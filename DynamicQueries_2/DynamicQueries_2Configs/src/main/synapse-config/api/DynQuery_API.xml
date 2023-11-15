@@ -7,7 +7,9 @@
             </log>
             <property description="payload" expression="json-eval($)" name="payload" scope="default" type="STRING"/>
             <property description="apiRegistryConfigPath" expression="get-property('file','apiRegistryConfigPath')" name="apiRegistryConfigPath" scope="default" type="STRING"/>
-            <log level="full"/>
+            <log description="Good Bye Log">
+                <property name="API Name " value="DynQuery"/>
+            </log>
             <respond/>
         </inSequence>
         <outSequence/>
