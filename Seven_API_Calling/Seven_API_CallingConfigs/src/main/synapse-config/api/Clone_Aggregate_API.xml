@@ -2,6 +2,9 @@
 <api context="/Clone_Aggregate" name="Clone_Aggregate_API" xmlns="http://ws.apache.org/ns/synapse">
     <resource faultSequence="faultSequence" methods="POST GET">
         <inSequence>
+            <log level="custom">
+                <property expression="$ctx:REST_API" name="API NAME"/>
+            </log>
             <call>
                 <endpoint key="DynamicQueryCall_EP"/>
             </call>
