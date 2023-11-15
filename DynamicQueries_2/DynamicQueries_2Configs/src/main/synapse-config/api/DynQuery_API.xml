@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/dynQueryAPI" name="DynQuery_API" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST GET">
+        <inSequence>
+            <log description="Welcome Log">
+                <property name="API Name " value="DynQuery"/>
+            </log>
+            <property description="payload" expression="json-eval($)" name="payload" scope="default" type="STRING"/>
+            <property description="apiRegistryConfigPath" expression="get-property('file','apiRegistryConfigPath')" name="apiRegistryConfigPath" scope="default" type="STRING"/>
+            <log level="full"/>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>
