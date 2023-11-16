@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <!DOCTYPE catalog PUBLIC "-//OASIS//DTD Entity Resolution XML Catalog V1.0//EN" "http://www.oasis-open.org/committees/entity/release/1.0/catalog.dtd">
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="public">
-<system systemId="http://maven.apache.org/maven-v4_0_0.xsd" uri="bundleentry://434.fwk1340181887/xsd/maven-v4_0_0.xsd"/>
-<system systemId="http://maven.apache.org/xsd/maven-4.0.0.xsd" uri="bundleentry://434.fwk1340181887/xsd/maven-v4_0_0.xsd"/>
-<system systemId="http://maven.apache.org/xsd/settings-1.0.0.xsd" uri="bundleentry://434.fwk1340181887/xsd/settings-v1_0_0.xsd"/>
-<system systemId="http://maven.apache.org/xsd/profiles-1.0.0.xsd" uri="bundleentry://434.fwk1340181887/xsd/profiles-v1_0_0.xsd"/>
-<system systemId="http://maven.apache.org/xsd/archetype-1.0.0.xsd" uri="bundleentry://434.fwk1340181887/xsd/archetype-1.0.0.xsd"/>
-<system systemId="http://maven.apache.org/xsd/archetype-catalog-1.0.0.xsd" uri="bundleentry://434.fwk1340181887/xsd/archetype-catalog-1.0.0.xsd"/>
-<system systemId="http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd" uri="bundleentry://434.fwk1340181887/xsd/archetype-descriptor-1.0.0.xsd"/>
+<system systemId="http://maven.apache.org/maven-v4_0_0.xsd" uri="bundleentry://434.fwk1156737301/xsd/maven-v4_0_0.xsd"/>
+<system systemId="http://maven.apache.org/xsd/maven-4.0.0.xsd" uri="bundleentry://434.fwk1156737301/xsd/maven-v4_0_0.xsd"/>
+<system systemId="http://maven.apache.org/xsd/settings-1.0.0.xsd" uri="bundleentry://434.fwk1156737301/xsd/settings-v1_0_0.xsd"/>
+<system systemId="http://maven.apache.org/xsd/profiles-1.0.0.xsd" uri="bundleentry://434.fwk1156737301/xsd/profiles-v1_0_0.xsd"/>
+<system systemId="http://maven.apache.org/xsd/archetype-1.0.0.xsd" uri="bundleentry://434.fwk1156737301/xsd/archetype-1.0.0.xsd"/>
+<system systemId="http://maven.apache.org/xsd/archetype-catalog-1.0.0.xsd" uri="bundleentry://434.fwk1156737301/xsd/archetype-catalog-1.0.0.xsd"/>
+<system systemId="http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd" uri="bundleentry://434.fwk1156737301/xsd/archetype-descriptor-1.0.0.xsd"/>
 <system systemId="http://www.w3.org/2001/xml.xsd" uri="platform:/plugin/org.eclipse.xsd/cache/www.w3.org/2001/xml.xsd"/>
 <system systemId="http://ws.apache.org/ns/synapse" uri="platform:/plugin/org.wso2.integrationstudio.ds.editor/resources/schema/dss_schema.xsd"/>
 <system systemId="http://ws.apache.org/ns/synapse" uri="platform:/plugin/org.wso2.integrationstudio.gmf.esb.diagram/resources/schema/synapse_config.xsd"/>

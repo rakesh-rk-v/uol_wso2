@@ -10,9 +10,9 @@
 </mappings>
 </org.eclipse.team.ui.MODEL_PARTICIPANT_MAPPINGS>
 </org.eclipse.team.ui.MODEL_PARTICIPANT_SETTINGS>
-<gitSynchronizeData container="E:/Git/uol_wso2/DynamicQueries_2" dstRev="refs/remotes/origin/ajay" inludeLocal="true" srcRev="HEAD">
+<gitSynchronizeData container="E:/Git/uol_wso2/Seven_API_CallingCompositeExporter" dstRev="refs/remotes/origin/ajay" inludeLocal="true" srcRev="HEAD">
 <includedPaths>
-<path path="E:/Git/uol_wso2/DynamicQueries_2"/>
+<path/>
 </includedPaths>
 </gitSynchronizeData>
 </data>
