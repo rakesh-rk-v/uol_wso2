@@ -4,6 +4,7 @@
         <inSequence>
             <log level="custom">
                 <property expression="$ctx:REST_API" name="API NAME"/>
+                <property name="Git" value="Added"/>
             </log>
             <log>
                 <property name="To Test" value="Version Control"/>
