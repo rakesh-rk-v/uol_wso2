@@ -8,11 +8,20 @@
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 	</section>
 	<section name="org.eclipse.egit.ui.internal.staging.StagingView">
-		<item key="MAIN_SASH_FORM_ORIENTATION_VERTICAL" value="false"/>
+		<item key="MAIN_SASH_FORM_ORIENTATION_VERTICAL" value="true"/>
 		<item key="HORIZONTAL_SASH_FORM_WEIGHT" value="500,500"/>
-		<item key="STAGING_SASH_FORM_WEIGHT" value="200,200"/>
+		<item key="STAGING_SASH_FORM_WEIGHT" value="500,500"/>
 		<item key="sortItemState" value="false"/>
 	</section>
 	<section name="GitCommitMessageComponent">
+		<list key="E:\Git\uol_wso2\.git">
+			<item value="false"/>
+			<item value="rakesh-rk-v &lt;rakeshvendrapati173@gmail.com&gt;"/>
+			<item value="Added Git Add In Clone API"/>
+			<item value="rakesh-rk-v &lt;rakeshvendrapati173@gmail.com&gt;"/>
+			<item value="17826f0d6296a400d55bd3dcf7f5c51ed7b0beef"/>
+			<item value="0"/>
+			<item value="false"/>
+		</list>
 	</section>
 </section>
