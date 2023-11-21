@@ -1,0 +1,11 @@
+{
+  "$schema" : "http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#",
+  "inputType" : "XML",
+  "id" : "Advance_API",
+  "title" : "requestPayload",
+  "type" : "array",
+  "items" : [ {
+    "id" : "Advance_API/0",
+    "type" : ""
+  } ]
+}

@@ -1,0 +1,11 @@
+---
+key: "Cache_Testing_API-1.0.0"
+name : "Cache_Testing_API"
+displayName : "Cache_Testing_API"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/cache_Testing_API"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

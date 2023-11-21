@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/cache_Testing_API" name="Cache_Testing_API" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <cache collector="false" description="Cache Finder" hashGenerator="org.wso2.carbon.mediator.cache.digest.DOMHASHGenerator" id="ID" maxMessageSize="20000" scope="per-host" timeout="3000">
+                <onCacheHit>
+                    <payloadFactory media-type="json">
+                        <format>{"Trace-ID" : "$1"} </format>
+                        <args>
+                            <arg evaluator="json" expression="$.headers.X-Amzn-Trace-Id"/>
+                        </args>
+                    </payloadFactory>
+                    <respond/>
+                </onCacheHit>
+                <implementation maxSize="1000" type="memory"/>
+            </cache>
+            <log description="Welcome Log">
+                <property name="Cache Mediator" value="When there is No Cache"/>
+            </log>
+            <send>
+                <endpoint key="BIN_EP"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <cache collector="true"/>
+            <payloadFactory media-type="json">
+                <format>{&#xd;
+"X-Amzn-Trace-Id" : "$1"&#xd;
+}</format>
+                <args>
+                    <arg evaluator="json" expression="$.headers.X-Amzn-Trace-Id"/>
+                </args>
+            </payloadFactory>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>

@@ -1,1 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?><artifacts/>
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="CallMultiple_API" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/CallMultiple_API.xml</file>
+    </artifact>
+    <artifact name="CallMultiple_API_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/CallMultiple_API_swagger.yaml</file>
+    </artifact>
+    <artifact name="CallMultiple_API_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/CallMultiple_API_metadata.yaml</file>
+    </artifact>
+    <artifact name="API_Call" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/API_Call.xml</file>
+    </artifact>
+    <artifact name="BIN_EP" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/BIN_EP.xml</file>
+    </artifact>
+</artifacts>

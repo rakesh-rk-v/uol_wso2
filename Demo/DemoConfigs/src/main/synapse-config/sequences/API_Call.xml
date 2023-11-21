@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="API_Call" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <call>
+        <endpoint key="BIN_EP"/>
+    </call>
+</sequence>

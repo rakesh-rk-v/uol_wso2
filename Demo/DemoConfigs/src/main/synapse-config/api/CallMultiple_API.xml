@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/callMultipleAPI" name="CallMultiple_API" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <log/>
+            <clone>
+                <target>
+                    <sequence>
+                        <sequence key="API_Call"/>
+                        <log>
+                            <property name="First Call" value="First Call"/>
+                        </log>
+                    </sequence>
+                </target>
+                <target>
+                    <sequence>
+                        <sequence key="API_Call"/>
+                        <log>
+                            <property name="First Call" value="First Call"/>
+                        </log>
+                    </sequence>
+                </target>
+                <target>
+                    <sequence>
+                        <sequence key="API_Call"/>
+                        <log>
+                            <property name="First Call" value="First Call"/>
+                        </log>
+                    </sequence>
+                </target>
+            </clone>
+            <payloadFactory media-type="json">
+                <format>$1</format>
+                <args>
+                    <arg evaluator="json" expression="$"/>
+                </args>
+            </payloadFactory>
+            <aggregate>
+                <completeCondition>
+                    <messageCount max="-1" min="-1"/>
+                </completeCondition>
+                <onComplete aggregateElementType="root" expression="json-eval($)">
+                    <log level="full">
+                        <property name="Inside The " value="Log"/>
+                    </log>
+                    <respond/>
+                </onComplete>
+            </aggregate>
+            <log level="full">
+                <property name="Out Side " value="Payload"/>
+            </log>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>
