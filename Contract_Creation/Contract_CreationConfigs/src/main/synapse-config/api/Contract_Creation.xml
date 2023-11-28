@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/create-contract" name="Contract_Creation" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST GET">
+        <inSequence>
+            <validate cache-schema="true" source="json-eval($)">
+                <schema key="conf:bscsValidation/BSCS_Validations.json"/>
+                <on-fail>
+                    <log/>
+                    <payloadFactory media-type="json">
+                        <format>{&#xd;
+"ERROR" : "INVALID INPUTS",&#xd;
+"Message" : "Please Give the Customer_ID, or NIC ,or passport"&#xd;
+}</format>
+                        <args/>
+                    </payloadFactory>
+                    <respond/>
+                </on-fail>
+            </validate>
+            <header name="To" scope="default" value=""/>
+            <payloadFactory media-type="xml">
+                <format>
+                    <soapenv:Envelope xmlns:con="http://ericsson.com/services/ws_CMI_7/contractnew" xmlns:ses="http://ericsson.com/services/ws_CMI_7/sessionchange" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+                        <soapenv:Header>
+                            <wsse:Security soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+                                <wsse:UsernameToken wsu:Id="UsernameToken-05E5B20EFB7524EEE216852580645311">
+                                    <wsse:Username>ADMX</wsse:Username>
+                                    <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">ADMX</wsse:Password>
+                                </wsse:UsernameToken>
+                            </wsse:Security>
+                        </soapenv:Header>
+                        <soapenv:Body>
+                            <con:contractNewRequest>
+                                <!--You may enter the following 2 items in any order-->
+                                <!--Optional:-->
+                                <con:inputAttributes>
+                                    <con:csId>518936</con:csId>
+                                    <con:contractTypeId/>
+                                    <!--Optional:-->
+                                    <con:contractTypeIdPub/>
+                                    <!--Optional:-->
+                                    <con:homeBidGroupId/>
+                                    <!--Optional:-->
+                                    <con:foreignBidGroupId/>
+                                    <!--Optional:-->
+                                    <con:coIdPub/>
+                                    <!--Optional:-->
+                                    <con:description/>
+                                    <!--Optional:-->
+                                    <con:dealerId/>
+                                    <!--Optional:-->
+                                    <con:dealerIdPub/>
+                                    <!--Optional:-->
+                                    <con:sccode>1</con:sccode>
+                                    <con:submId>1</con:submId>
+                                    <con:plcode>1001</con:plcode>
+                                    <con:mainCoId/>
+                                    <con:coArchive/>
+                                    <!--Optional:-->
+                                    <con:coOpDir/>
+                                    <!--Optional:-->
+                                    <con:coPstnDir/>
+                                    <con:rpcode>1</con:rpcode>
+                                    <con:extProductId/>
+                                    <con:coTrial/>
+                                    <!--Optional:-->
+                                    <con:coTrialEndDate/>
+                                    <!--Optional:-->
+                                    <con:anPackageId/>
+                                    <con:preratedTapRp/>
+                                    <!--Optional:-->
+                                    <con:autoAssignCoreServ/>
+                                    <!--Optional:-->
+                                    <con:coNonexplServPaymentType/>
+                                    <!--Optional:-->
+                                    <con:altRpcode/>
+                                    <con:coSignedDate/>
+                                    <!--Optional:-->
+                                    <con:currencyId/>
+                                    <!--Optional:-->
+                                    <con:currencyIdPub/>
+                                    <!--Optional:-->
+                                    <con:callDetail/>
+                                    <!--Optional:-->
+                                    <con:userinstallationAdr/>
+                                    <!--Optional:-->
+                                    <con:bmId/>
+                                    <!--Optional:-->
+                                    <con:bmIdPub/>
+                                    <!--Optional:-->
+                                    <con:notificationMediumId/>
+                                    <!--Optional:-->
+                                    <con:notificationMediumIdPub/>
+                                    <!--Optional:-->
+                                    <con:chargingPeriodAdjustmentReference/>
+                                    <!--Optional:-->
+                                    <con:coEquipmentStatus/>
+                                    <!--Optional:-->
+                                    <con:reason/>
+                                    <!--Optional:-->
+                                    <con:ivrLangId/>
+                                    <!--Optional:-->
+                                    <con:ivrLangIdPub/>
+                                    <con:sdpId/>
+                                </con:inputAttributes>
+                                <con:sessionChangeRequest>
+                                    <!--Optional:-->
+                                    <ses:values>
+                                        <ses:item>
+                                            <ses:key>BU_ID</ses:key>
+                                            <ses:value>2</ses:value>
+                                        </ses:item>
+                                    </ses:values>
+                                </con:sessionChangeRequest>
+                            </con:contractNewRequest>
+                        </soapenv:Body>
+                    </soapenv:Envelope>
+                </format>
+                <args/>
+            </payloadFactory>
+            <call>
+                <endpoint key="BSCS_KNOT"/>
+            </call>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

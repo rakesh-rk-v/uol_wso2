@@ -1,0 +1,11 @@
+---
+key: "Contract_Creation-1.0.0"
+name : "Contract_Creation"
+displayName : "Contract_Creation"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/create-contract"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

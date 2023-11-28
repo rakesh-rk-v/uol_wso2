@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><resources>
+    <item>
+        <file>BSCS_Validations.json</file>
+        <path>/_system/config/bscsValidation</path>
+        <mediaType>application/json</mediaType>
+        <properties/>
+    </item>
+</resources>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<esb:EsbDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:esb="http:///org/wso2/integrationstudio/eclipse/gmf/esb">
+  <server type="API">
+    <children xsi:type="esb:SynapseAPI" apiName="Contract_Creation" context="/create-contract">
+      <resources allowGet="true" allowPost="true">
+        <inputConnector/>
+        <outputConnector>
+          <outgoingLink target="//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.4/@inputConnector"/>
+        </outputConnector>
+        <outSequenceOutputConnector/>
+        <faultInputConnector/>
+        <container>
+          <sequenceAndEndpointContainer>
+            <mediatorFlow>
+              <children xsi:type="esb:CallMediator">
+                <inputConnector incomingLinks="//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.2/@outputConnector/@outgoingLink"/>
+                <outputConnector>
+                  <outgoingLink target="//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.3/@inputConnector"/>
+                </outputConnector>
+                <endpointOutputConnector>
+                  <outgoingLink target="//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.0/@mediatorFlow/@children.0/@inputConnector"/>
+                </endpointOutputConnector>
+                <mediatorFlow>
+                  <children xsi:type="esb:NamedEndpoint" name="BSCS_KNOT">
+                    <reliableMessagingPolicy prettyName="ReliableMessagingPolicy Key" keyName="ReliableMessagingPolicy Key" keyValue="/default/key" filters="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+                    <securityPolicy prettyName="SecurityPolicy Key" keyName="SecurityPolicy Key" filters="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+                    <inboundPolicy prettyName="inboundPolicy Key" keyName="inboundPolicy Key" filters="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+                    <outboundPolicy prettyName="obPolicy Key" keyName="obPolicy Key" filters="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+                    <inputConnector incomingLinks="//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.0/@endpointOutputConnector/@outgoingLink"/>
+                    <dynamicReferenceKey prettyName="Endpoint Expression" propertyName="expression" propertyValue="/default/expression" namespaces="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+                    <staticReferenceKey prettyName="Endpoint Key" keyName="Endpoint Key" keyValue="BSCS_KNOT" filters="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+                  </children>
+                </mediatorFlow>
+                <endpointRegistrykey prettyName="Endpoint Key" keyName="Endpoint Key" filters="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+                <sourceXPath prettyName="Endpoint XPath" propertyName="expression" namespaces="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+              </children>
+              <children xsi:type="esb:HeaderMediator">
+                <headerName prettyName="Header Name" propertyName="name" propertyValue="To" namespaces="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+                <valueExpression prettyName="Expression" propertyName="expression" namespaces="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+                <inputConnector incomingLinks="//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.4/@outputConnector/@outgoingLink"/>
+                <outputConnector>
+                  <outgoingLink target="//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.2/@inputConnector"/>
+                </outputConnector>
+              </children>
+              <children xsi:type="esb:PayloadFactoryMediator" payload="&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:con=&quot;http://ericsson.com/services/ws_CMI_7/contractnew&quot; xmlns:ses=&quot;http://ericsson.com/services/ws_CMI_7/sessionchange&quot;>&#xD;&#xA;    &lt;soapenv:Header>&#xD;&#xA;      &lt;wsse:Security soapenv:mustUnderstand=&quot;1&quot; xmlns:wsse=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot; xmlns:wsu=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;>&#xD;&#xA;         &lt;wsse:UsernameToken wsu:Id=&quot;UsernameToken-05E5B20EFB7524EEE216852580645311&quot;>&#xD;&#xA;            &lt;wsse:Username>ADMX&lt;/wsse:Username>&#xD;&#xA;            &lt;wsse:Password Type=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText&quot;>ADMX&lt;/wsse:Password>&#xD;&#xA;         &lt;/wsse:UsernameToken>&#xD;&#xA;      &lt;/wsse:Security>&#xD;&#xA;   &lt;/soapenv:Header>&#xD;&#xA;   &lt;soapenv:Body>&#xD;&#xA;      &lt;con:contractNewRequest>&#xD;&#xA;         &lt;!--You may enter the following 2 items in any order-->&#xD;&#xA;         &lt;!--Optional:-->&#xD;&#xA;         &lt;con:inputAttributes>&#xD;&#xA;            &lt;con:csId>518936&lt;/con:csId>&#xD;&#xA;   &#xD;&#xA;            &lt;con:contractTypeId>&lt;/con:contractTypeId>&#xD;&#xA;            &lt;!--Optional:-->&#xD;&#xA;            &lt;con:contractTypeIdPub>&lt;/con:contractTypeIdPub>&#xD;&#xA;            &lt;!--Optional:-->&#xD;&#xA;            &lt;con:homeBidGroupId>&lt;/con:homeBidGroupId>&#xD;&#xA;            &lt;!--Optional:-->&#xD;&#xA;            &lt;con:foreignBidGroupId>&lt;/con:foreignBidGroupId>&#xD;&#xA;            &lt;!--Optional:-->&#xD;&#xA;            &lt;con:coIdPub>&lt;/con:coIdPub>&#xD;&#xA;            &lt;!--Optional:-->&#xD;&#xA;            &lt;con:description>&lt;/con:description>&#xD;&#xA;            &lt;!--Optional:-->&#xD;&#xA;            &lt;con:dealerId>&lt;/con:dealerId>&#xD;&#xA;            &lt;!--Optional:-->&#xD;&#xA;            &lt;con:dealerIdPub>&lt;/con:dealerIdPub>&#xD;&#xA;            &lt;!--Optional:-->&#xD;&#xA;            &lt;con:sccode>1&lt;/con:sccode>&#xD;&#xA;            &#xD;&#xA;         &#xD;&#xA;            &lt;con:submId>1&lt;/con:submId>&#xD;&#xA;           &#xD;&#xA;           &#xD;&#xA;            &lt;con:plcode>1001&lt;/con:plcode>&#xD;&#xA;           &#xD;&#xA;            &lt;con:mainCoId>&lt;/con:mainCoId>&#xD;&#xA;            &#xD;&#xA;            &lt;con:coArchive>&lt;/con:coArchive>&#xD;&#xA;            &lt;!--Optional:-->&#xD;&#xA;            &lt;con:coOpDir>&lt;/con:coOpDir>&#xD;&#xA;            &lt;!--Optional:-->&#xD;&#xA;            &lt;con:coPstnDir>&lt;/con:coPstnDir>&#xD;&#xA;            &#xD;&#xA;            &lt;con:rpcode>1&lt;/con:rpcode>&#xD;&#xA;           &#xD;&#xA;            &lt;con:extProductId>&lt;/con:extProductId>&#xD;&#xA;           &#xD;&#xA;            &lt;con:coTrial>&lt;/con:coTrial>&#xD;&#xA;            &lt;!--Optional:-->&#xD;&#xA;            &lt;con:coTrialEndDate>&lt;/con:coTrialEndDate>&#xD;&#xA;            &lt;!--Optional:-->&#xD;&#xA;            &lt;con:anPackageId>&lt;/con:anPackageId>&#xD;&#xA;            &#xD;&#xA;            &lt;con:preratedTapRp>&lt;/con:preratedTapRp>&#xD;&#xA;            &lt;!--Optional:-->&#xD;&#xA;            &lt;con:autoAssignCoreServ>&lt;/con:autoAssignCoreServ>&#xD;&#xA;            &lt;!--Optional:-->&#xD;&#xA;            &lt;con:coNonexplServPaymentType>&lt;/con:coNonexplServPaymentType>&#xD;&#xA;            &lt;!--Optional:-->&#xD;&#xA;            &lt;con:altRpcode>&lt;/con:altRpcode>&#xD;&#xA;            &#xD;&#xA;            &lt;con:coSignedDate>&lt;/con:coSignedDate>&#xD;&#xA;            &lt;!--Optional:-->&#xD;&#xA;            &lt;con:currencyId>&lt;/con:currencyId>&#xD;&#xA;            &lt;!--Optional:-->&#xD;&#xA;            &lt;con:currencyIdPub>&lt;/con:currencyIdPub>&#xD;&#xA;            &lt;!--Optional:-->&#xD;&#xA;            &lt;con:callDetail>&lt;/con:callDetail>&#xD;&#xA;            &lt;!--Optional:-->&#xD;&#xA;            &lt;con:userinstallationAdr>&lt;/con:userinstallationAdr>&#xD;&#xA;            &lt;!--Optional:-->&#xD;&#xA;            &lt;con:bmId>&lt;/con:bmId>&#xD;&#xA;            &lt;!--Optional:-->&#xD;&#xA;            &lt;con:bmIdPub>&lt;/con:bmIdPub>&#xD;&#xA;            &lt;!--Optional:-->&#xD;&#xA;            &lt;con:notificationMediumId>&lt;/con:notificationMediumId>&#xD;&#xA;            &lt;!--Optional:-->&#xD;&#xA;            &lt;con:notificationMediumIdPub>&lt;/con:notificationMediumIdPub>&#xD;&#xA;            &lt;!--Optional:-->&#xD;&#xA;            &lt;con:chargingPeriodAdjustmentReference>&lt;/con:chargingPeriodAdjustmentReference>&#xD;&#xA;            &lt;!--Optional:-->&#xD;&#xA;            &lt;con:coEquipmentStatus>&lt;/con:coEquipmentStatus>&#xD;&#xA;            &lt;!--Optional:-->&#xD;&#xA;            &lt;con:reason>&lt;/con:reason>&#xD;&#xA;            &lt;!--Optional:-->&#xD;&#xA;            &lt;con:ivrLangId>&lt;/con:ivrLangId>&#xD;&#xA;            &lt;!--Optional:-->&#xD;&#xA;            &lt;con:ivrLangIdPub>&lt;/con:ivrLangIdPub>&#xD;&#xA;&#xD;&#xA;            &lt;con:sdpId>&lt;/con:sdpId>&#xD;&#xA;         &lt;/con:inputAttributes>&#xD;&#xA;&#xD;&#xA;         &lt;con:sessionChangeRequest>&#xD;&#xA;            &lt;!--Optional:-->&#xD;&#xA;            &lt;ses:values>&#xD;&#xA;               &lt;ses:item>&#xD;&#xA;                  &lt;ses:key>BU_ID&lt;/ses:key>&#xD;&#xA;                  &lt;ses:value>2&lt;/ses:value>&#xD;&#xA;               &lt;/ses:item>&#xD;&#xA;            &lt;/ses:values>&#xD;&#xA;         &lt;/con:sessionChangeRequest>&#xD;&#xA;      &lt;/con:contractNewRequest>&#xD;&#xA;   &lt;/soapenv:Body>&#xD;&#xA;&lt;/soapenv:Envelope>">
+                <payloadKey prettyName="Sequence Key" keyName="Sequence Key" filters="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+                <inputConnector incomingLinks="//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@outputConnector/@outgoingLink"/>
+                <outputConnector>
+                  <outgoingLink target="//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.0/@inputConnector"/>
+                </outputConnector>
+              </children>
+              <children xsi:type="esb:RespondMediator">
+                <inputConnector incomingLinks="//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.0/@outputConnector/@outgoingLink"/>
+                <outputConnector/>
+              </children>
+              <children xsi:type="esb:ValidateMediator">
+                <sourceXpath propertyName="source" propertyValue="json-eval($)" namespaces="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+                <schemas>
+                  <validateStaticSchemaKey prettyName="prettyName" keyValue="conf:bscsValidation/BSCS_Validations.json" filters="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+                  <validateDynamicSchemaKey prettyName="expression" propertyName="expression" propertyValue="/default/expression" namespaces="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+                </schemas>
+                <inputConnector incomingLinks="//@server/@children.0/@resources.0/@outputConnector/@outgoingLink"/>
+                <outputConnector>
+                  <outgoingLink target="//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@inputConnector"/>
+                </outputConnector>
+                <onFailOutputConnector>
+                  <outgoingLink target="//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.4/@mediatorFlow/@children.1/@inputConnector"/>
+                </onFailOutputConnector>
+                <mediatorFlow>
+                  <children xsi:type="esb:RespondMediator">
+                    <inputConnector incomingLinks="//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.4/@mediatorFlow/@children.2/@outputConnector/@outgoingLink"/>
+                    <outputConnector/>
+                  </children>
+                  <children xsi:type="esb:LogMediator">
+                    <inputConnector incomingLinks="//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.4/@onFailOutputConnector/@outgoingLink"/>
+                    <outputConnector>
+                      <outgoingLink target="//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.4/@mediatorFlow/@children.2/@inputConnector"/>
+                    </outputConnector>
+                  </children>
+                  <children xsi:type="esb:PayloadFactoryMediator" payload="{&#xD;&#xA;&quot;ERROR&quot; : &quot;INVALID INPUTS&quot;,&#xD;&#xA;&quot;Message&quot; : &quot;Please Give the Customer_ID, or NIC ,or passport&quot;&#xD;&#xA;}" mediaType="json">
+                    <payloadKey prettyName="Sequence Key" keyName="Sequence Key" filters="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+                    <inputConnector incomingLinks="//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.4/@mediatorFlow/@children.1/@outputConnector/@outgoingLink"/>
+                    <outputConnector>
+                      <outgoingLink target="//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.4/@mediatorFlow/@children.0/@inputConnector"/>
+                    </outputConnector>
+                  </children>
+                </mediatorFlow>
+              </children>
+            </mediatorFlow>
+          </sequenceAndEndpointContainer>
+          <faultContainer>
+            <mediatorFlow/>
+          </faultContainer>
+        </container>
+        <inSequenceKey prettyName="In Sequence Reference" keyName="key" filters="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+        <outSequenceKey prettyName="Out Sequence Reference" keyName="key" filters="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+        <faultSequenceKey prettyName="Fault Sequence Reference" keyName="key" filters="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+      </resources>
+    </children>
+  </server>
+</esb:EsbDiagram>
