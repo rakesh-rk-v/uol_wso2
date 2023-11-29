@@ -5,19 +5,71 @@
             <validate cache-schema="true" source="json-eval($)">
                 <schema key="conf:bscsValidation/BSCS_Validations.json"/>
                 <on-fail>
-                    <log/>
-                    <payloadFactory media-type="json">
+                    <log description="Validation Log"/>
+                    <payloadFactory description="Invalid Input Response" media-type="json">
                         <format>{&#xd;
 "ERROR" : "INVALID INPUTS",&#xd;
 "Message" : "Please Give the Customer_ID, or NIC ,or passport"&#xd;
 }</format>
                         <args/>
                     </payloadFactory>
-                    <respond/>
+                    <respond description="Responds for Fault Input"/>
                 </on-fail>
             </validate>
-            <header name="To" scope="default" value=""/>
-            <payloadFactory media-type="xml">
+            <propertyGroup description="Getting Properties From Request Payload">
+                <property expression="json-eval($.parameters.cust_id)" name="cust_id" scope="default" type="STRING"/>
+                <property expression="json-eval($.parameters.NIC)" name="NIC" scope="default" type="STRING"/>
+                <property expression="json-eval($.parameters.passport)" name="passport" scope="default" type="STRING"/>
+                <property expression="json-eval($)" name="payload" scope="default" type="STRING"/>
+                <property expression="json-eval($.rpcode)" name="rpcode" scope="default" type="STRING"/>
+                <property expression="json-eval($.sccode)" name="sccode" scope="default" type="STRING"/>
+                <property expression="json-eval($.plcode)" name="plcode" scope="default" type="STRING"/>
+                <property expression="json-eval($.submId)" name="submId" scope="default" type="STRING"/>
+            </propertyGroup>
+            <script description="SETTING THE QUERY NAME" language="js"><![CDATA[// Example logic to construct SQL query based on available values
+        var cust_id = mc.getProperty('cust_id');
+        var NIC = mc.getProperty('NIC');
+        var passport = mc.getProperty('passport');
+
+        var sqlQuery = "";
+
+        if (cust_id) {
+            sqlQuery = "cust_id";
+        } else if (NIC) {
+            sqlQuery = "NIC";
+        } else if (passport) {
+            sqlQuery = "passport";
+        }
+
+        mc.setProperty('queryName', sqlQuery);]]></script>
+            <log description="queryName">
+                <property expression="$ctx:queryName" name="queryName"/>
+            </log>
+            <class description="Dynamic Query Mediator" name="com.knot.uol.mediators.DynamicXMLQueryMediator"/>
+            <filter regex="false" source="boolean(get-property('co_id'))">
+                <then>
+                    <log description="When The Customer is Un Available">
+                        <property name="CO_ID" value="UN AVAILABLE"/>
+                        <property expression="$ctx:cust_id" name="cust_id"/>
+                    </log>
+                    <payloadFactory description="NO Customer Response." media-type="xml">
+                        <format>
+                            <ERROR xmlns="">
+                                <CUST_ID>{ctx:cust_id}</CUST_ID>
+                                <MESSAGE>The Given Customer_ID is un Available</MESSAGE>
+                            </ERROR>
+                        </format>
+                        <args/>
+                    </payloadFactory>
+                    <respond description="Responds When there is No Customer."/>
+                </then>
+                <else>
+                    <log description="Customer Is Valid">
+                        <property expression="$ctx:co_id" name="CO_ID"/>
+                    </log>
+                </else>
+            </filter>
+            <payloadFactory description="Payload For Contract Creation" media-type="xml">
                 <format>
                     <soapenv:Envelope xmlns:con="http://ericsson.com/services/ws_CMI_7/contractnew" xmlns:ses="http://ericsson.com/services/ws_CMI_7/sessionchange" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
                         <soapenv:Header>
@@ -33,77 +85,13 @@
                                 <!--You may enter the following 2 items in any order-->
                                 <!--Optional:-->
                                 <con:inputAttributes>
-                                    <con:csId>518936</con:csId>
-                                    <con:contractTypeId/>
-                                    <!--Optional:-->
-                                    <con:contractTypeIdPub/>
-                                    <!--Optional:-->
-                                    <con:homeBidGroupId/>
-                                    <!--Optional:-->
-                                    <con:foreignBidGroupId/>
-                                    <!--Optional:-->
-                                    <con:coIdPub/>
-                                    <!--Optional:-->
-                                    <con:description/>
-                                    <!--Optional:-->
-                                    <con:dealerId/>
-                                    <!--Optional:-->
-                                    <con:dealerIdPub/>
-                                    <!--Optional:-->
-                                    <con:sccode>1</con:sccode>
-                                    <con:submId>1</con:submId>
-                                    <con:plcode>1001</con:plcode>
-                                    <con:mainCoId/>
-                                    <con:coArchive/>
-                                    <!--Optional:-->
-                                    <con:coOpDir/>
-                                    <!--Optional:-->
-                                    <con:coPstnDir/>
-                                    <con:rpcode>1</con:rpcode>
-                                    <con:extProductId/>
-                                    <con:coTrial/>
-                                    <!--Optional:-->
-                                    <con:coTrialEndDate/>
-                                    <!--Optional:-->
-                                    <con:anPackageId/>
-                                    <con:preratedTapRp/>
-                                    <!--Optional:-->
-                                    <con:autoAssignCoreServ/>
-                                    <!--Optional:-->
-                                    <con:coNonexplServPaymentType/>
-                                    <!--Optional:-->
-                                    <con:altRpcode/>
-                                    <con:coSignedDate/>
-                                    <!--Optional:-->
-                                    <con:currencyId/>
-                                    <!--Optional:-->
-                                    <con:currencyIdPub/>
-                                    <!--Optional:-->
-                                    <con:callDetail/>
-                                    <!--Optional:-->
-                                    <con:userinstallationAdr/>
-                                    <!--Optional:-->
-                                    <con:bmId/>
-                                    <!--Optional:-->
-                                    <con:bmIdPub/>
-                                    <!--Optional:-->
-                                    <con:notificationMediumId/>
-                                    <!--Optional:-->
-                                    <con:notificationMediumIdPub/>
-                                    <!--Optional:-->
-                                    <con:chargingPeriodAdjustmentReference/>
-                                    <!--Optional:-->
-                                    <con:coEquipmentStatus/>
-                                    <!--Optional:-->
-                                    <con:reason/>
-                                    <!--Optional:-->
-                                    <con:ivrLangId/>
-                                    <!--Optional:-->
-                                    <con:ivrLangIdPub/>
-                                    <con:sdpId/>
+                                    <con:csId>$1</con:csId>
+                                    <con:sccode>$2</con:sccode>
+                                    <con:submId>$3</con:submId>
+                                    <con:plcode>$4</con:plcode>
+                                    <con:rpcode>$5</con:rpcode>
                                 </con:inputAttributes>
                                 <con:sessionChangeRequest>
-                                    <!--Optional:-->
                                     <ses:values>
                                         <ses:item>
                                             <ses:key>BU_ID</ses:key>
@@ -115,12 +103,18 @@
                         </soapenv:Body>
                     </soapenv:Envelope>
                 </format>
-                <args/>
+                <args>
+                    <arg evaluator="xml" expression="$ctx:cust_id"/>
+                    <arg evaluator="xml" expression="$ctx:sccode"/>
+                    <arg evaluator="xml" expression="$ctx:submId"/>
+                    <arg evaluator="xml" expression="$ctx:plcode"/>
+                    <arg evaluator="xml" expression="$ctx:rpcode"/>
+                </args>
             </payloadFactory>
             <call>
                 <endpoint key="BSCS_KNOT"/>
             </call>
-            <respond/>
+            <respond description="Responds after Calling End Point."/>
         </inSequence>
         <outSequence/>
         <faultSequence/>

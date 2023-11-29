@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "object",
     "properties": {
-        "Inputs": {
+        "parameters": {
             "type": "object",
             "oneOf": [
                 {
@@ -26,5 +26,5 @@
             ]
         }
     },
-    "required": ["Inputs"]
+    "required": ["parameters"]
 }
