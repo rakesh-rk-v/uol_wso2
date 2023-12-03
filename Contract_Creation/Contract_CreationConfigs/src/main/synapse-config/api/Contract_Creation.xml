@@ -20,7 +20,6 @@
                 <property expression="json-eval($.parameters.cust_id)" name="cust_id" scope="default" type="STRING"/>
                 <property expression="json-eval($.parameters.NIC)" name="NIC" scope="default" type="STRING"/>
                 <property expression="json-eval($.parameters.passport)" name="passport" scope="default" type="STRING"/>
-                <property expression="json-eval($)" name="payload" scope="default" type="STRING"/>
                 <property expression="json-eval($.rpcode)" name="rpcode" scope="default" type="STRING"/>
                 <property expression="json-eval($.sccode)" name="sccode" scope="default" type="STRING"/>
                 <property expression="json-eval($.plcode)" name="plcode" scope="default" type="STRING"/>
@@ -44,6 +43,19 @@
         mc.setProperty('queryName', sqlQuery);]]></script>
             <log description="queryName">
                 <property expression="$ctx:queryName" name="queryName"/>
+            </log>
+            <payloadFactory media-type="json">
+                <format>{&#xd;
+"queryName" : "$1",&#xd;
+$2&#xd;
+}</format>
+                <args>
+                    <arg evaluator="xml" expression="$ctx:queryName"/>
+                    <arg evaluator="json" expression="$.parameters"/>
+                </args>
+            </payloadFactory>
+            <log level="custom">
+                <property expression="$body" name="Payload Before Dynamic Mediator"/>
             </log>
             <class description="Dynamic Query Mediator" name="com.knot.uol.mediators.DynamicXMLQueryMediator"/>
             <filter regex="false" source="boolean(get-property('co_id'))">
@@ -114,6 +126,19 @@
             <call>
                 <endpoint key="BSCS_KNOT"/>
             </call>
+            <dblookup>
+                <connection>
+                    <pool>
+                        <driver>com.mysql.cj.jdbc.Driver</driver>
+                        <url>jdbc:mysql://localhost:3306/wso2</url>
+                        <user>root</user>
+                        <password>mysql</password>
+                    </pool>
+                </connection>
+                <statement>
+                    <sql><![CDATA[insert into bscs.REQUEST (?,?,?,?,?)]]></sql>
+                </statement>
+            </dblookup>
             <respond description="Responds after Calling End Point."/>
         </inSequence>
         <outSequence/>
