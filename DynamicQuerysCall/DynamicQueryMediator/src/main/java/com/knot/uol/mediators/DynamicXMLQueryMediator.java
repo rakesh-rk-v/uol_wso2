@@ -35,18 +35,10 @@ public class DynamicXMLQueryMediator extends AbstractMediator {
 
 		 String queryName = null, statusCode = null, message = null, errorName = null, errorCode = null;
 		 JsonArray dbResponse = null;
-			//org.apache.axis2.context.MessageContext axis2MessageContext = ((Axis2MessageContext) messageContext).getAxis2MessageContext();
-	        HttpServletResponse response = (HttpServletResponse) messageContext.getProperty("TRANSPORT_HEADERS");
-			
-	        org.apache.axis2.context.MessageContext axis2MessageContext =
-	                ((org.apache.synapse.core.axis2.Axis2MessageContext) messageContext).getAxis2MessageContext();
-
 		try {
-
-
 			String apiRegistryConfigs = (String)messageContext.getProperty("apiregistryConfigPath");
 			String inputPayload = (String) messageContext.getProperty("requestPayload");
-
+			log.info(new String("File Properties Name = "+apiRegistryConfigs));
 			Properties properties = PropertiesUtil.propertiesFileRead(apiRegistryConfigs);
 
 			JsonParser parser = new JsonParser();
@@ -55,6 +47,7 @@ public class DynamicXMLQueryMediator extends AbstractMediator {
 			
 			// Fetch dynamic query configuration from the database based on query name
 			QueryConfig queryConfig = JDBCConnectionUtil.getQueryConfigFromDatabase(queryName, properties);
+			log.debug(new String("Query Name = "+queryName));
 			log.info("QueryConfig Object info :: " + queryConfig);
 			if (queryConfig == null || org.apache.commons.lang.StringUtils.isEmpty(queryConfig.getPropertiesFile())) {
 				// Handle error: Query not found in the database
@@ -78,10 +71,10 @@ public class DynamicXMLQueryMediator extends AbstractMediator {
 
 			// Load the properties file containing dynamic queries
 			Properties readQueryProperties = PropertiesUtil.propertiesFileRead(queryConfig.getPropertiesFile());
-
+			log.debug(new String("Properties File = "+queryConfig.getPropertiesFile()));
 			// Get the dynamic query from the properties file based on query name
 			String dynamicQuery = readQueryProperties.getProperty(queryName);
-
+			log.debug(new String("Dynamic Query = "+dynamicQuery));
 			if (dynamicQuery == null) {
 				// Handle error: Query not found in the properties file
 				log.info("Dynamic Query Object not found in properties file");

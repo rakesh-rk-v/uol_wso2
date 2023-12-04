@@ -75,7 +75,7 @@ public class JDBCConnectionUtil {
 			 connection = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
 			System.out.println("query name::" + queryName);
 			// Prepare and execute the SQL query to retrieve query configuration based on
-			String sql = "SELECT * FROM training.dynamic_queries WHERE query_name = ?";
+			String sql = "SELECT * FROM wso2.dynamic_queries WHERE query_name = ?";
 		    preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setString(1, queryName);
 		    resultSet = preparedStatement.executeQuery();
