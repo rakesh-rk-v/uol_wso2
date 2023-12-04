@@ -7,10 +7,6 @@ servers:
 - url: http://localhost:8290/create-contract
 paths:
   /:
-    get:
-      responses:
-        default:
-          description: Default response
     post:
       responses:
         default:

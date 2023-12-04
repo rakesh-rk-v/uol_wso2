@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <api context="/create-contract" name="Contract_Creation" xmlns="http://ws.apache.org/ns/synapse">
-    <resource methods="POST GET">
+    <resource methods="POST">
         <inSequence>
             <validate cache-schema="true" source="json-eval($)">
                 <schema key="conf:bscsValidation/BSCS_Validations.json"/>
@@ -53,7 +53,7 @@
                 <property expression="$ctx:queryName" name="queryName"/>
                 <property expression="json-eval($.parameters)" name="Parameters"/>
             </log>
-            <payloadFactory media-type="json">
+            <payloadFactory description="Dynamic Query Payload" media-type="json">
                 <format>{&#xd;
 "queryName" : "$1",&#xd;
 "parameters" : $2,&#xd;
@@ -65,35 +65,42 @@
                     <arg evaluator="json" expression="$.bscs_params"/>
                 </args>
             </payloadFactory>
-            <propertyGroup>
+            <propertyGroup description="BSCS Properties">
                 <property expression="json-eval($.bscs_params.rpcode)" name="rpcode" scope="default" type="STRING"/>
                 <property expression="json-eval($.bscs_params.sccode)" name="sccode" scope="default" type="STRING"/>
                 <property expression="json-eval($.bscs_params.plcode)" name="plcode" scope="default" type="STRING"/>
                 <property expression="json-eval($.bscs_params.submId)" name="submId" scope="default" type="STRING"/>
                 <property expression="json-eval($)" name="requestPayload" scope="default" type="STRING"/>
-                <property name="apiregistryConfigPath" scope="default" type="STRING" value="E:\MI_4.2\wso2mi-4.2.0\CustomDevConfigs\api-registry-configs.properties"/>
+                <property expression="get-property('file','apiregistryConfigs')" name="apiregistryConfigPath" scope="default" type="STRING"/>
             </propertyGroup>
             <class description="Dynamic Query" name="com.knot.uol.mediators.DynamicXMLQueryMediator"/>
-            <log description="responsePayload" level="custom">
+            <property description="responsePayload" expression="$ctx:responsePayload" name="responsePayload" scope="default" type="STRING"/>
+            <log description="Debug Before Filter" level="custom">
                 <property expression="$body" name="Payload Before Dynamic Mediator"/>
                 <property expression="$ctx:responsePayload" name="responsePayload"/>
                 <property expression="$ctx:requestPayload.cust_id" name="Customer - ID : "/>
-                <property expression="$ctx:requestPayload.queryName" name="Customer - ID : "/>
+                <property expression="$ctx:requestPayload.queryName" name="Query - ID : "/>
+                <property expression="json-eval($.statusCode)" name="Name of Query "/>
+                <property expression="json-eval($ctx:responsePayload.response)" name="Response"/>
+                <property expression="fn:string-length(get-property('Filter'))" name="Lenghth of String"/>
+                <property expression="fn:string-length(get-property('Filter')) > 2.0" name="True r False Gt 2"/>
+                <!--  <property expression="json-eval(get-property('requestPayload')" name="JSON Query - ID : "/>  -->
             </log>
-            <filter regex="false" source="boolean(get-property('responsePayload'))">
+            <filter regex="false" source="fn:string-length(get-property('Filter')) > 2.0">
                 <then>
                     <log description="When The Customer is Un Available">
                         <property name="CO_ID" value="UN AVAILABLE"/>
                         <property expression="$ctx:cust_id" name="cust_id"/>
                     </log>
-                    <payloadFactory description="NO Customer Response." media-type="xml">
-                        <format>
-                            <ERROR xmlns="">
-                                <CUST_ID>{ctx:cust_id}</CUST_ID>
-                                <MESSAGE>The Given Customer_ID is un Available</MESSAGE>
-                            </ERROR>
-                        </format>
-                        <args/>
+                    <payloadFactory description="NO Customer Response." media-type="json">
+                        <format>{&#xd;
+"ERROR" :{&#xd;
+"Message" : "The Given Customer Is Invalid Based on Input [customer_id ] or [NIC] or [passport]"&#xd;
+$1&#xd;
+}</format>
+                        <args>
+                            <arg evaluator="xml" expression="$ctx:responsePayload"/>
+                        </args>
                     </payloadFactory>
                     <respond description="Responds When there is No Customer."/>
                 </then>
@@ -153,7 +160,7 @@
                 <property expression="$ctx:processId" name="processId"/>
                 <property expression="json-eval($)" name="responsePayload"/>
                 <property expression="$axis2:HTTP_SC" name="status"/>
-                <property expression="get-property('file','apiRegistryConfigs')" name="apiregistryConfigPath"/>
+                <property expression="get-property('file','apiregistryConfigs')" name="apiregistryConfigPath"/>
                 <property expression="$ctx:childId" name="childId"/>
             </class>
             <respond description="Responds after Calling End Point."/>

@@ -48,7 +48,7 @@ public class DynamicXMLQueryMediator extends AbstractMediator {
 			// Fetch dynamic query configuration from the database based on query name
 			QueryConfig queryConfig = JDBCConnectionUtil.getQueryConfigFromDatabase(queryName, properties);
 			log.debug(new String("Query Name = "+queryName));
-			log.info("QueryConfig Object info :: " + queryConfig);
+			log.info("QueryConfig Object info :: " + queryConfig.getPropertiesFile());
 			if (queryConfig == null || org.apache.commons.lang.StringUtils.isEmpty(queryConfig.getPropertiesFile())) {
 				// Handle error: Query not found in the database
 			log.info("QueryConfig Object info is null /not existed in DB");
