@@ -1,2 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sequence name="parentIdGenerateSeq" trace="disable" xmlns="http://ws.apache.org/ns/synapse"/>
+<sequence name="parentIdGenerateSeq" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <propertyGroup description="req params">
+        <property expression="get-property('MessageID')" name="uuid" scope="default" type="STRING"/>
+        <property expression="substring-after(get-property('uuid'), 'urn:uuid:')" name="parentId" scope="default" type="STRING"/>
+    </propertyGroup>
+    <log level="custom">
+        <property expression="get-property('parentId')" name="parentId generated in registry"/>
+    </log>
+</sequence>

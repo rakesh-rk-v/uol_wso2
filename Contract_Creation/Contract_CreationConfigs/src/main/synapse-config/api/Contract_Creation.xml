@@ -27,7 +27,7 @@
             </propertyGroup>
             <class description="SystemRequestLogs" name="com.knot.uol.utils.SystemRequestNewLog">
                 <property name="process" value="IterateEligibilityCheckAPI"/>
-                <property expression="get-property('file','apiRegistryConfigs')" name="apiregistryConfigPath"/>
+                <property expression="get-property('file','apiregistryConfigs')" name="apiregistryConfigPath"/>
                 <property expression="$ctx:requestPayload" name="requestPayload"/>
                 <property expression="$ctx:SYNAPSE_REST_API" name="apiName"/>
                 <property expression="$ctx:parentId" name="parentId"/>
