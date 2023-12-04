@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:simpleType name="fileExtensionType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value=".*\.(jpg|pdf|png)$"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="file">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="fileName" type="xs:string"/>
+        <xs:element name="fileData" type="xs:base64Binary"/>
+        <xs:element name="fileExtension" type="fileExtensionType"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+
+</xs:schema>

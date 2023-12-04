@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/fileTest" name="FileTest" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <validate cache-schema="true" source="//mediate/@filename">
+                <schema key="conf:files/FIleName.xsd"/>
+                <on-fail>
+                    <log level="custom">
+                        <property name="Inside the Validate" value="Inside the Validate"/>
+                        <property expression="//mediate/@filename" name="fileName"/>
+                    </log>
+                    <respond/>
+                </on-fail>
+            </validate>
+            <log level="custom">
+                <property name="Outside the Validate" value="Outside the Validate"/>
+            </log>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

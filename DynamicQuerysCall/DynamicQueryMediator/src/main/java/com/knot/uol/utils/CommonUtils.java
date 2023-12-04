@@ -4,6 +4,8 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
+import org.apache.synapse.MessageContext;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.knot.uol.dto.ErrorResponse;
@@ -30,6 +32,7 @@ public class CommonUtils {
             	
                 String columnName = metaData.getColumnName(i);
                 Object columnValue = resultSet.getObject(i);
+                //System.out.println(columnName+ " Resultset building  "+columnValue );
                 if (columnValue == null) {
                     jsonObject.add(columnName, null);
                 } else {
@@ -75,5 +78,20 @@ public class CommonUtils {
 		return mediatorRes;
 		
 	}
+	
+	public static boolean setSynapseHttpResponseforRequest(MessageContext synCtx)
+    {
+        try {
+			org.apache.axis2.context.MessageContext axis2MessageContext = ((org.apache.synapse.core.axis2.Axis2MessageContext) synCtx)
+					.getAxis2MessageContext();
+			String customMessage = "This is a custom Bad Request message.";
+			axis2MessageContext.setProperty("ERROR_MESSAGE", customMessage);
+			synCtx.setProperty("RESPONSE", "true");
+			synCtx.setTo(null);
+		} catch (Exception e) {
+		}
+		return false;
+        
+    }
 
 }

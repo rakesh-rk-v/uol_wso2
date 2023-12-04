@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="CommonAPISeqPropertiesCollectionSeq" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <propertyGroup description="req params">
+        <property expression="json-eval($)" name="requestPayload" scope="default" type="STRING"/>
+        <property expression="get-property('SYNAPSE_REST_API')" name="SYNAPSE_REST_API" scope="default" type="STRING"/>
+        <property expression="$ctx:REST_METHOD" name="HTTP_Method" scope="default" type="STRING"/>
+        <property expression="json-eval($ctx:request.system)" name="system" scope="default" type="STRING"/>
+    </propertyGroup>
+</sequence>

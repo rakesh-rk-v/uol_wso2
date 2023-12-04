@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:esb="http:///org/wso2/integrationstudio/eclipse/gmf/esb" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmi:id="_dbeKMJHNEe6HTLd90E1dcw" type="Esb" name="parentIdGenerateSeq" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_dcA8wJHNEe6HTLd90E1dcw" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_dcA8xZHNEe6HTLd90E1dcw" type="7001">
+      <children xmi:type="notation:Node" xmi:id="_dg4OoJHNEe6HTLd90E1dcw" type="3614">
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_dg4OoZHNEe6HTLd90E1dcw"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_dg4OopHNEe6HTLd90E1dcw" fontName="Segoe UI"/>
+        <styles xmi:type="notation:LineStyle" xmi:id="_dg4Oo5HNEe6HTLd90E1dcw"/>
+        <element xmi:type="esb:Sequences" href="parentIdGenerateSeq.esb#//@server/@children.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dg4OpJHNEe6HTLd90E1dcw" width="195" height="125"/>
+      </children>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_dcA8wZHNEe6HTLd90E1dcw"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_dcA8wpHNEe6HTLd90E1dcw" fontName="Segoe UI"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_dcA8w5HNEe6HTLd90E1dcw"/>
+    <element xmi:type="esb:EsbServer" href="parentIdGenerateSeq.esb#//@server"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dcA8xJHNEe6HTLd90E1dcw"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_dbeKMZHNEe6HTLd90E1dcw"/>
+  <element xmi:type="esb:EsbDiagram" href="parentIdGenerateSeq.esb#/"/>
+</notation:Diagram>

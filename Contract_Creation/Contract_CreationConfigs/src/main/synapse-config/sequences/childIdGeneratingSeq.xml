@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="childIdGeneratingSeq" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <script description="child ID generate" language="js"><![CDATA[var uuid = java.util.UUID.randomUUID().toString();
+         mc.setProperty("childId", uuid);]]></script>
+    <log level="custom">
+        <property expression="get-property('childId')" name="childId generated in registry sequence"/>
+    </log>
+</sequence>

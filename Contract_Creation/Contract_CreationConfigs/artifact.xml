@@ -11,4 +11,13 @@
     <artifact name="BSCS_KNOT" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/endpoints/BSCS_KNOT.xml</file>
     </artifact>
+    <artifact name="childIdGeneratingSeq" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/childIdGeneratingSeq.xml</file>
+    </artifact>
+    <artifact name="CommonAPISeqPropertiesCollectionSeq" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CommonAPISeqPropertiesCollectionSeq.xml</file>
+    </artifact>
+    <artifact name="parentIdGenerateSeq" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/parentIdGenerateSeq.xml</file>
+    </artifact>
 </artifacts>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><resources>
+    <item>
+        <file>FIleName.xsd</file>
+        <path>/_system/config/files</path>
+        <mediaType>application/x-xsd+xml</mediaType>
+        <properties/>
+    </item>
+</resources>

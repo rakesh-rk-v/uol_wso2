@@ -16,15 +16,23 @@
                     <respond description="Responds for Fault Input"/>
                 </on-fail>
             </validate>
+            <sequence key="childIdGeneratingSeq"/>
+            <sequence key="CommonAPISeqPropertiesCollectionSeq"/>
+            <sequence key="parentIdGenerateSeq"/>
             <propertyGroup description="Getting Properties From Request Payload">
                 <property expression="json-eval($.parameters.cust_id)" name="cust_id" scope="default" type="STRING"/>
                 <property expression="json-eval($.parameters.NIC)" name="NIC" scope="default" type="STRING"/>
                 <property expression="json-eval($.parameters.passport)" name="passport" scope="default" type="STRING"/>
-                <property expression="json-eval($.rpcode)" name="rpcode" scope="default" type="STRING"/>
-                <property expression="json-eval($.sccode)" name="sccode" scope="default" type="STRING"/>
-                <property expression="json-eval($.plcode)" name="plcode" scope="default" type="STRING"/>
-                <property expression="json-eval($.submId)" name="submId" scope="default" type="STRING"/>
+                <property expression="json-eval($)" name="requestPayload" scope="default" type="STRING"/>
             </propertyGroup>
+            <class description="SystemRequestLogs" name="com.knot.uol.utils.SystemRequestNewLog">
+                <property name="process" value="IterateEligibilityCheckAPI"/>
+                <property expression="get-property('file','apiRegistryConfigs')" name="apiregistryConfigPath"/>
+                <property expression="$ctx:requestPayload" name="requestPayload"/>
+                <property expression="$ctx:SYNAPSE_REST_API" name="apiName"/>
+                <property expression="$ctx:parentId" name="parentId"/>
+                <property name="childId" value="Main"/>
+            </class>
             <script description="SETTING THE QUERY NAME" language="js"><![CDATA[// Example logic to construct SQL query based on available values
         var cust_id = mc.getProperty('cust_id');
         var NIC = mc.getProperty('NIC');
@@ -43,21 +51,29 @@
         mc.setProperty('queryName', sqlQuery);]]></script>
             <log description="queryName">
                 <property expression="$ctx:queryName" name="queryName"/>
+                <property expression="json-eval($.parameters)" name="Parameters"/>
             </log>
             <payloadFactory media-type="json">
                 <format>{&#xd;
 "queryName" : "$1",&#xd;
-$2&#xd;
+"parameters" : $2,&#xd;
+"bscs_params"  :$3&#xd;
 }</format>
                 <args>
                     <arg evaluator="xml" expression="$ctx:queryName"/>
                     <arg evaluator="json" expression="$.parameters"/>
+                    <arg evaluator="json" expression="$.bscs_params"/>
                 </args>
             </payloadFactory>
             <log level="custom">
                 <property expression="$body" name="Payload Before Dynamic Mediator"/>
             </log>
-            <class description="Dynamic Query Mediator" name="com.knot.uol.mediators.DynamicXMLQueryMediator"/>
+            <propertyGroup>
+                <property expression="json-eval($.bscs_params.rpcode)" name="rpcode" scope="default" type="STRING"/>
+                <property expression="json-eval($.bscs_params.sccode)" name="sccode" scope="default" type="STRING"/>
+                <property expression="json-eval($.bscs_params.plcode)" name="plcode" scope="default" type="STRING"/>
+                <property expression="json-eval($.bscs_params.submId)" name="submId" scope="default" type="STRING"/>
+            </propertyGroup>
             <filter regex="false" source="boolean(get-property('co_id'))">
                 <then>
                     <log description="When The Customer is Un Available">
@@ -126,19 +142,14 @@ $2&#xd;
             <call>
                 <endpoint key="BSCS_KNOT"/>
             </call>
-            <dblookup>
-                <connection>
-                    <pool>
-                        <driver>com.mysql.cj.jdbc.Driver</driver>
-                        <url>jdbc:mysql://localhost:3306/wso2</url>
-                        <user>root</user>
-                        <password>mysql</password>
-                    </pool>
-                </connection>
-                <statement>
-                    <sql><![CDATA[insert into bscs.REQUEST (?,?,?,?,?)]]></sql>
-                </statement>
-            </dblookup>
+            <class description="SystemResponseLogs" name="com.knot.uol.utils.SystemResponseUpdateLog">
+                <property expression="$ctx:parentId" name="parentId"/>
+                <property expression="$ctx:processId" name="processId"/>
+                <property expression="json-eval($)" name="responsePayload"/>
+                <property expression="$axis2:HTTP_SC" name="status"/>
+                <property expression="get-property('file','apiRegistryConfigs')" name="apiregistryConfigPath"/>
+                <property expression="$ctx:childId" name="childId"/>
+            </class>
             <respond description="Responds after Calling End Point."/>
         </inSequence>
         <outSequence/>

@@ -31,7 +31,8 @@ public class JDBCConnectionUtil {
 			}
 			String dbConnectionUrl = dbUrl + schemaName + "?user=" + dbUser + "&password=" + dbPassword;
 
-			System.out.println("db url anme::" + dbConnectionUrl);
+			System.out.println("db url name::" + dbConnectionUrl);
+			
 			// connection = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
 			Class.forName(dbDriver);
 			
