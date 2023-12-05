@@ -21,13 +21,7 @@ public class SystemRequestNewLog extends AbstractMediator  {
     private String apiName;
     private String requestPayload;
 
-
-
     // Setters for private class variables
-    
-    
-
-
 	public void setApiregistryConfigPath(String apiregistryConfigPath) {
 		this.apiregistryConfigPath = apiregistryConfigPath;
 	}
@@ -52,20 +46,17 @@ public class SystemRequestNewLog extends AbstractMediator  {
 		this.parentId = parentId;
 	}
 
-
 	public void setChildId(String childId) {
 		this.childId = childId;
 	}
 
 	// Getters for private class variables
-
-
     public String getChildId() {
 		return childId;
 	}
     
     public String getParentId() {
-		return parentId;
+	return parentId;
 	}
 
 

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="BSCS_Template_TestAPI" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/BSCS_Template_TestAPI.xml</file>
+    </artifact>
+    <artifact name="BSCS_Template_TestAPI_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/BSCS_Template_TestAPI_swagger.yaml</file>
+    </artifact>
+    <artifact name="BSCS_Template_TestAPI_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/BSCS_Template_TestAPI_metadata.yaml</file>
+    </artifact>
+</artifacts>

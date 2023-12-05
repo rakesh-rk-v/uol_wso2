@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/bscs_Template_TestAPI" name="BSCS_Template_TestAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <property description="inputBody" name="inputBody" scope="default" type="STRING" value="&lt;cus:customerReadRequest>&lt;cus:inputAttributes>&lt;cus:csId>${ctx.customer_id}&lt;/cus:csId>&lt;/cus:inputAttributes>&lt;cus:sessionChangeRequest>&lt;ses:values>&lt;ses:item>&lt;ses:key>BU_ID&lt;/ses:key>&lt;ses:value>2&lt;/ses:value>&lt;/ses:item>&lt;/ses:values>&lt;/cus:sessionChangeRequest>&lt;/cus:customerReadRequest>"/>
+            <property description="customer_id" expression="json-eval($.parameters.customer_id)" name="customer_id" scope="default" type="STRING"/>
+            <log description="Customer ID Log" level="custom">
+                <property expression="$ctx:customer_id" name="customer_id"/>
+            </log>
+            <property description="fullPayLoad" name="fullPayLoad" scope="default" type="STRING" value="&lt;soapenv:Envelope xmlns:cus=&quot;http://ericsson.com/services/ws_CIL_7/customerread&quot; xmlns:ses=&quot;http://ericsson.com/services/ws_CIL_7/sessionchange&quot; xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;>&lt;soapenv:Header>&lt;wsse:Security soapenv:mustUnderstand=&quot;1&quot; xmlns:wsse=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot; xmlns:wsu=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;>&lt;wsse:UsernameToken wsu:Id=&quot;UsernameToken-56D2CD5FBD0197EF2717017598886421&quot;>&lt;wsse:Username>ADMX&lt;/wsse:Username>&lt;wsse:Password Type=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText&quot;>ADMX&lt;/wsse:Password>&lt;/wsse:UsernameToken>&lt;/wsse:Security>&lt;/soapenv:Header>&lt;soapenv:Body>&lt;&lt;cus:inputAttributes>&lt;cus:csId>518936&lt;/cus:csId>&lt;/cus:inputAttributes>&lt;cus:sessionChangeRequest>&lt;ses:values>&lt;ses:item>&lt;ses:key>BU_ID&lt;/ses:key>&lt;ses:value>2&lt;/ses:value>&lt;/ses:item>&lt;/ses:values>&lt;/cus:sessionChangeRequest>&lt;/cus:customerReadRequest>&lt;/soapenv:Body>&lt;/soapenv:Envelope>"/>
+            <payloadFactory media-type="text">
+                <format>$1</format>
+                <args>
+                    <arg evaluator="xml" expression="$ctx:fullPayLoad"/>
+                </args>
+            </payloadFactory>
+            <property name="messageType" scope="axis2" type="STRING" value="application/xml"/>
+            <header name="Action" scope="default" value="urn:customerReadRequest"/>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

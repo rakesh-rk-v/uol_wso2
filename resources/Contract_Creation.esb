@@ -185,10 +185,10 @@
                   <outputConnector/>
                   <valueExpression propertyValue="json-eval($)" namespaces="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078" supportJsonPaths="true"/>
                 </properties>
-                <properties valueType="EXPRESSION" value="E:\MI_4.2\wso2mi-4.2.0\CustomDevConfigs\api-registry-configs.properties" newPropertyName="apiregistryConfigPath">
+                <properties valueType="EXPRESSION" newPropertyName="apiregistryConfigPath">
                   <inputConnector/>
                   <outputConnector/>
-                  <valueExpression prettyName="Property Expression" propertyName="expression" propertyValue="get-property('file','apiregistryConfigs')" namespaces="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078" supportJsonPaths="true"/>
+                  <valueExpression propertyValue="get-property('file','apiregistryConfigs')" namespaces="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078" supportJsonPaths="true"/>
                 </properties>
               </children>
               <children xsi:type="esb:ClassMediator" description="Dynamic Query" className="com.knot.uol.mediators.DynamicXMLQueryMediator">
@@ -266,7 +266,7 @@
                       <children xsi:type="esb:PayloadFactoryMediator" description="NO Customer Response." payload="{&#xD;&#xA;&quot;ERROR&quot; :{&#xD;&#xA;&quot;Message&quot; : &quot;The Given Customer Is Invalid Based on Input [customer_id ] or [NIC] or [passport]&quot;&#xD;&#xA;$1&#xD;&#xA;}" mediaType="json">
                         <payloadKey prettyName="Sequence Key" keyName="Sequence Key" filters="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
                         <args argumentType="Expression">
-                          <argumentExpression prettyName="Argument Expression" propertyName="Argument Expression" propertyValue="$ctx:responsePayload" namespaces="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+                          <argumentExpression propertyValue="$ctx:responsePayload" namespaces="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
                         </args>
                         <inputConnector incomingLinks="//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.13/@filterContainer/@passContainer/@mediatorFlow/@children.0/@outputConnector/@outgoingLink"/>
                         <outputConnector>
