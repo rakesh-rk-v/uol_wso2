@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<localEntry key="Customer_Read_LE" xmlns="http://ws.apache.org/ns/synapse">
+    <req:customerReadRequest xmlns:req="http://ericsson.com/services/ws_CIL_7" xmlns:ses=" http://ericsson.com/services/ws_CIL_7/sessionchange">
+        <req:inputAttributes>
+            <req:csId>${ctx.customer_id}</req:csId>
+        </req:inputAttributes>
+        <req:sessionChangeRequest>
+            <ses:values>
+                <ses:item>
+                    <ses:key>BU_ID</ses:key>
+                    <ses:value>2</ses:value>
+                </ses:item>
+            </ses:values>
+        </req:sessionChangeRequest>
+    </req:customerReadRequest>
+</localEntry>

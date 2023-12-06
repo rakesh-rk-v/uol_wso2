@@ -1,1 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?><artifacts/>
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="customer_read" groupId="com.example.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+        <item>
+            <file>customer_read.xslt</file>
+            <path>/_system/config/customerRead</path>
+            <mediaType>application/xslt+xml</mediaType>
+            <properties/>
+        </item>
+    </artifact>
+    <artifact name="discountPayment" groupId="com.example.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+        <item>
+            <file>discountPayment.xsl</file>
+            <path>/_system/config/myresources</path>
+            <mediaType>application/xsl+xml</mediaType>
+            <properties/>
+        </item>
+    </artifact>
+</artifacts>

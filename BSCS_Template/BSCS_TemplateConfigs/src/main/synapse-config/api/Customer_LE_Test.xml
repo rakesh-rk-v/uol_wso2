@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/customer_localEntryTest" name="Customer_LE_Test" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST GET">
+        <inSequence>
+            <log description="Before logs">
+                <property expression="get-property('Customer_Read_LE')" name="Body"/>
+                <property expression="$ctx:Customer_Read_LE" name="ctx"/>
+            </log>
+            <property description="customer_id" name="customer_id" scope="default" type="STRING" value="518531"/>
+            <property description="LE" expression="get-property('Customer_Read_LE')" name="LE" scope="default" type="OM"/>
+            <property description="payload" expression="$ctx:LE" name="payload" scope="default" type="OM"/>
+            <sequence key="Replace"/>
+            <payloadFactory media-type="xml" template-type="freemarker">
+                <format><![CDATA[${ctx.LE}
+]]></format>
+                <args/>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

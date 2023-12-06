@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="Replace" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <property expression="get-property('customer_id')" name="customer_id" scope="default" type="STRING"/>
+    <xslt key="conf:customerRead/customer_read.xslt" source="$body">
+        <property expression="get-property('payload')" name="payload"/>
+        <property expression="get-property('customer_id')" name="customer_id"/>
+    </xslt>
+    <property expression="get-property('requestPayload')" name="request_payload" scope="default" type="STRING"/>
+</sequence>

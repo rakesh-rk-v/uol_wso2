@@ -8,4 +8,28 @@
     <artifact name="BSCS_Template_TestAPI_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
         <file>src/main/resources/metadata/BSCS_Template_TestAPI_metadata.yaml</file>
     </artifact>
+    <artifact name="Customer_Read_LE" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/Customer_Read_LE.xml</file>
+    </artifact>
+    <artifact name="Customer_LE_Test" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/Customer_LE_Test.xml</file>
+    </artifact>
+    <artifact name="Customer_LE_Test_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Customer_LE_Test_swagger.yaml</file>
+    </artifact>
+    <artifact name="Customer_LE_Test_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Customer_LE_Test_metadata.yaml</file>
+    </artifact>
+    <artifact name="Replace" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/Replace.xml</file>
+    </artifact>
+    <artifact name="XSLTAPI" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/XSLTAPI.xml</file>
+    </artifact>
+    <artifact name="XSLTAPI_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/XSLTAPI_swagger.yaml</file>
+    </artifact>
+    <artifact name="XSLTAPI_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/XSLTAPI_metadata.yaml</file>
+    </artifact>
 </artifacts>
