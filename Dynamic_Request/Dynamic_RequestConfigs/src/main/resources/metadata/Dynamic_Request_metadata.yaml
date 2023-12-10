@@ -1,0 +1,11 @@
+---
+key: "Dynamic_Request-1.0.0"
+name : "Dynamic_Request"
+displayName : "Dynamic_Request"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/dynamicRequest"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

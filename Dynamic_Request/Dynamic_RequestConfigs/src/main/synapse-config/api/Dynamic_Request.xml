@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/dynamicRequest" name="Dynamic_Request" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <log description="Entry LOG">
+                <property name="Entry LOG" value="Entry LOG"/>
+            </log>
+            <iterate continueParent="true" expression="json-eval($.templates)" sequential="true">
+                <target>
+                    <sequence>
+                        <property description="template" expression="json-eval($.template)" name="template" scope="default" type="STRING"/>
+                        <property description="LE" expression="get-property(get-property('template'))" name="LE" scope="default" type="STRING"/>
+                        <log description="Iterator Log">
+                            <property expression="$ctx:LE" name="LE"/>
+                            <property expression="$ctx:template" name="template"/>
+                        </log>
+                        <payloadFactory media-type="xml" template-type="freemarker">
+                            <format><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://ericsson.com/services/ws_CMI_7/contractnew" xmlns:ses="http://ericsson.com/services/ws_CMI_7/sessionchange">
+    <soapenv:Header>
+      <wsse:Security soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+         <wsse:UsernameToken wsu:Id="UsernameToken-05E5B20EFB7524EEE216852580645311">
+            <wsse:Username>ADMX</wsse:Username>
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">ADMX</wsse:Password>
+         </wsse:UsernameToken>
+      </wsse:Security>
+   </soapenv:Header>
+   <soapenv:Body>
+${ctx.LE}
+</soapenv:Body>
+</soapenv:Envelope>]]></format>
+                            <args/>
+                        </payloadFactory>
+                    </sequence>
+                </target>
+            </iterate>
+            <aggregate>
+                <correlateOn expression="json-eval($)"/>
+                <completeCondition>
+                    <messageCount max="-1" min="-1"/>
+                </completeCondition>
+                <onComplete aggregateElementType="root" expression="json-eval($)">
+                    <drop/>
+                </onComplete>
+            </aggregate>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

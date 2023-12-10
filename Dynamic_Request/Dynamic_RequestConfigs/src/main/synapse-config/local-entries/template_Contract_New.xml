@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<localEntry key="template_Contract_New" xmlns="http://ws.apache.org/ns/synapse">
+    <con:contractNewRequest xmlns:con="http://ericsson.com/services/ws_CMI_7/contractnew" xmlns:ses="http://ericsson.com/services/ws_CMI_7/sessionchange">
+        <!--You may enter the following 2 items in any order-->
+        <!--Optional:-->
+        <con:inputAttributes>
+            <con:csId>518936</con:csId>
+            <con:sccode>1</con:sccode>
+            <con:submId>1</con:submId>
+            <con:plcode>1001</con:plcode>
+            <con:rpcode>1</con:rpcode>
+        </con:inputAttributes>
+        <con:sessionChangeRequest>
+            <ses:values>
+                <ses:item>
+                    <ses:key>BU_ID</ses:key>
+                    <ses:value>2</ses:value>
+                </ses:item>
+            </ses:values>
+        </con:sessionChangeRequest>
+    </con:contractNewRequest>
+</localEntry>

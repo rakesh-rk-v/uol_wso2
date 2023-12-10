@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="DynamicMediatorSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <payloadFactory media-type="json">
+        <format>{&#xd;
+"SystemName" : "EB",&#xd;
+"template" :"requestPayload",&#xd;
+"src_apiName" : "UOL_API",&#xd;
+"src_request_Id" : "src_id"&#xd;
+&#xd;
+}</format>
+        <args/>
+    </payloadFactory>
+    <property description="SysName" name="SysName" scope="default" type="STRING" value="EB"/>
+    <switch source="get-property('SysName')">
+        <case regex="EB">
+            <sequence key="EB"/>
+        </case>
+        <case regex=".*+">
+            <sequence key="EC"/>
+        </case>
+        <case regex=".*+">
+            <sequence key="EDA"/>
+        </case>
+        <case regex=".*+">
+            <sequence key="NMS"/>
+        </case>
+        <default>
+            <makefault version="soap11">
+                <code value="soap11Env:VersionMismatch" xmlns:soap11Env="http://schemas.xmlsoap.org/soap/envelope/"/>
+                <reason value=""/>
+            </makefault>
+            <respond/>
+        </default>
+    </switch>
+</sequence>

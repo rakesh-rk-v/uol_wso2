@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/placeholder-api" name="PlaceholderReplacementAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST" uri-template="/replacePlaceholders">
+        <inSequence>
+            <!-- Your logic to extract input parameters from the request -->
+            <property expression="//customer_id/text()" name="customer_id" scope="default" type="STRING"/>
+            <property expression="//bu_id/text()" name="bu_id" scope="default" type="STRING"/>
+            <!-- Your logic to replace placeholders using the script mediator -->
+            <script language="js"><![CDATA[// Example XML template
+    var xmlTemplate = '<req:customerReadRequest xmlns:req="http://ericsson.com/services/ws_CIL_7" xmlns:ses="http://ericsson.com/services/ws_CIL_7/sessionchange">' +
+        '<req:inputAttributes>' +
+            '<req:csId>{customer_id}</req:csId>' +
+        '</req:inputAttributes>' +
+        '<req:sessionChangeRequest>' +
+            '<ses:values>' +
+                '<ses:item>' +
+                    '<ses:key>BU_ID</ses:key>' +
+                    '<ses:value>{bu_id}</ses:value>' +
+                '</ses:item>' +
+            '</ses:values>' +
+        '</req:sessionChangeRequest>' +
+    '</req:customerReadRequest>';
+
+    // Define a regular expression pattern for placeholders like {property_name}
+    var placeholderPattern = /{([^}]+)}/g;
+
+    // Extract values from the message context using regular expressions
+    var values = {};
+    var xmlPayload = mc.getPayloadXML().toString();
+    var match;
+
+    while ((match = placeholderPattern.exec(xmlPayload)) !== null) {
+        var propertyName = match[1];
+        values[propertyName] = mc.getProperty(propertyName) || 'default_' + propertyName;
+    }
+
+    // Replace placeholders with actual values in the XML template
+    function replacePlaceholders(xmlStr) {
+        return xmlStr.replace(placeholderPattern, function(match, key) {
+            return values[key] || match; // Use the value or keep the placeholder if not found
+        });
+    }
+
+    // Replace placeholders in the XML template
+    var replacedXml = replacePlaceholders(xmlTemplate);
+
+    // Set the replaced XML string back to the message payload
+    mc.setPayloadXML(replacedXml);]]></script>
+            <!-- Send the replaced XML as the response -->
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

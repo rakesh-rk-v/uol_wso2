@@ -181,14 +181,14 @@
     <element xmi:type="esb:EsbLink" href="XSLTAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.0/@outputConnector/@outgoingLink"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_gfgk8pQoEe63dasaXRGP_g" points="[-11, 0, 69, 0]$[-74, 0, 6, 0]"/>
   </edges>
-  <edges xmi:type="notation:Connector" xmi:id="_gfkPUJQoEe63dasaXRGP_g" type="4001" source="_gezaVZQoEe63dasaXRGP_g" target="_gfHjYJQoEe63dasaXRGP_g" roundedBendpointsRadius="5" routing="Rectilinear">
-    <styles xmi:type="notation:FontStyle" xmi:id="_gfkPUZQoEe63dasaXRGP_g" fontName="Segoe UI"/>
+  <edges xmi:type="notation:Connector" xmi:id="_5WQF8JQxEe63dasaXRGP_g" type="4001" source="_gezaVZQoEe63dasaXRGP_g" target="_gfHjYJQoEe63dasaXRGP_g" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_5WQF8ZQxEe63dasaXRGP_g" fontName="Segoe UI"/>
     <element xmi:type="esb:EsbLink" href="XSLTAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@outputConnector/@outgoingLink"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_gfkPUpQoEe63dasaXRGP_g" points="[-11, 0, 69, 0]$[-74, 0, 6, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5WQF8pQxEe63dasaXRGP_g" points="[6, 0, -160, 0]$[160, 0, -6, 0]"/>
   </edges>
-  <edges xmi:type="notation:Connector" xmi:id="_gfnSoJQoEe63dasaXRGP_g" type="4001" source="_gfIKcJQoEe63dasaXRGP_g" target="_gfUXsJQoEe63dasaXRGP_g" roundedBendpointsRadius="5" routing="Rectilinear">
-    <styles xmi:type="notation:FontStyle" xmi:id="_gfnSoZQoEe63dasaXRGP_g" fontName="Segoe UI"/>
+  <edges xmi:type="notation:Connector" xmi:id="_lTUtsJQyEe63dasaXRGP_g" type="4001" source="_gfIKcJQoEe63dasaXRGP_g" target="_gfUXsJQoEe63dasaXRGP_g" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_lTUtsZQyEe63dasaXRGP_g" fontName="Segoe UI"/>
     <element xmi:type="esb:EsbLink" href="XSLTAPI.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.2/@outputConnector/@outgoingLink"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_gfnSopQoEe63dasaXRGP_g" points="[-11, 0, 69, 0]$[-74, 0, 6, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_lTUtspQyEe63dasaXRGP_g" points="[6, 0, -160, 0]$[160, 0, -6, 0]"/>
   </edges>
 </notation:Diagram>

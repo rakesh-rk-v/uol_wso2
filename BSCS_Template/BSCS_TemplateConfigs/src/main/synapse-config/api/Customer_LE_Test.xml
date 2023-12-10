@@ -9,7 +9,7 @@
             <property description="customer_id" name="customer_id" scope="default" type="STRING" value="518531"/>
             <property description="LE" expression="get-property('Customer_Read_LE')" name="LE" scope="default" type="OM"/>
             <property description="payload" expression="$ctx:LE" name="payload" scope="default" type="OM"/>
-            <sequence key="Replace"/>
+            <sequence key=""/>
             <payloadFactory media-type="xml" template-type="freemarker">
                 <format><![CDATA[${ctx.LE}
 ]]></format>

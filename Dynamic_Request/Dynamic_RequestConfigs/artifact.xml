@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="Dynamic_Request" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/Dynamic_Request.xml</file>
+    </artifact>
+    <artifact name="Dynamic_Request_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Dynamic_Request_swagger.yaml</file>
+    </artifact>
+    <artifact name="Dynamic_Request_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Dynamic_Request_metadata.yaml</file>
+    </artifact>
+    <artifact name="RequestPreparationSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/RequestPreparationSequence.xml</file>
+    </artifact>
+    <artifact name="EB_CUSTOMER_READ_TEMPLATE" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/EB_CUSTOMER_READ_TEMPLATE.xml</file>
+    </artifact>
+    <artifact name="Customer_Read" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/Customer_Read.xml</file>
+    </artifact>
+    <artifact name="template_CustCreate" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/template_CustCreate.xml</file>
+    </artifact>
+    <artifact name="template_Contract_New" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/template_Contract_New.xml</file>
+    </artifact>
+    <artifact name="DynamicMediatorSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/DynamicMediatorSequence.xml</file>
+    </artifact>
+</artifacts>

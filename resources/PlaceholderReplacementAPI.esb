@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<esb:EsbDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:esb="http:///org/wso2/integrationstudio/eclipse/gmf/esb">
+  <server type="API">
+    <children xsi:type="esb:SynapseAPI" apiName="PlaceholderReplacementAPI" context="/placeholder-api">
+      <resources urlStyle="URI_TEMPLATE" uriTemplate="/replacePlaceholders" allowPost="true">
+        <inputConnector/>
+        <outputConnector>
+          <outgoingLink target="//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.0/@inputConnector"/>
+          <commentMediators commentText=" Your logic to extract input parameters from the request "/>
+        </outputConnector>
+        <outSequenceOutputConnector/>
+        <faultInputConnector/>
+        <container>
+          <sequenceAndEndpointContainer>
+            <mediatorFlow>
+              <children xsi:type="esb:PropertyMediator" valueType="EXPRESSION" newPropertyName="customer_id">
+                <inputConnector incomingLinks="//@server/@children.0/@resources.0/@outputConnector/@outgoingLink"/>
+                <outputConnector>
+                  <outgoingLink target="//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@inputConnector"/>
+                </outputConnector>
+                <valueExpression propertyValue="//customer_id/text()" namespaces="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078" supportJsonPaths="true"/>
+              </children>
+              <children xsi:type="esb:PropertyMediator" valueType="EXPRESSION" newPropertyName="bu_id">
+                <inputConnector incomingLinks="//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.0/@outputConnector/@outgoingLink"/>
+                <outputConnector>
+                  <outgoingLink target="//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.2/@inputConnector"/>
+                  <commentMediators commentText=" Your logic to replace placeholders using the script mediator "/>
+                </outputConnector>
+                <valueExpression propertyValue="//bu_id/text()" namespaces="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078" supportJsonPaths="true"/>
+              </children>
+              <children xsi:type="esb:ScriptMediator" scriptType="INLINE" scriptBody="&#xA;    // Example XML template&#xA;    var xmlTemplate = '&lt;req:customerReadRequest xmlns:req=&quot;http://ericsson.com/services/ws_CIL_7&quot; xmlns:ses=&quot;http://ericsson.com/services/ws_CIL_7/sessionchange&quot;>' +&#xA;        '&lt;req:inputAttributes>' +&#xA;            '&lt;req:csId>{customer_id}&lt;/req:csId>' +&#xA;        '&lt;/req:inputAttributes>' +&#xA;        '&lt;req:sessionChangeRequest>' +&#xA;            '&lt;ses:values>' +&#xA;                '&lt;ses:item>' +&#xA;                    '&lt;ses:key>BU_ID&lt;/ses:key>' +&#xA;                    '&lt;ses:value>{bu_id}&lt;/ses:value>' +&#xA;                '&lt;/ses:item>' +&#xA;            '&lt;/ses:values>' +&#xA;        '&lt;/req:sessionChangeRequest>' +&#xA;    '&lt;/req:customerReadRequest>';&#xA;&#xA;    // Define a regular expression pattern for placeholders like {property_name}&#xA;    var placeholderPattern = /{([^}]+)}/g;&#xA;&#xA;    // Extract values from the message context using regular expressions&#xA;    var values = {};&#xA;    var xmlPayload = mc.getPayloadXML().toString();&#xA;    var match;&#xA;&#xA;    while ((match = placeholderPattern.exec(xmlPayload)) !== null) {&#xA;        var propertyName = match[1];&#xA;        values[propertyName] = mc.getProperty(propertyName) || 'default_' + propertyName;&#xA;    }&#xA;&#xA;    // Replace placeholders with actual values in the XML template&#xA;    function replacePlaceholders(xmlStr) {&#xA;        return xmlStr.replace(placeholderPattern, function(match, key) {&#xA;            return values[key] || match; // Use the value or keep the placeholder if not found&#xA;        });&#xA;    }&#xA;&#xA;    // Replace placeholders in the XML template&#xA;    var replacedXml = replacePlaceholders(xmlTemplate);&#xA;&#xA;    // Set the replaced XML string back to the message payload&#xA;    mc.setPayloadXML(replacedXml);&#xA;">
+                <scriptDynamicKey prettyName="" propertyName="dynamic key" namespaces="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+                <inputConnector incomingLinks="//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@outputConnector/@outgoingLink"/>
+                <outputConnector>
+                  <outgoingLink target="//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.3/@inputConnector"/>
+                  <commentMediators commentText=" Send the replaced XML as the response "/>
+                </outputConnector>
+                <scriptStaticKey prettyName="Script Key" keyName="key" filters="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+              </children>
+              <children xsi:type="esb:RespondMediator">
+                <inputConnector incomingLinks="//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.2/@outputConnector/@outgoingLink"/>
+                <outputConnector/>
+              </children>
+            </mediatorFlow>
+          </sequenceAndEndpointContainer>
+          <faultContainer>
+            <mediatorFlow/>
+          </faultContainer>
+        </container>
+        <inSequenceKey prettyName="In Sequence Reference" keyName="key" filters="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+        <outSequenceKey prettyName="Out Sequence Reference" keyName="key" filters="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+        <faultSequenceKey prettyName="Fault Sequence Reference" keyName="key" filters="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+      </resources>
+    </children>
+  </server>
+</esb:EsbDiagram>

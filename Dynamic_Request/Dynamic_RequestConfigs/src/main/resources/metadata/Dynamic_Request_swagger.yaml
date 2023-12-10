@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: Dynamic_Request
+  description: API Definition of Dynamic_Request
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/dynamicRequest
+paths:
+  /:
+    post:
+      responses:
+        default:
+          description: Default response

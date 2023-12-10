@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="ReplacePlaceholdersSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <script language="js"><![CDATA[// Example XML template
+        var xmlTemplate = '<req:customerReadRequest xmlns:req="http://ericsson.com/services/ws_CIL_7" xmlns:ses="http://ericsson.com/services/ws_CIL_7/sessionchange"> \
+            <req:inputAttributes> \
+                <req:csId>{customer_id}</req:csId> \
+            </req:inputAttributes> \
+            <req:sessionChangeRequest> \
+                <ses:values> \
+                    <ses:item> \
+                        <ses:key>BU_ID</ses:key> \
+                        <ses:value>{bu_id}</ses:value> \
+                    </ses:item> \
+                </ses:values> \
+            </req:sessionChangeRequest> \
+        </req:customerReadRequest>';
+
+        // Get all properties from message context
+        var properties = mc.getProperties();
+
+        // Replace placeholders with actual values
+        var replacedXml = xmlTemplate.replace(/{([^}]+)}/g, function(match, key) {
+            return properties[key] || match; // Use the property value or keep the placeholder if not found
+        });
+
+        // Set the replaced XML back to the message payload
+        mc.setPayloadXML(new XML(replacedXml));]]></script>
+    <respond/>
+</sequence>

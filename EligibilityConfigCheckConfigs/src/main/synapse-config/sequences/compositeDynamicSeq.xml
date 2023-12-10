@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="compositeDynamicSeq" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <switch source="get-property('System_Name')">
+        <case regex="REST">
+            <sequence key="REST_API_Call_Seq"/>
+        </case>
+        <case regex="EB">
+            <log level="custom">
+                <property expression="$body/*" name="EB Call Data==>"/>
+            </log>
+        </case>
+        <case regex="QUERY">
+            <payloadFactory media-type="json">
+                <format>{&#xd;
+    "queryName": "eligibility_check_2",&#xd;
+    "parameters": {&#xd;
+        "customer_id":518531,&#xd;
+        "Id": 100,&#xd;
+        "Fname": "Prashanth",&#xd;
+        "Lname": "B",&#xd;
+        "Mail": "prashanthb@gmail.com",&#xd;
+        "scenario":"pre-post",&#xd;
+        "API_Name":"CUS_OnBoarding"&#xd;
+    }&#xd;
+}</format>
+                <args/>
+            </payloadFactory>
+            <sequence key="Dynamic_Query_Call_Seq"/>
+        </case>
+        <case regex=".*+"/>
+        <case regex="QUERY'"/>
+        <default/>
+    </switch>
+</sequence>

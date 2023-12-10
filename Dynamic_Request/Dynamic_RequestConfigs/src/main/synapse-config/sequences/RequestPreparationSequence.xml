@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="RequestPreparationSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <!-- Read the XML template from local entry -->
+    <property expression="get-property('EB_CUSTOMER_READ_TEMPLATE')" name="req_template" scope="default" type="OM"/>
+    <!-- Set dynamic values -->
+    <log level="full"/>
+    <!--  here below property keys-values are come from request or from internally business DB call and set to the property -->
+    <property name="customer_id" scope="default" type="STRING" value="123"/>
+    <property name="BUID_KEY" scope="default" type="STRING" value="BU_ID"/>
+    <property name="BUID_VAL" scope="default" type="STRING" value="2"/>
+    <script language="js"><![CDATA[var log = mc.getServiceLog();   
+            var XMLRequest = mc.getProperty("req_template");
+            var srcRequest = XMLRequest.toString();
+            
+            // Extract placeholder keys from the  srcRequest
+              var dynamicKeys = srcRequest.match(/{(.*?)}/g).map(function(key) 
+              {
+              return key.replace(/[{}]/g, '');
+              });
+                  log.info("dynamic replaceble keys are-->"+dynamicKeys);       
+            // Replace placeholders with dynamically fetched values
+              dynamicKeys.forEach(function(key) 
+              {
+               if (mc.getProperty(key)) {
+               log.info("key  are-->"+key+"::"+mc.getProperty(key));      
+               srcRequest = srcRequest.replace("{" + key + "}", mc.getProperty(key));
+              }
+              });
+                log.info("templateString-->"+srcRequest);
+            mc.setPayloadXML(new XML(srcRequest));]]></script>
+    <log level="full"/>
+    <respond/>
+</sequence>
