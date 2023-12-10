@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/eligibility_Check_API" name="Eligibility_Check_API" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST GET">
+        <inSequence>
+            <log description="Welcome Log">
+                <property expression="$ctx:SYNAPSE_REST_API" name="API NAME"/>
+            </log>
+            <propertyGroup>
+                <property expression="json-eval($)" name="requestPayload" scope="default" type="STRING"/>
+            </propertyGroup>
+            <class description="DynamicXMLQueryMediator" name="com.knot.uol.mediators.DynamicXMLQueryMediator">
+                <property expression="get-property('file','apiregistryConfigPath')" name="apiregistryConfigPath"/>
+            </class>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

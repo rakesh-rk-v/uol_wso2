@@ -1,0 +1,11 @@
+---
+key: "Eligibility_Check_API-1.0.0"
+name : "Eligibility_Check_API"
+displayName : "Eligibility_Check_API"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/eligibility_Check_API"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

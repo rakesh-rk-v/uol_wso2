@@ -1,0 +1,17 @@
+openapi: 3.0.1
+info:
+  title: Eligibility_Check_API
+  description: API Definition of Eligibility_Check_API
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/eligibility_Check_API
+paths:
+  /:
+    get:
+      responses:
+        default:
+          description: Default response
+    post:
+      responses:
+        default:
+          description: Default response
