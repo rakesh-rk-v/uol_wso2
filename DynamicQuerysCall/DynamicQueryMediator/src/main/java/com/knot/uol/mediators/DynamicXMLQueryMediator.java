@@ -171,7 +171,6 @@ public class DynamicXMLQueryMediator extends AbstractMediator {
 			errorName = "Exception occured during the db call";
 			statusCode = "500";
 			message = e.getMessage();
-			
 
 		} finally {
             MediatorResponse obj = CommonUtils.buildResponse(queryName, statusCode, message, dbResponse, errorName,errorCode);

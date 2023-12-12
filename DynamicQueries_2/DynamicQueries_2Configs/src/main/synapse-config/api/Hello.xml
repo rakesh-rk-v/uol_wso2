@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/hello" name="Hello" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <ejb beanstalk="HelloWorldEJB" class="com.knot.uol.mediators.QueryProperties" method="sayHello">
+                <args>
+                    <arg value="World"/>
+                </args>
+            </ejb>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

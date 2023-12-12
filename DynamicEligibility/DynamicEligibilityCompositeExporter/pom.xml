@@ -14,12 +14,55 @@
   <name>DynamicEligibilityCompositeExporter</name>
   <description>DynamicEligibilityCompositeExporter</description>
   <properties>
+    <com.example.endpoint_._Eligible_EP>capp/EnterpriseServiceBus</com.example.endpoint_._Eligible_EP>
+    <com.example.metadata_._Contract_Create_API_metadata>capp/EnterpriseServiceBus</com.example.metadata_._Contract_Create_API_metadata>
+    <com.example.metadata_._Customer_Create_API_swagger>capp/EnterpriseServiceBus</com.example.metadata_._Customer_Create_API_swagger>
+    <com.example.metadata_._Customer_Create_API_metadata>capp/EnterpriseServiceBus</com.example.metadata_._Customer_Create_API_metadata>
+    <com.example.metadata_._Contract_Create_API_swagger>capp/EnterpriseServiceBus</com.example.metadata_._Contract_Create_API_swagger>
+    <com.example.api_._Customer_Create_API>capp/EnterpriseServiceBus</com.example.api_._Customer_Create_API>
+    <com.example.api_._Contract_Create_API>capp/EnterpriseServiceBus</com.example.api_._Contract_Create_API>
     <com.example.metadata_._Eligibility_Check_API_metadata>capp/EnterpriseServiceBus</com.example.metadata_._Eligibility_Check_API_metadata>
     <artifact.types>jaggery/app=zip,synapse/priority-executor=xml,synapse/inbound-endpoint=xml,service/rule=aar,synapse/message-store=xml,event/stream=json,service/meta=xml,datasource/datasource=xml,synapse/proxy-service=xml,bpel/workflow=zip,synapse/sequence=xml,synapse/endpointTemplate=xml,carbon/application=car,wso2/gadget=dar,synapse/api=xml,synapse/event-source=xml,synapse/message-processors=xml,event/receiver=xml,lib/dataservice/validator=jar,synapse/template=xml,synapse/endpoint=xml,lib/carbon/ui=jar,lib/synapse/mediator=jar,synapse/metadata=yaml,event/publisher=xml,synapse/local-entry=xml,synapse/task=xml,webapp/jaxws=war,registry/resource=zip,synapse/configuration=xml,service/axis2=aar,synapse/lib=zip,synapse/sequenceTemplate=xml,event/execution-plan=siddhiql,service/dataservice=dbs,web/application=war,lib/library/bundle=jar</artifact.types>
     <com.example.api_._Eligibility_Check_API>capp/EnterpriseServiceBus</com.example.api_._Eligibility_Check_API>
     <com.example.metadata_._Eligibility_Check_API_swagger>capp/EnterpriseServiceBus</com.example.metadata_._Eligibility_Check_API_swagger>
   </properties>
   <dependencies>
+    <dependency>
+      <groupId>com.example.metadata</groupId>
+      <artifactId>Contract_Create_API_metadata</artifactId>
+      <version>1.0.0</version>
+      <type>yaml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.metadata</groupId>
+      <artifactId>Contract_Create_API_swagger</artifactId>
+      <version>1.0.0</version>
+      <type>yaml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.api</groupId>
+      <artifactId>Contract_Create_API</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.metadata</groupId>
+      <artifactId>Customer_Create_API_metadata</artifactId>
+      <version>1.0.0</version>
+      <type>yaml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.metadata</groupId>
+      <artifactId>Customer_Create_API_swagger</artifactId>
+      <version>1.0.0</version>
+      <type>yaml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.api</groupId>
+      <artifactId>Customer_Create_API</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
     <dependency>
       <groupId>com.example.metadata</groupId>
       <artifactId>Eligibility_Check_API_metadata</artifactId>
@@ -35,6 +78,12 @@
     <dependency>
       <groupId>com.example.api</groupId>
       <artifactId>Eligibility_Check_API</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>Eligible_EP</artifactId>
       <version>1.0.0</version>
       <type>xml</type>
     </dependency>

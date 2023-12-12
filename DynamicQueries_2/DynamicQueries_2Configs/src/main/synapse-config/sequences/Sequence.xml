@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="Sequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <class name="com.knot.uol.mediators.DynamicQueriesMediator"/>
+    <log>
+        <property name="Dynamic" value="Properties Got Executed"/>
+    </log>
+    <respond/>
+</sequence>

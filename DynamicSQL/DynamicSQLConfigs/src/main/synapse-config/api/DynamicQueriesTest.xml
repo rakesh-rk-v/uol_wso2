@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/dynamicQueriesTest" name="DynamicQueriesTest" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <property description="apiRegistryConfigs" name="apiRegistryConfigs" scope="default" type="STRING" value="E:\Test\DynamicPropertiesTest\api-registry-configs.properties"/>
+            <class description="com.knot.uol.mediators.DynamicQueriesMediator" name="com.knot.uol.mediators.DynamicQueriesMediator"/>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <sequence description="CustomFaultSequence" key="{get-property('registry','conf:/sequences/CustomFaultSequence')}"/>
+        </faultSequence>
+    </resource>
+</api>

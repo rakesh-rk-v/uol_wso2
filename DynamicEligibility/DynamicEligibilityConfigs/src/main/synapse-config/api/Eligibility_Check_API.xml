@@ -1,16 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <api context="/eligibility_Check_API" name="Eligibility_Check_API" xmlns="http://ws.apache.org/ns/synapse">
-    <resource methods="POST GET">
+    <resource methods="POST">
         <inSequence>
-            <log description="Welcome Log">
-                <property expression="$ctx:SYNAPSE_REST_API" name="API NAME"/>
-            </log>
-            <propertyGroup>
+            <propertyGroup description="apiregistryConfigPath">
                 <property expression="json-eval($)" name="requestPayload" scope="default" type="STRING"/>
+                <property expression="get-property('file','apiregistryConfigs')" name="apiregistryConfigPath" scope="default" type="STRING"/>
+                <property name="Count" scope="default" type="STRING" value="0"/>
             </propertyGroup>
-            <class description="DynamicXMLQueryMediator" name="com.knot.uol.mediators.DynamicXMLQueryMediator">
-                <property expression="get-property('file','apiregistryConfigPath')" name="apiregistryConfigPath"/>
-            </class>
+            <class description="DynamicXMLQueryMediator" name="com.knot.uol.mediators.DynamicXMLQueryMediator"/>
+            <payloadFactory description="responsePayload" media-type="json">
+                <format>$1</format>
+                <args>
+                    <arg evaluator="xml" expression="$ctx:responsePayload"/>
+                </args>
+            </payloadFactory>
+            <propertyGroup description="Response Objects Caching">
+                <property expression="json-eval($.response)" name="response" scope="default" type="STRING"/>
+                <property expression="json-eval($.response.length())" name="CountObj" scope="default" type="STRING"/>
+            </propertyGroup>
+            <filter regex="0" source="get-property('CountObj')">
+                <then>
+                    <log description="No Need Call" level="custom">
+                        <property name="No APIs to Call" value="Tata Bye Bye"/>
+                    </log>
+                    <respond/>
+                </then>
+                <else>
+                    <log description="Need to  Call APIs" level="custom">
+                        <property name="There are Eligiility Check APIs " value="Calling the APIs"/>
+                    </log>
+                </else>
+            </filter>
+            <iterate expression="json-eval($.response)" id="Aggregate" sequential="true">
+                <target>
+                    <sequence>
+                        <property description="uri.var.resourcepath" expression="json-eval($.sub_endpoint)" name="uri.var.resourcepath" scope="default" type="STRING"/>
+                        <log description="VariableCount" level="custom">
+                            <property expression="$ctx:uri.var.resourcepath" name="Resource Path"/>
+                        </log>
+                        <call>
+                            <endpoint key="Eligible_EP"/>
+                        </call>
+                    </sequence>
+                </target>
+            </iterate>
+            <aggregate id="Aggregate">
+                <completeCondition>
+                    <messageCount max="-1" min="{get-property('CountObj')}"/>
+                </completeCondition>
+                <onComplete aggregateElementType="root" expression="json-eval($)">
+                    <log level="custom">
+                        <property name="Inside Aggregate" value="Inside Aggregate"/>
+                    </log>
+                </onComplete>
+            </aggregate>
+            <payloadFactory description="Response PayLoad" media-type="json">
+                <format>{&#xd;
+"Validation Status":"$1",&#xd;
+"Eligibility Check Response" : {$2&#xd;
+}&#xd;
+}</format>
+                <args>
+                    <arg evaluator="json" expression="$.validateStatus"/>
+                    <arg evaluator="json" expression="$"/>
+                </args>
+            </payloadFactory>
+            <log description="Out Side the Log">
+                <property expression="$ctx:CountObj" name="No of Iterations"/>
+            </log>
             <respond/>
         </inSequence>
         <outSequence/>

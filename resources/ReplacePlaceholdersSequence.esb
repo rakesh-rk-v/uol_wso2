@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<esb:EsbDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:esb="http:///org/wso2/integrationstudio/eclipse/gmf/esb">
+  <server type="SEQUENCE">
+    <children xsi:type="esb:Sequences" name="ReplacePlaceholdersSequence">
+      <outputConnector>
+        <outgoingLink target="//@server/@children.0/@mediatorFlow/@children.0/@inputConnector"/>
+      </outputConnector>
+      <inputConnector incomingLinks="//@server/@children.0/@mediatorFlow/@children.1/@outputConnector/@outgoingLink"/>
+      <mediatorFlow>
+        <children xsi:type="esb:ScriptMediator" scriptType="INLINE" scriptBody="&#xA;        // Example XML template&#xA;        var xmlTemplate = '&lt;req:customerReadRequest xmlns:req=&quot;http://ericsson.com/services/ws_CIL_7&quot; xmlns:ses=&quot;http://ericsson.com/services/ws_CIL_7/sessionchange&quot;> \&#xA;            &lt;req:inputAttributes> \&#xA;                &lt;req:csId>{customer_id}&lt;/req:csId> \&#xA;            &lt;/req:inputAttributes> \&#xA;            &lt;req:sessionChangeRequest> \&#xA;                &lt;ses:values> \&#xA;                    &lt;ses:item> \&#xA;                        &lt;ses:key>BU_ID&lt;/ses:key> \&#xA;                        &lt;ses:value>{bu_id}&lt;/ses:value> \&#xA;                    &lt;/ses:item> \&#xA;                &lt;/ses:values> \&#xA;            &lt;/req:sessionChangeRequest> \&#xA;        &lt;/req:customerReadRequest>';&#xA;&#xA;        // Get all properties from message context&#xA;        var properties = mc.getProperties();&#xA;&#xA;        // Replace placeholders with actual values&#xA;        var replacedXml = xmlTemplate.replace(/{([^}]+)}/g, function(match, key) {&#xA;            return properties[key] || match; // Use the property value or keep the placeholder if not found&#xA;        });&#xA;&#xA;        // Set the replaced XML back to the message payload&#xA;        mc.setPayloadXML(new XML(replacedXml));&#xA;    ">
+          <scriptDynamicKey prettyName="" propertyName="dynamic key" namespaces="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+          <inputConnector incomingLinks="//@server/@children.0/@outputConnector/@outgoingLink"/>
+          <outputConnector>
+            <outgoingLink target="//@server/@children.0/@mediatorFlow/@children.1/@inputConnector"/>
+          </outputConnector>
+          <scriptStaticKey prettyName="Script Key" keyName="key" filters="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+        </children>
+        <children xsi:type="esb:RespondMediator">
+          <inputConnector incomingLinks="//@server/@children.0/@mediatorFlow/@children.0/@outputConnector/@outgoingLink"/>
+          <outputConnector>
+            <outgoingLink target="//@server/@children.0/@inputConnector"/>
+          </outputConnector>
+        </children>
+      </mediatorFlow>
+      <onError prettyName="OnError sequence Key" keyName="OnError sequence Key" filters="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
+    </children>
+  </server>
+</esb:EsbDiagram>

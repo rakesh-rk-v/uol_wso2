@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="DynQuery_API" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/DynQuery_API.xml</file>
+    </artifact>
+    <artifact name="DynQuery_API_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/DynQuery_API_swagger.yaml</file>
+    </artifact>
+    <artifact name="DynQuery_API_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/DynQuery_API_metadata.yaml</file>
+    </artifact>
+    <artifact name="Hello" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/Hello.xml</file>
+    </artifact>
+    <artifact name="Hello_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Hello_swagger.yaml</file>
+    </artifact>
+    <artifact name="Hello_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Hello_metadata.yaml</file>
+    </artifact>
+    <artifact name="PropertiesLoad" groupId="com.example.inbound-endpoint" version="1.0.0" type="synapse/inbound-endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/inbound-endpoints/PropertiesLoad.xml</file>
+    </artifact>
+    <artifact name="Sequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/Sequence.xml</file>
+    </artifact>
+    <artifact name="Fault_Sequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/Fault_Sequence.xml</file>
+    </artifact>
+    <artifact name="Custom_Inbound_EP" groupId="com.example.inbound-endpoint" version="1.0.0" type="synapse/inbound-endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/inbound-endpoints/Custom_Inbound_EP.xml</file>
+    </artifact>
+    <artifact name="HTTP_DynamicQueries" groupId="com.example.inbound-endpoint" version="1.0.0" type="synapse/inbound-endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/inbound-endpoints/HTTP_DynamicQueries.xml</file>
+    </artifact>
+    <artifact name="Calling_API" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/Calling_API.xml</file>
+    </artifact>
+    <artifact name="DeployProps" groupId="com.example.task" version="1.0.0" type="synapse/task" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/tasks/DeployProps.xml</file>
+    </artifact>
+</artifacts>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/readCustomer" name="ReadCustomer" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <property description="Request" name="Request" scope="default" type="STRING" value="Request"/>
+            <log description="Request Log"/>
+            <class description="Insert Request DB Mediator" name="com.DynamicMediator"/>
+            <validate cache-schema="true" source="json-eval($)">
+                <schema key="default/key"/>
+                <on-fail>
+                    <payloadFactory description="Invalid Response Payload" media-type="xml">
+                        <format>
+                            <inline xmlns=""/>
+                        </format>
+                        <args/>
+                    </payloadFactory>
+                </on-fail>
+            </validate>
+            <class description="Fetch Child API's From DB" name="com.MySQL"/>
+            <script description="Business Logic to Build Payload" function="" key="" language="js"/>
+            <payloadFactory description="Preare Payload For Child API's" media-type="xml">
+                <format>
+                    <inline xmlns=""/>
+                </format>
+                <args/>
+            </payloadFactory>
+            <iterate expression="json-eval($)">
+                <target>
+                    <sequence>
+                        <call>
+                            <endpoint>
+                                <http method="get" uri-template="http://childAPIs">
+                                    <suspendOnFailure>
+                                        <initialDuration>-1</initialDuration>
+                                        <progressionFactor>-1</progressionFactor>
+                                        <maximumDuration>0</maximumDuration>
+                                    </suspendOnFailure>
+                                    <markForSuspension>
+                                        <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                                    </markForSuspension>
+                                </http>
+                            </endpoint>
+                        </call>
+                        <property description="System Name " name="System Name" scope="default" type="STRING" value=""/>
+                        <switch source="grt-property('sysname')">
+                            <case regex=".*+">
+                                <sequence key="EB Sequence"/>
+                            </case>
+                            <case regex=".*+">
+                                <sequence key="EC Sequence"/>
+                            </case>
+                            <case regex=".*+">
+                                <sequence key="PCRF Sequence"/>
+                            </case>
+                            <case regex=".*+">
+                                <sequence key="AAA Sequence"/>
+                            </case>
+                            <case regex=".*+">
+                                <sequence key="HLR Sequence"/>
+                            </case>
+                            <case regex=".*+">
+                                <sequence key="EDA Sequence"/>
+                            </case>
+                            <case regex=".*+">
+                                <sequence key="NMS Sequence"/>
+                            </case>
+                            <default>
+                                <sequence key="Default Sequence"/>
+                            </default>
+                        </switch>
+                    </sequence>
+                </target>
+            </iterate>
+            <aggregate>
+                <completeCondition>
+                    <messageCount max="-1" min="-1"/>
+                </completeCondition>
+                <onComplete aggregateElementType="root" expression="json-eval($)">
+                    <payloadFactory description="Aggregaed Response" media-type="xml">
+                        <format>
+                            <inline xmlns=""/>
+                        </format>
+                        <args/>
+                    </payloadFactory>
+                    <class description="Stored Response in DB" name="com.AggregatedResponse"/>
+                    <drop/>
+                </onComplete>
+            </aggregate>
+            <respond description="Responds after Iteration"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

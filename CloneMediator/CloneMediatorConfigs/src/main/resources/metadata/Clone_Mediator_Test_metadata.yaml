@@ -1,0 +1,11 @@
+---
+key: "Clone_Mediator_Test-1.0.0"
+name : "Clone_Mediator_Test"
+displayName : "Clone_Mediator_Test"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/clone"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

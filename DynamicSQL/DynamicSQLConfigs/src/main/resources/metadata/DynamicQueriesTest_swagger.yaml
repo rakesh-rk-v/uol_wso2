@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: DynamicQueriesTest
+  description: API Definition of DynamicQueriesTest
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/dynamicQueriesTest
+paths:
+  /:
+    post:
+      responses:
+        default:
+          description: Default response
