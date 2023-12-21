@@ -33,7 +33,7 @@
                 <property expression="$ctx:parentId" name="parentId"/>
                 <property name="childId" value="Main"/>
             </class>
-            <script description="SETTING THE QUERY NAME" language="js"><![CDATA[// Example logic to construct SQL query based on available values
+            <script description="SETTING THE QUERY NAME" language="js"><![CDATA[// Example logic to construct SQL query based on available inputs
         var cust_id = mc.getProperty('cust_id');
         var NIC = mc.getProperty('NIC');
         var passport = mc.getProperty('passport');
@@ -41,7 +41,8 @@
         var sqlQuery = "";
 
         if (cust_id) {
-            sqlQuery = "cust_id";
+        	// here i have changed (ajay akula)
+            sqlQuery = "customer_id";
         } else if (NIC) {
             sqlQuery = "NIC";
         } else if (passport) {
@@ -82,11 +83,16 @@
                 <property expression="$ctx:requestPayload.queryName" name="Query - ID : "/>
                 <property expression="json-eval($.statusCode)" name="Name of Query "/>
                 <property expression="json-eval($ctx:responsePayload.response)" name="Response"/>
+                <property expression="get-property('Filter')" name="whatIsFilter"/>
                 <property expression="fn:string-length(get-property('Filter'))" name="Lenghth of String"/>
                 <property expression="fn:string-length(get-property('Filter')) > 2.0" name="True r False Gt 2"/>
+                <!-- here i(ajay akula) have changed -->
                 <!--  <property expression="json-eval(get-property('requestPayload')" name="JSON Query - ID : "/>  -->
             </log>
-            <filter regex="false" source="fn:string-length(get-property('Filter')) > 2.0">
+            <log level="custom">
+                <property name="debug" value="after the bscs hit "/>
+            </log>
+            <filter regex="false" source="fn:string-length(get-property('responsePayload')) > 2.0">
                 <then>
                     <log description="When The Customer is Un Available">
                         <property name="CO_ID" value="UN AVAILABLE"/>

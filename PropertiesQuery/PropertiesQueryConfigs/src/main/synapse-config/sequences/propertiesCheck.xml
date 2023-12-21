@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="propertiesCheck" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <property description="queryName" expression="get-property('uri.var.queryName')" name="queryName" scope="default" type="STRING"/>
+    <filter regex="true" source="boolean(get-property('system',get-property('queryName')))">
+        <then>
+            <log level="custom">
+                <property expression="get-property('system',get-property('queryName'))" name="QueryName is Available in System Properties"/>
+            </log>
+            <property expression="get-property('system',get-property('queryName'))" name="Query" scope="default" type="STRING"/>
+        </then>
+        <else>
+            <log description="When Query is  Unavailable" level="custom">
+                <property expression="get-property('queryName')" name="QueryName is UnAvailable in System Properties"/>
+            </log>
+            <propertyGroup description="apiregistryConfigs">
+                <property expression="get-property('file','apiregistryConfigs')" name="apiRegistryConfigPath" scope="default" type="STRING"/>
+            </propertyGroup>
+            <class description="prop.GlobalProperties" name="prop.GlobalProperties"/>
+            <property description="Query" expression="get-property('system',$ctx:queryName)" name="Query" scope="default" type="STRING"/>
+            <filter regex="false" source="boolean(get-property('Query'))">
+                <then>
+                    <log/>
+                    <payloadFactory media-type="json">
+                        <format>{&#xd;
+"ERROR" : {&#xd;
+"Message" : "The Query Name is Not Valid and It is Not In Properties Files"&#xd;
+}&#xd;
+}</format>
+                        <args/>
+                    </payloadFactory>
+                    <respond/>
+                </then>
+                <else>
+                    <log level="full">
+                        <property expression="$ctx:Query" name="Query is Valid"/>
+                    </log>
+                </else>
+            </filter>
+        </else>
+    </filter>
+</sequence>

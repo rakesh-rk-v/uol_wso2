@@ -47,7 +47,7 @@ public class DynamicXMLQueryMediator extends AbstractMediator {
 			
 			// Fetch dynamic query configuration from the database based on query name
 			QueryConfig queryConfig = JDBCConnectionUtil.getQueryConfigFromDatabase(queryName, properties);
-			log.debug(new String("Query Name = "+queryName));
+			log.info(new String("Query Name = "+queryName));
 			log.info("QueryConfig Object info :: " + queryConfig.getPropertiesFile());
 			if (queryConfig == null || org.apache.commons.lang.StringUtils.isEmpty(queryConfig.getPropertiesFile())) {
 				// Handle error: Query not found in the database
@@ -75,6 +75,7 @@ public class DynamicXMLQueryMediator extends AbstractMediator {
 			// Get the dynamic query from the properties file based on query name
 			String dynamicQuery = readQueryProperties.getProperty(queryName);
 			log.debug(new String("Dynamic Query = "+dynamicQuery));
+			messageContext.setProperty("dynamicQuery", dynamicQuery);
 			if (dynamicQuery == null) {
 				// Handle error: Query not found in the properties file
 				log.info("Dynamic Query Object not found in properties file");
@@ -171,6 +172,8 @@ public class DynamicXMLQueryMediator extends AbstractMediator {
 			errorName = "Exception occured during the db call";
 			statusCode = "500";
 			message = e.getMessage();
+			
+			MediatorResponse res;
 
 		} finally {
             MediatorResponse obj = CommonUtils.buildResponse(queryName, statusCode, message, dbResponse, errorName,errorCode);

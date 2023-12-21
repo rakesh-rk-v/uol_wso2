@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/dynamicSeq_API" name="DynamicSeq_API" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <class description="DynamicSequence" name="com.dynamic.seq.DynamicSequence"/>
+            <log level="custom">
+                <property name="After Class Mediator" value="After Class Mediator"/>
+            </log>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

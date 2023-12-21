@@ -9,6 +9,7 @@
   <name>Test</name>
   <description>Test</description>
   <modules>
+    <module>DynamicSequnce</module>
     <module>TestRegistryResources</module>
     <module>TestConfigs</module>
     <module>TestCompositeExporter</module>

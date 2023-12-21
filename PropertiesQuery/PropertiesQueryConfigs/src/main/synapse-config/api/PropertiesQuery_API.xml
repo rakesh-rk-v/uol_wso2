@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/propertiesQuery_API" name="PropertiesQuery_API" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" uri-template="/{queryName}">
+        <inSequence>
+            <sequence key="propertiesCheck"/>
+            <payloadFactory description="Payload For Query" media-type="json">
+                <format>{&#xd;
+    "queryName" : "QuerySelect",&#xd;
+    "parameters" : {&#xd;
+        "queryName" : "$1"&#xd;
+    }&#xd;
+}</format>
+                <args>
+                    <arg evaluator="xml" expression="$ctx:queryName"/>
+                </args>
+            </payloadFactory>
+            <propertyGroup description="requestPayload">
+                <property expression="get-property('file','apiregistryConfigs')" name="apiregistryConfigPath" scope="default" type="STRING"/>
+                <property expression="json-eval($)" name="requestPayload" scope="default" type="STRING"/>
+            </propertyGroup>
+            <class description="DB System Details" name="com.knot.uol.mediators.DynamicXMLQueryMediator"/>
+            <propertyGroup>
+                <property expression="$ctx:responsePayload" name="dynamicResponse" scope="default" type="STRING"/>
+                <property expression="json-eval($ctx:responsePayload.response)" name="SystemDetails" scope="default" type="STRING"/>
+            </propertyGroup>
+            <log/>
+            <payloadFactory media-type="json">
+                <format>{&#xd;
+"Query" : "$1",&#xd;
+"System Details" : {$2}&#xd;
+}</format>
+                <args>
+                    <arg evaluator="xml" expression="$ctx:Query"/>
+                    <arg evaluator="xml" expression="$ctx:SystemDetails"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/testProperties" name="TestProps" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <propertyGroup description="System Properties ">
+                <property expression="get-property('system','Name')" name="UserName" scope="default" type="STRING"/>
+                <property expression="get-property('CustomerRead')" name="CustomerRead" scope="system" type="STRING"/>
+            </propertyGroup>
+            <log description="Properties LOgging">
+                <property expression="$ctx:UserName" name="My Name "/>
+                <property expression="$ctx:CustomerRead" name="Customer Read "/>
+            </log>
+            <payloadFactory media-type="json">
+                <format>{&#xd;
+"User Name" : "$1",&#xd;
+"CustomerRead" : "$2"&#xd;
+}</format>
+                <args>
+                    <arg evaluator="xml" expression="$ctx:UserName"/>
+                    <arg evaluator="xml" expression="$ctx:CustomerRead"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

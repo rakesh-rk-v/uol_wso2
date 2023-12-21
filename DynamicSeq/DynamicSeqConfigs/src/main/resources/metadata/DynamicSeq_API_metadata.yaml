@@ -1,0 +1,11 @@
+---
+key: "DynamicSeq_API-1.0.0"
+name : "DynamicSeq_API"
+displayName : "DynamicSeq_API"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/dynamicSeq_API"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

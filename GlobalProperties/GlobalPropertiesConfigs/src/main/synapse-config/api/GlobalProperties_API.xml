@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/globalProperties" name="GlobalProperties_API" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <propertyGroup description="apiregistryConfigs">
+                <property expression="get-property('file','apiregistryConfigs')" name="apiRegistryConfigPath" scope="default" type="STRING"/>
+            </propertyGroup>
+            <class description="prop.GlobalProperties" name="prop.GlobalProperties"/>
+            <log description="Just To Know Ca;;ing This API">
+                <property name="Properties are Set Dynamically" value="True"/>
+            </log>
+            <respond description="It Will Just Load and Returning the REsponse"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

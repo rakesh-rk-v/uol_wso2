@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="GlobalProperties_API" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/GlobalProperties_API.xml</file>
+    </artifact>
+    <artifact name="GlobalProperties_API_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/GlobalProperties_API_swagger.yaml</file>
+    </artifact>
+    <artifact name="GlobalProperties_API_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/GlobalProperties_API_metadata.yaml</file>
+    </artifact>
+    <artifact name="TestProps" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/TestProps.xml</file>
+    </artifact>
+    <artifact name="TestProps_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/TestProps_swagger.yaml</file>
+    </artifact>
+    <artifact name="TestProps_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/TestProps_metadata.yaml</file>
+    </artifact>
+</artifacts>

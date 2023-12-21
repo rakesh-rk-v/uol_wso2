@@ -79,7 +79,7 @@ public class SystemResponseUpdateLog extends AbstractMediator {
 
         try {
         	Properties properties = PropertiesUtil.propertiesFileRead(apiregistryConfigPath);
-            con = JDBCConnectionUtil.connectToDatabase("UOLLogs", "wso2", properties);
+            con = JDBCConnectionUtil.connectToDatabase("UOLLogs", "bscs", properties);
             if(con!=null) {
                 System.out.println("update log conn obj====> "+con);
                 

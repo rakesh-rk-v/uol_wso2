@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="DynamicSeq" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="custom">
+        <property expression="$ctx:DynamicSeqRes" name="DynamicRes"/>
+        <property expression="$ctx:customReq" name="Custom Request In Seq"/>
+    </log>
+    <payloadFactory description="Message" media-type="json">
+        <format>{&#xd;
+"Message" : "This is Sequence"&#xd;
+}</format>
+        <args>
+            <arg evaluator="json" expression="$"/>
+        </args>
+    </payloadFactory>
+    <property description="sequences" expression="fn:concat($ctx:sequences,' ','adding value in seq')" name="DynamicSeqRes" scope="default" type="STRING"/>
+</sequence>

@@ -7,9 +7,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Properties;
 
-import com.knot.uol.mediators.DynamicXMLQueryMediator;
-import com.knot.uol.utils.JDBCConnectionUtil;
-
 public class SystemRequestNewLog extends AbstractMediator  {
 	
     // Private class variables
