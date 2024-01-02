@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/prabhasUngulam" name="PrabhasUngulam" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <log/>
+            <class description="com.knot.uol.utils.UOLRequestLog" name="com.knot.uol.utils.UOLRequestLog">
+                <property expression="$ctx:NIC" name="NIC"/>
+                <property expression="$ctx:MSISDN" name="MSISDN"/>
+                <property expression="$ctx:custid" name="custid"/>
+                <property expression="get-property('MessageID')" name="source_req_id"/>
+                <property expression="$ctx:channel" name="channel"/>
+                <property expression="get-property('MessageID')" name="child_req_id"/>
+                <property expression="$ctx:api_name" name="api_name"/>
+                <property expression="$ctx:processId" name="processId"/>
+                <property expression="$ctx:processName" name="processName"/>
+                <property expression="$ctx:request" name="request"/>
+                <property expression="$ctx:status" name="status"/>
+            </class>
+            <call>
+                <endpoint>
+                    <http method="get" uri-template="https://httpbin.org/get">
+                        <suspendOnFailure>
+                            <initialDuration>-1</initialDuration>
+                            <progressionFactor>-1</progressionFactor>
+                            <maximumDuration>0</maximumDuration>
+                        </suspendOnFailure>
+                        <markForSuspension>
+                            <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                        </markForSuspension>
+                    </http>
+                </endpoint>
+            </call>
+            <class description="UOLResponseLog" name="com.knot.uol.utils.UOLResponseLog">
+                <property expression="$ctx:source_req_id" name="source_req_id"/>
+                <property expression="$ctx:child_req_id" name="child_req_id"/>
+                <property expression="$ctx:response" name="response"/>
+                <property expression="$ctx:status" name="status"/>
+            </class>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

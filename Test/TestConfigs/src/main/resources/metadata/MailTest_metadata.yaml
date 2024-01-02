@@ -1,0 +1,11 @@
+---
+key: "MailTest-1.0.0"
+name : "MailTest"
+displayName : "MailTest"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/testMail"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

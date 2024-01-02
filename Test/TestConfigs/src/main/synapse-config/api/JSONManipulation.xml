@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/jsonManipulation" name="JSONManipulation" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <property description="ChildObj" expression="json-eval($)" name="Obj" scope="default" type="STRING"/>
+            <property description="key" name="key" scope="default" type="STRING" value="Main"/>
+            <payloadFactory description="Payload " media-type="json">
+                <format>{&#xd;
+"API DATA" : {&#xd;
+"Main " : {&#xd;
+"Existing": "Obj"&#xd;
+ }&#xd;
+}&#xd;
+}</format>
+                <args/>
+            </payloadFactory>
+            <script language="js"><![CDATA[// Get the existing JSON object from the message context
+    var existingJsonString = mc.getPayloadJSON();
+    
+    // Get the key and new object from the message context properties
+    var key = mc.getProperty("key");
+    var newObject = mc.getProperty("ChildObj");
+
+    // Parse the existing JSON string to a JavaScript object
+    var existingJsonObject = JSON.parse(existingJsonString);
+
+    // Insert the new object into the specified key
+    existingJsonObject[key] = JSON.parse(newObject);
+
+    // Convert the modified JavaScript object back to a JSON string
+    var modifiedJsonString = JSON.stringify(existingJsonObject);
+
+    // Set the modified JSON string as the new payload
+    mc.setPayloadJSON(modifiedJsonString);]]></script>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <sequence key="fault"/>
+        </faultSequence>
+    </resource>
+</api>

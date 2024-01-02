@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: DataMapperTest
+  description: API Definition of DataMapperTest
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/dataMapperTest
+paths:
+  /:
+    post:
+      responses:
+        default:
+          description: Default response

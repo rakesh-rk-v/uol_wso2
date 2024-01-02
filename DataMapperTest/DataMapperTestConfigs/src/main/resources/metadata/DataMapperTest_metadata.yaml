@@ -1,0 +1,11 @@
+---
+key: "DataMapperTest-1.0.0"
+name : "DataMapperTest"
+displayName : "DataMapperTest"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/dataMapperTest"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

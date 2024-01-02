@@ -1,0 +1,20 @@
+map_S_root_S_root = function(){ 
+var outputroot={};
+
+outputroot =  {};
+outputroot.Customer =  {};
+outputroot.Customer.id = inputroot.csId;
+outputroot.Customer.Code = inputroot.csCode;
+outputroot.Customer.Status = inputroot.csStatus;
+outputroot.Customer.StatusDate = inputroot.csStatusDate;
+outputroot.Customer.LevelCode = inputroot.csLevelCode;
+outputroot.Customer.paymentResp = inputroot.paymentResp;
+return outputroot;
+};
+
+
+
+
+
+
+

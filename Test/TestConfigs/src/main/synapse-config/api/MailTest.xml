@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/testMail" name="MailTest" xmlns="http://ws.apache.org/ns/synapse">
+    <resource faultSequence="fault" methods="GET">
+        <inSequence>
+            <log description="Welcome Log" level="custom">
+                <property name="Entered Into Mail Test" value="..."/>
+            </log>
+            <sequence key="API_Details_SEQ"/>
+            <property name="Message" scope="default" type="STRING" value="Hi Rakesh, This is a Mail Test."/>
+            <payloadFactory media-type="xml">
+                <format>
+                    <text xmlns="http://ws.apache.org/commons/ns/payload">$1</text>
+                </format>
+                <args>
+                    <arg evaluator="xml" expression="$ctx:Message"/>
+                </args>
+            </payloadFactory>
+            <header description="Subject" name="Subject" scope="transport" value="Mail Test"/>
+            <property name="messageType" scope="axis2" type="STRING" value="text/html"/>
+            <call>
+                <endpoint>
+                    <address uri="mailto:rakeshvendrapati173@gmail.com">
+                        <suspendOnFailure>
+                            <errorCodes>-1</errorCodes>
+                            <initialDuration>10000</initialDuration>
+                            <progressionFactor>1.0</progressionFactor>
+                            <maximumDuration>0</maximumDuration>
+                        </suspendOnFailure>
+                        <markForSuspension>
+                            <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                        </markForSuspension>
+                    </address>
+                </endpoint>
+                <target type="body"/>
+            </call>
+            <log level="custom">
+                <property name="Call" value="Over"/>
+            </log>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+    </resource>
+</api>

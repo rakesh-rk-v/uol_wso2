@@ -15,8 +15,16 @@
   <description>DynamicQueries_2CompositeExporter</description>
   <properties>
     <com.example.metadata_._Hello_swagger>capp/EnterpriseServiceBus</com.example.metadata_._Hello_swagger>
-    <com.example.api_._Hello>capp/EnterpriseServiceBus</com.example.api_._Hello>
+    <com.example.metadata_._PrabhasUngulam_metadata>capp/EnterpriseServiceBus</com.example.metadata_._PrabhasUngulam_metadata>
+    <com.example.inbound-endpoint_._HTTP_DynamicQueries>capp/EnterpriseServiceBus</com.example.inbound-endpoint_._HTTP_DynamicQueries>
+    <com.example.sequence_._Calling_API>capp/EnterpriseServiceBus</com.example.sequence_._Calling_API>
+    <com.example.api_._PrabhasUngulam>capp/EnterpriseServiceBus</com.example.api_._PrabhasUngulam>
     <com.example.metadata_._Hello_metadata>capp/EnterpriseServiceBus</com.example.metadata_._Hello_metadata>
+    <com.example.inbound-endpoint_._Custom_Inbound_EP>capp/EnterpriseServiceBus</com.example.inbound-endpoint_._Custom_Inbound_EP>
+    <com.example.sequence_._Fault_Sequence>capp/EnterpriseServiceBus</com.example.sequence_._Fault_Sequence>
+    <com.example.task_._DeployProps>capp/EnterpriseServiceBus</com.example.task_._DeployProps>
+    <com.example.metadata_._PrabhasUngulam_swagger>capp/EnterpriseServiceBus</com.example.metadata_._PrabhasUngulam_swagger>
+    <com.example.inbound-endpoint_._PropertiesLoad>capp/EnterpriseServiceBus</com.example.inbound-endpoint_._PropertiesLoad>
     <artifact.types>jaggery/app=zip,synapse/priority-executor=xml,synapse/inbound-endpoint=xml,service/rule=aar,synapse/message-store=xml,event/stream=json,service/meta=xml,datasource/datasource=xml,synapse/proxy-service=xml,bpel/workflow=zip,synapse/sequence=xml,synapse/endpointTemplate=xml,carbon/application=car,wso2/gadget=dar,synapse/api=xml,synapse/event-source=xml,synapse/message-processors=xml,event/receiver=xml,lib/dataservice/validator=jar,synapse/template=xml,synapse/endpoint=xml,lib/carbon/ui=jar,lib/synapse/mediator=jar,synapse/metadata=yaml,event/publisher=xml,synapse/local-entry=xml,synapse/task=xml,webapp/jaxws=war,registry/resource=zip,synapse/configuration=xml,service/axis2=aar,synapse/lib=zip,synapse/sequenceTemplate=xml,event/execution-plan=siddhiql,service/dataservice=dbs,web/application=war,lib/library/bundle=jar</artifact.types>
   </properties>
   <dependencies>
@@ -33,8 +41,56 @@
       <type>yaml</type>
     </dependency>
     <dependency>
+      <groupId>com.example.metadata</groupId>
+      <artifactId>PrabhasUngulam_metadata</artifactId>
+      <version>1.0.0</version>
+      <type>yaml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.metadata</groupId>
+      <artifactId>PrabhasUngulam_swagger</artifactId>
+      <version>1.0.0</version>
+      <type>yaml</type>
+    </dependency>
+    <dependency>
       <groupId>com.example.api</groupId>
-      <artifactId>Hello</artifactId>
+      <artifactId>PrabhasUngulam</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.inbound-endpoint</groupId>
+      <artifactId>Custom_Inbound_EP</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.inbound-endpoint</groupId>
+      <artifactId>HTTP_DynamicQueries</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.inbound-endpoint</groupId>
+      <artifactId>PropertiesLoad</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.sequence</groupId>
+      <artifactId>Calling_API</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.sequence</groupId>
+      <artifactId>Fault_Sequence</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.task</groupId>
+      <artifactId>DeployProps</artifactId>
       <version>1.0.0</version>
       <type>xml</type>
     </dependency>

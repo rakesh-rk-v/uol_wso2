@@ -8,15 +8,6 @@
     <artifact name="DynQuery_API_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
         <file>src/main/resources/metadata/DynQuery_API_metadata.yaml</file>
     </artifact>
-    <artifact name="Hello" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
-        <file>src/main/synapse-config/api/Hello.xml</file>
-    </artifact>
-    <artifact name="Hello_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
-        <file>src/main/resources/metadata/Hello_swagger.yaml</file>
-    </artifact>
-    <artifact name="Hello_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
-        <file>src/main/resources/metadata/Hello_metadata.yaml</file>
-    </artifact>
     <artifact name="PropertiesLoad" groupId="com.example.inbound-endpoint" version="1.0.0" type="synapse/inbound-endpoint" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/inbound-endpoints/PropertiesLoad.xml</file>
     </artifact>
@@ -37,5 +28,20 @@
     </artifact>
     <artifact name="DeployProps" groupId="com.example.task" version="1.0.0" type="synapse/task" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/tasks/DeployProps.xml</file>
+    </artifact>
+    <artifact name="PrabhasUngulam" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/PrabhasUngulam.xml</file>
+    </artifact>
+    <artifact name="PrabhasUngulam_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/PrabhasUngulam_swagger.yaml</file>
+    </artifact>
+    <artifact name="PrabhasUngulam_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/PrabhasUngulam_metadata.yaml</file>
+    </artifact>
+    <artifact name="FileTransfer" groupId="com.example.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/FileTransfer.xml</file>
+    </artifact>
+    <artifact name="FileTransfer_proxy_metadata" groupId="com.example.proxy-service.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/FileTransfer_proxy_metadata.yaml</file>
     </artifact>
 </artifacts>

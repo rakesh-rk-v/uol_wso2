@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: API_Data_Test
+  description: API Definition of API_Data_Test
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/apiDataTest
+paths:
+  /:
+    get:
+      responses:
+        default:
+          description: Default response

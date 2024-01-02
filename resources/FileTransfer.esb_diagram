@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:esb="http:///org/wso2/integrationstudio/eclipse/gmf/esb" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmi:id="__gy6oKLtEe6_u87lfvpoRg" type="Esb" name="FileTransfer" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="__hZXkKLtEe6_u87lfvpoRg" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="__hZXlaLtEe6_u87lfvpoRg" type="7001">
+      <children xmi:type="notation:Node" xmi:id="_RgfaYKLuEe6_u87lfvpoRg" type="3001">
+        <children xmi:type="notation:DecorationNode" xmi:id="_RggBcKLuEe6_u87lfvpoRg" type="5003"/>
+        <styles xmi:type="notation:DescriptionStyle" xmi:id="_RgfaYaLuEe6_u87lfvpoRg"/>
+        <styles xmi:type="notation:FontStyle" xmi:id="_RgfaYqLuEe6_u87lfvpoRg" fontName="Segoe UI"/>
+        <styles xmi:type="notation:LineStyle" xmi:id="_RgfaY6LuEe6_u87lfvpoRg"/>
+        <element xmi:type="esb:ProxyService" href="FileTransfer.esb#//@server/@children.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RgfaZKLuEe6_u87lfvpoRg" width="300" height="400"/>
+      </children>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="__hZXkaLtEe6_u87lfvpoRg"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="__hZXkqLtEe6_u87lfvpoRg" fontName="Segoe UI"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="__hZXk6LtEe6_u87lfvpoRg"/>
+    <element xmi:type="esb:EsbServer" href="FileTransfer.esb#//@server"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="__hZXlKLtEe6_u87lfvpoRg"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="__gy6oaLtEe6_u87lfvpoRg"/>
+  <element xmi:type="esb:EsbDiagram" href="FileTransfer.esb#/"/>
+</notation:Diagram>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/mailConnector" name="MailConnector" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <gmail.passwordLogin>
+                <username>rakeshvendrapati173</username>
+                <password>xtvi vfmh ncdz egvp</password>
+            </gmail.passwordLogin>
+            <gmail.sendMail>
+                <to>rakeshvendrapati173@gmail.com</to>
+                <subject>Mail Connector Test</subject>
+                <from>rakeshvendrapati173@gmail.com</from>
+                <messageBody>{json-eval($.body)}</messageBody>
+                <contentType>text/plain</contentType>
+            </gmail.sendMail>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <sequence key="fault"/>
+        </faultSequence>
+    </resource>
+</api>

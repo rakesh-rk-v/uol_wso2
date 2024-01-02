@@ -1,0 +1,10 @@
+---
+key: "Sample_Proxy_proxy-1.0.0"
+name : "Sample_Proxy"
+displayName : "Sample_Proxy"
+description: "Sample Proxy Service"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/services/Sample_Proxy"
+definitionType: "WSDL1"
+securityType: "BASIC"
+mutualSSLEnabled: false

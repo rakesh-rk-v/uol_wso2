@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:esb="http:///org/wso2/integrationstudio/eclipse/gmf/esb" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmi:id="_JeycUKU0Ee6RJsQnrmd0RQ" type="Esb" name="MailConnector" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_Jfg1EKU0Ee6RJsQnrmd0RQ" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Jfg1FaU0Ee6RJsQnrmd0RQ" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_JwJSEKU0Ee6RJsQnrmd0RQ" type="3668" fontName="Segoe UI">
+        <children xmi:type="notation:BasicCompartment" xmi:id="_JwJ5IKU0Ee6RJsQnrmd0RQ" type="7044">
+          <children xmi:type="notation:Node" xmi:id="_JwX7kKU0Ee6RJsQnrmd0RQ" type="3669">
+            <children xmi:type="notation:Node" xmi:id="_JwcNAKU0Ee6RJsQnrmd0RQ" type="3670">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_JwcNAaU0Ee6RJsQnrmd0RQ"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_JwcNAqU0Ee6RJsQnrmd0RQ" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_JwcNA6U0Ee6RJsQnrmd0RQ"/>
+              <element xmi:type="esb:APIResourceInputConnector" href="MailConnector.esb#//@server/@children.0/@resources.0/@inputConnector"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JwcNBKU0Ee6RJsQnrmd0RQ" x="86" y="-11"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_JwcNBaU0Ee6RJsQnrmd0RQ" type="3671">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_JwcNBqU0Ee6RJsQnrmd0RQ"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_JwcNB6U0Ee6RJsQnrmd0RQ" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_JwcNCKU0Ee6RJsQnrmd0RQ"/>
+              <element xmi:type="esb:APIResourceOutputConnector" href="MailConnector.esb#//@server/@children.0/@resources.0/@outputConnector"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JwcNCaU0Ee6RJsQnrmd0RQ" x="86" y="-23"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Jwc0EKU0Ee6RJsQnrmd0RQ" type="3730">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_Jwc0EaU0Ee6RJsQnrmd0RQ"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_Jwc0EqU0Ee6RJsQnrmd0RQ" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_Jwc0E6U0Ee6RJsQnrmd0RQ"/>
+              <element xmi:type="esb:APIResourceOutSequenceOutputConnector" href="MailConnector.esb#//@server/@children.0/@resources.0/@outSequenceOutputConnector"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Jwc0FKU0Ee6RJsQnrmd0RQ" x="110" y="-11"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_JwdbIKU0Ee6RJsQnrmd0RQ" type="3672">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_JwdbIaU0Ee6RJsQnrmd0RQ"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_JwdbIqU0Ee6RJsQnrmd0RQ" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_JwdbI6U0Ee6RJsQnrmd0RQ"/>
+              <element xmi:type="esb:APIResourceFaultInputConnector" href="MailConnector.esb#//@server/@children.0/@resources.0/@faultInputConnector"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JwdbJKU0Ee6RJsQnrmd0RQ" x="86" y="7"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_JwdbJaU0Ee6RJsQnrmd0RQ" type="3673">
+              <children xmi:type="notation:Node" xmi:id="_JwkI0KU0Ee6RJsQnrmd0RQ" type="3487">
+                <children xmi:type="notation:Node" xmi:id="_JwmlEKU0Ee6RJsQnrmd0RQ" type="3608">
+                  <children xmi:type="notation:DecorationNode" xmi:id="_JwmlFaU0Ee6RJsQnrmd0RQ" type="7034">
+                    <children xmi:type="notation:Node" xmi:id="_JxD4EKU0Ee6RJsQnrmd0RQ" type="3722">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_JxEfIKU0Ee6RJsQnrmd0RQ" type="5198"/>
+                      <children xmi:type="notation:Node" xmi:id="_JxJ-sKU0Ee6RJsQnrmd0RQ" type="3723">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_JxJ-saU0Ee6RJsQnrmd0RQ"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_JxJ-sqU0Ee6RJsQnrmd0RQ" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_JxJ-s6U0Ee6RJsQnrmd0RQ"/>
+                        <element xmi:type="esb:CloudConnectorOperationInputConnector" href="MailConnector.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.0/@inputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JxJ-tKU0Ee6RJsQnrmd0RQ" x="-6" y="-5"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_JxJ-taU0Ee6RJsQnrmd0RQ" type="3724">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_JxJ-tqU0Ee6RJsQnrmd0RQ"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_JxJ-t6U0Ee6RJsQnrmd0RQ" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_JxJ-uKU0Ee6RJsQnrmd0RQ"/>
+                        <element xmi:type="esb:CloudConnectorOperationOutputConnector" href="MailConnector.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.0/@outputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JxJ-uaU0Ee6RJsQnrmd0RQ" x="64" y="-9"/>
+                      </children>
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="_JxD4EaU0Ee6RJsQnrmd0RQ"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="_JxD4EqU0Ee6RJsQnrmd0RQ" fontName="Segoe UI"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="_JxD4E6U0Ee6RJsQnrmd0RQ"/>
+                      <element xmi:type="esb:CloudConnectorOperation" href="MailConnector.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.0"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JxD4FKU0Ee6RJsQnrmd0RQ" x="25" y="38" width="84" height="115"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_Jx2iQKU0Ee6RJsQnrmd0RQ" type="3739">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_Jx2iRaU0Ee6RJsQnrmd0RQ" type="5209"/>
+                      <children xmi:type="notation:Node" xmi:id="_Jx8B0KU0Ee6RJsQnrmd0RQ" type="3740">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_Jx8B0aU0Ee6RJsQnrmd0RQ"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_Jx8B0qU0Ee6RJsQnrmd0RQ" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_Jx8B06U0Ee6RJsQnrmd0RQ"/>
+                        <element xmi:type="esb:RespondMediatorInputConnector" href="MailConnector.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@inputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Jx8B1KU0Ee6RJsQnrmd0RQ" x="-6" y="-5"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_Jx8o4KU0Ee6RJsQnrmd0RQ" type="3741">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_Jx8o4aU0Ee6RJsQnrmd0RQ"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_Jx8o4qU0Ee6RJsQnrmd0RQ" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_Jx8o46U0Ee6RJsQnrmd0RQ"/>
+                        <element xmi:type="esb:RespondMediatorOutputConnector" href="MailConnector.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@outputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Jx8o5KU0Ee6RJsQnrmd0RQ" x="64" y="-9"/>
+                      </children>
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="_Jx2iQaU0Ee6RJsQnrmd0RQ"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="_Jx2iQqU0Ee6RJsQnrmd0RQ" fontName="Segoe UI"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="_Jx2iQ6U0Ee6RJsQnrmd0RQ"/>
+                      <element xmi:type="esb:RespondMediator" href="MailConnector.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Jx2iRKU0Ee6RJsQnrmd0RQ" x="149" y="38" width="84" height="115"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_m_wfgKU3Ee6RJsQnrmd0RQ" type="3722">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_m_wfhaU3Ee6RJsQnrmd0RQ" type="5198"/>
+                      <children xmi:type="notation:Node" xmi:id="_m_0J4KU3Ee6RJsQnrmd0RQ" type="3723">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_m_0J4aU3Ee6RJsQnrmd0RQ"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_m_0J4qU3Ee6RJsQnrmd0RQ" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_m_0J46U3Ee6RJsQnrmd0RQ"/>
+                        <element xmi:type="esb:CloudConnectorOperationInputConnector" href="MailConnector.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.2/@inputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m_0J5KU3Ee6RJsQnrmd0RQ" x="-6" y="-5"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_m_0J5aU3Ee6RJsQnrmd0RQ" type="3724">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_m_0J5qU3Ee6RJsQnrmd0RQ"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_m_0J56U3Ee6RJsQnrmd0RQ" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_m_0J6KU3Ee6RJsQnrmd0RQ"/>
+                        <element xmi:type="esb:CloudConnectorOperationOutputConnector" href="MailConnector.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.2/@outputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m_0J6aU3Ee6RJsQnrmd0RQ" x="64" y="-9"/>
+                      </children>
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="_m_wfgaU3Ee6RJsQnrmd0RQ"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="_m_wfgqU3Ee6RJsQnrmd0RQ" fontName="Segoe UI"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="_m_wfg6U3Ee6RJsQnrmd0RQ"/>
+                      <element xmi:type="esb:CloudConnectorOperation" href="MailConnector.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.2"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m_wfhKU3Ee6RJsQnrmd0RQ" x="27" y="66"/>
+                    </children>
+                    <styles xmi:type="notation:TitleStyle" xmi:id="_JwmlFqU0Ee6RJsQnrmd0RQ" showTitle="true"/>
+                  </children>
+                  <styles xmi:type="notation:DescriptionStyle" xmi:id="_JwmlEaU0Ee6RJsQnrmd0RQ"/>
+                  <styles xmi:type="notation:FontStyle" xmi:id="_JwmlEqU0Ee6RJsQnrmd0RQ" fontName="Segoe UI"/>
+                  <styles xmi:type="notation:LineStyle" xmi:id="_JwmlE6U0Ee6RJsQnrmd0RQ"/>
+                  <element xmi:type="esb:MediatorFlow" href="MailConnector.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JwmlFKU0Ee6RJsQnrmd0RQ"/>
+                </children>
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="_JwkI0aU0Ee6RJsQnrmd0RQ"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="_JwkI0qU0Ee6RJsQnrmd0RQ" fontName="Segoe UI"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="_JwkI06U0Ee6RJsQnrmd0RQ"/>
+                <element xmi:type="esb:ProxyServiceSequenceAndEndpointContainer" href="MailConnector.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JwkI1KU0Ee6RJsQnrmd0RQ"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_JwkI1aU0Ee6RJsQnrmd0RQ" type="3488">
+                <children xmi:type="notation:Node" xmi:id="_JwrdkKU0Ee6RJsQnrmd0RQ" type="3530">
+                  <children xmi:type="notation:DecorationNode" xmi:id="_JwrdlaU0Ee6RJsQnrmd0RQ" type="7019">
+                    <children xmi:type="notation:Node" xmi:id="_ObiDIKU0Ee6RJsQnrmd0RQ" type="3503">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_ObiDJaU0Ee6RJsQnrmd0RQ" type="5132"/>
+                      <children xmi:type="notation:Node" xmi:id="_Ob9g8KU0Ee6RJsQnrmd0RQ" type="3049">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_Ob9g8aU0Ee6RJsQnrmd0RQ"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_Ob9g8qU0Ee6RJsQnrmd0RQ" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_Ob9g86U0Ee6RJsQnrmd0RQ"/>
+                        <element xmi:type="esb:SequenceInputConnector" href="MailConnector.esb#//@server/@children.0/@resources.0/@container/@faultContainer/@mediatorFlow/@children.0/@inputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ob9g9KU0Ee6RJsQnrmd0RQ"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_OcXJkKU0Ee6RJsQnrmd0RQ" type="3050">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_OcXJkaU0Ee6RJsQnrmd0RQ"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_OcXJkqU0Ee6RJsQnrmd0RQ" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_OcXJk6U0Ee6RJsQnrmd0RQ"/>
+                        <element xmi:type="esb:SequenceOutputConnector" href="MailConnector.esb#//@server/@children.0/@resources.0/@container/@faultContainer/@mediatorFlow/@children.0/@outputConnector.0"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OcXJlKU0Ee6RJsQnrmd0RQ"/>
+                      </children>
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="_ObiDIaU0Ee6RJsQnrmd0RQ"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="_ObiDIqU0Ee6RJsQnrmd0RQ" fontName="Segoe UI"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="_ObiDI6U0Ee6RJsQnrmd0RQ"/>
+                      <element xmi:type="esb:Sequence" href="MailConnector.esb#//@server/@children.0/@resources.0/@container/@faultContainer/@mediatorFlow/@children.0"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ObiDJKU0Ee6RJsQnrmd0RQ" x="36" y="21"/>
+                    </children>
+                  </children>
+                  <styles xmi:type="notation:DescriptionStyle" xmi:id="_JwrdkaU0Ee6RJsQnrmd0RQ"/>
+                  <styles xmi:type="notation:FontStyle" xmi:id="_JwrdkqU0Ee6RJsQnrmd0RQ" fontName="Segoe UI"/>
+                  <styles xmi:type="notation:LineStyle" xmi:id="_Jwrdk6U0Ee6RJsQnrmd0RQ"/>
+                  <element xmi:type="esb:MediatorFlow" href="MailConnector.esb#//@server/@children.0/@resources.0/@container/@faultContainer/@mediatorFlow"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JwrdlKU0Ee6RJsQnrmd0RQ"/>
+                </children>
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="_JwkI1qU0Ee6RJsQnrmd0RQ"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="_JwkI16U0Ee6RJsQnrmd0RQ" fontName="Segoe UI"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="_JwkI2KU0Ee6RJsQnrmd0RQ"/>
+                <element xmi:type="esb:ProxyServiceFaultContainer" href="MailConnector.esb#//@server/@children.0/@resources.0/@container/@faultContainer"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JwkI2aU0Ee6RJsQnrmd0RQ"/>
+              </children>
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_JwdbJqU0Ee6RJsQnrmd0RQ"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_JwdbJ6U0Ee6RJsQnrmd0RQ" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_JwdbKKU0Ee6RJsQnrmd0RQ"/>
+              <element xmi:type="esb:ProxyServiceContainer" href="MailConnector.esb#//@server/@children.0/@resources.0/@container"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JwdbKaU0Ee6RJsQnrmd0RQ"/>
+            </children>
+            <styles xmi:type="notation:DescriptionStyle" xmi:id="_JwX7kaU0Ee6RJsQnrmd0RQ"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_JwX7kqU0Ee6RJsQnrmd0RQ" fontName="Segoe UI"/>
+            <styles xmi:type="notation:LineStyle" xmi:id="_JwX7k6U0Ee6RJsQnrmd0RQ"/>
+            <element xmi:type="esb:APIResource" href="MailConnector.esb#//@server/@children.0/@resources.0"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JwX7lKU0Ee6RJsQnrmd0RQ" width="300" height="400"/>
+          </children>
+        </children>
+        <element xmi:type="esb:SynapseAPI" href="MailConnector.esb#//@server/@children.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JwJSEaU0Ee6RJsQnrmd0RQ" width="640" height="500"/>
+      </children>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_Jfg1EaU0Ee6RJsQnrmd0RQ"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_Jfg1EqU0Ee6RJsQnrmd0RQ" fontName="Segoe UI"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_Jfg1E6U0Ee6RJsQnrmd0RQ"/>
+    <element xmi:type="esb:EsbServer" href="MailConnector.esb#//@server"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Jfg1FKU0Ee6RJsQnrmd0RQ"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_JeycUaU0Ee6RJsQnrmd0RQ"/>
+  <element xmi:type="esb:EsbDiagram" href="MailConnector.esb#/"/>
+  <edges xmi:type="notation:Connector" xmi:id="_JyXfoKU0Ee6RJsQnrmd0RQ" type="4001" source="_JxJ-taU0Ee6RJsQnrmd0RQ" target="_Jx8B0KU0Ee6RJsQnrmd0RQ" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_JyXfoaU0Ee6RJsQnrmd0RQ" fontName="Segoe UI"/>
+    <element xmi:type="esb:EsbLink" href="MailConnector.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.0/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JyXfoqU0Ee6RJsQnrmd0RQ" points="[-11, 0, 69, 0]$[-74, 0, 6, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_OdB38KU0Ee6RJsQnrmd0RQ" type="4001" source="_OcXJkKU0Ee6RJsQnrmd0RQ" target="_JwdbIKU0Ee6RJsQnrmd0RQ" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_OdB38aU0Ee6RJsQnrmd0RQ" fontName="Segoe UI"/>
+    <element xmi:type="esb:EsbLink" href="MailConnector.esb#//@server/@children.0/@resources.0/@container/@faultContainer/@mediatorFlow/@children.0/@outputConnector.0/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_OdB38qU0Ee6RJsQnrmd0RQ" points="[-6, 0, 47, -6]$[-47, 5, 6, -1]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_nAnbIKU3Ee6RJsQnrmd0RQ" type="4001" source="_JwcNBaU0Ee6RJsQnrmd0RQ" target="_m_0J4KU3Ee6RJsQnrmd0RQ" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_nAnbIaU3Ee6RJsQnrmd0RQ" fontName="Segoe UI"/>
+    <element xmi:type="esb:EsbLink" href="MailConnector.esb#//@server/@children.0/@resources.0/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_nAnbIqU3Ee6RJsQnrmd0RQ" points="[6, -1, -32, 5]$[32, -6, -6, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_nAs6sKU3Ee6RJsQnrmd0RQ" type="4001" source="_m_0J5aU3Ee6RJsQnrmd0RQ" target="_JxJ-sKU0Ee6RJsQnrmd0RQ" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_nAs6saU3Ee6RJsQnrmd0RQ" fontName="Segoe UI"/>
+    <element xmi:type="esb:EsbLink" href="MailConnector.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.2/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_nAs6sqU3Ee6RJsQnrmd0RQ" points="[-11, 8, 51, 0]$[-56, 7, 6, -1]"/>
+  </edges>
+</notation:Diagram>

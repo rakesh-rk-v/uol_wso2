@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/apiDataTest" name="API_Data_Test" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <call>
+                <endpoint>
+                    <http method="get" uri-template="http://172.16.110.118:8285/sample_test">
+                        <suspendOnFailure>
+                            <initialDuration>-1</initialDuration>
+                            <progressionFactor>-1</progressionFactor>
+                            <maximumDuration>0</maximumDuration>
+                        </suspendOnFailure>
+                        <markForSuspension>
+                            <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                        </markForSuspension>
+                    </http>
+                </endpoint>
+            </call>
+            <log level="custom">
+                <property expression="$ctx:REST_URL_PREFIX" name="REST_URL_PREFIX"/>
+                <property expression="$ctx:SYNAPSE_REST_API_VERSION" name="SYNAPSE_REST_API_VERSION"/>
+                <property expression="$ctx:REST_METHOD" name="REST_METHOD"/>
+                <property expression="$ctx:REST_SUB_REQUEST_PATH" name="REST_SUB_REQUEST_PATH"/>
+                <property expression="$ctx:REST_FULL_REQUEST_PATH" name="REST_FULL_REQUEST_PATH"/>
+                <property expression="$ctx:uri.var.symbol" name="uri.var.symbol"/>
+                <property expression="$ctx:TRANSPORT_IN_NAME" name="TRANSPORT_IN_NAME"/>
+                <property expression="$ctx:SYNAPSE_RESOURCE" name="SYNAPSE_RESOURCE"/>
+                <property expression="$axis2:HTTP_SC" name="API_RESPONSE_HTTP_SC"/>
+                <property expression="get-property('transport', 'Content-Type')" name="API_RESPONSE_CONTENT_TYPE"/>
+                <property expression="get-property('transport', 'HTTP_METHOD')" name="TRANSPORT_HTTP_METHOD"/>
+                <property expression="get-property('transport', 'CONTENT_TYPE')" name="TRANSPORT_CONTENT_TYPE"/>
+                <property expression="get-property('transport', 'HEADER_NAME')" name="TRANSPORT_HEADER_NAME"/>
+                <!-- Access details from the API response -->
+                <!-- Capture details from the transport level -->
+                <!-- Add more transport level properties as needed -->
+            </log>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

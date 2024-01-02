@@ -14,36 +14,36 @@
   <name>TestCompositeExporter</name>
   <description>TestCompositeExporter</description>
   <properties>
-    <com.example.metadata_._FileTest_swagger>capp/EnterpriseServiceBus</com.example.metadata_._FileTest_swagger>
-    <com.example.resource_._FIleName>capp/EnterpriseIntegrator</com.example.resource_._FIleName>
-    <com.example.metadata_._FileTest_metadata>capp/EnterpriseServiceBus</com.example.metadata_._FileTest_metadata>
+    <com.example.sequence_._API_Details_SEQ>capp/EnterpriseServiceBus</com.example.sequence_._API_Details_SEQ>
+    <com.example.api_._API_Data_Test>capp/EnterpriseServiceBus</com.example.api_._API_Data_Test>
+    <com.example.metadata_._API_Data_Test_metadata>capp/EnterpriseServiceBus</com.example.metadata_._API_Data_Test_metadata>
     <artifact.types>jaggery/app=zip,synapse/priority-executor=xml,synapse/inbound-endpoint=xml,service/rule=aar,synapse/message-store=xml,event/stream=json,service/meta=xml,datasource/datasource=xml,synapse/proxy-service=xml,bpel/workflow=zip,synapse/sequence=xml,synapse/endpointTemplate=xml,carbon/application=car,wso2/gadget=dar,synapse/api=xml,synapse/event-source=xml,synapse/message-processors=xml,event/receiver=xml,lib/dataservice/validator=jar,synapse/template=xml,synapse/endpoint=xml,lib/carbon/ui=jar,lib/synapse/mediator=jar,synapse/metadata=yaml,event/publisher=xml,synapse/local-entry=xml,synapse/task=xml,webapp/jaxws=war,registry/resource=zip,synapse/configuration=xml,service/axis2=aar,synapse/lib=zip,synapse/sequenceTemplate=xml,event/execution-plan=siddhiql,service/dataservice=dbs,web/application=war,lib/library/bundle=jar</artifact.types>
-    <com.example.api_._FileTest>capp/EnterpriseServiceBus</com.example.api_._FileTest>
+    <com.example.metadata_._API_Data_Test_swagger>capp/EnterpriseServiceBus</com.example.metadata_._API_Data_Test_swagger>
   </properties>
   <dependencies>
     <dependency>
+      <groupId>com.example.sequence</groupId>
+      <artifactId>API_Details_SEQ</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
       <groupId>com.example.metadata</groupId>
-      <artifactId>FileTest_metadata</artifactId>
+      <artifactId>API_Data_Test_metadata</artifactId>
       <version>1.0.0</version>
       <type>yaml</type>
     </dependency>
     <dependency>
       <groupId>com.example.metadata</groupId>
-      <artifactId>FileTest_swagger</artifactId>
+      <artifactId>API_Data_Test_swagger</artifactId>
       <version>1.0.0</version>
       <type>yaml</type>
     </dependency>
     <dependency>
       <groupId>com.example.api</groupId>
-      <artifactId>FileTest</artifactId>
+      <artifactId>API_Data_Test</artifactId>
       <version>1.0.0</version>
       <type>xml</type>
-    </dependency>
-    <dependency>
-      <groupId>com.example.resource</groupId>
-      <artifactId>FIleName</artifactId>
-      <version>1.0.0</version>
-      <type>zip</type>
     </dependency>
   </dependencies>
   <repositories>

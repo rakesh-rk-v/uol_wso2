@@ -8,4 +8,55 @@
     <artifact name="FileTest_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
         <file>src/main/resources/metadata/FileTest_metadata.yaml</file>
     </artifact>
+    <artifact name="MailTest" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/MailTest.xml</file>
+    </artifact>
+    <artifact name="MailTest_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/MailTest_swagger.yaml</file>
+    </artifact>
+    <artifact name="MailTest_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/MailTest_metadata.yaml</file>
+    </artifact>
+    <artifact name="fault" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/fault.xml</file>
+    </artifact>
+    <artifact name="MailConnector" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/MailConnector.xml</file>
+    </artifact>
+    <artifact name="MailConnector_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/MailConnector_swagger.yaml</file>
+    </artifact>
+    <artifact name="MailConnector_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/MailConnector_metadata.yaml</file>
+    </artifact>
+    <artifact name="JSONManipulation" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/JSONManipulation.xml</file>
+    </artifact>
+    <artifact name="JSONManipulation_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/JSONManipulation_swagger.yaml</file>
+    </artifact>
+    <artifact name="JSONManipulation_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/JSONManipulation_metadata.yaml</file>
+    </artifact>
+    <artifact name="EP" groupId="com.example.template" version="1.0.0" type="synapse/endpointTemplate" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/templates/EP.xml</file>
+    </artifact>
+    <artifact name="API_Details_SEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/API_Details_SEQ.xml</file>
+    </artifact>
+    <artifact name="API_Data_Test" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/API_Data_Test.xml</file>
+    </artifact>
+    <artifact name="API_Data_Test_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/API_Data_Test_swagger.yaml</file>
+    </artifact>
+    <artifact name="API_Data_Test_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/API_Data_Test_metadata.yaml</file>
+    </artifact>
+    <artifact name="Sample_Proxy" groupId="com.example.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/Sample_Proxy.xml</file>
+    </artifact>
+    <artifact name="Sample_Proxy_proxy_metadata" groupId="com.example.proxy-service.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Sample_Proxy_proxy_metadata.yaml</file>
+    </artifact>
 </artifacts>

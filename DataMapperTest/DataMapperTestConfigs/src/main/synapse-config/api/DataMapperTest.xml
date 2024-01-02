@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/dataMapperTest" name="DataMapperTest" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <datamapper config="gov:datamapper/CustomerRead.dmc" inputSchema="gov:datamapper/CustomerRead_inputSchema.json" inputType="JSON" outputSchema="gov:datamapper/CustomerRead_outputSchema.json" outputType="JSON" xsltStyleSheet="gov:datamapper/CustomerRead_xsltStyleSheet.xml"/>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

@@ -1,0 +1,33 @@
+{
+  "$schema" : "http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#",
+  "inputType" : "JSON",
+  "id" : "http://wso2jsonschema.org",
+  "title" : "root",
+  "type" : "object",
+  "properties" : {
+    "csId" : {
+      "id" : "http://wso2jsonschema.org/csId",
+      "type" : "number"
+    },
+    "csCode" : {
+      "id" : "http://wso2jsonschema.org/csCode",
+      "type" : "number"
+    },
+    "csStatus" : {
+      "id" : "http://wso2jsonschema.org/csStatus",
+      "type" : "string"
+    },
+    "csStatusDate" : {
+      "id" : "http://wso2jsonschema.org/csStatusDate",
+      "type" : "string"
+    },
+    "csLevelCode" : {
+      "id" : "http://wso2jsonschema.org/csLevelCode",
+      "type" : "number"
+    },
+    "paymentResp" : {
+      "id" : "http://wso2jsonschema.org/paymentResp",
+      "type" : "boolean"
+    }
+  }
+}
