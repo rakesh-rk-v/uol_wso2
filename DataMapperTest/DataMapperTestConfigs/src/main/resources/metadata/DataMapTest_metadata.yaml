@@ -1,0 +1,11 @@
+---
+key: "DataMapTest-1.0.0"
+name : "DataMapTest"
+displayName : "DataMapTest"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/dataMapTest"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

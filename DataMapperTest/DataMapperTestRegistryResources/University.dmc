@@ -1,0 +1,40 @@
+map_S_root_S_root = function(){ 
+var outputroot={};
+
+var count_i_departments_03feb592_4d7a_40d9_bd01_74d8343c1b37 = 0;
+outputroot =  [];
+outputroot[0] =  {};
+outputroot[0].university = inputroot.university;
+outputroot[0].location =  {};
+outputroot[0].location.city = inputroot.location.city;
+outputroot[0].location.state = inputroot.location.state;
+outputroot[0].location.country = inputroot.location.country;
+outputroot[0].departments =  [];
+
+for(i_departments_03feb592_4d7a_40d9_bd01_74d8343c1b37 in inputroot.departments){
+outputroot[0].departments[count_i_departments_03feb592_4d7a_40d9_bd01_74d8343c1b37] =  {};
+outputroot[0].departments[count_i_departments_03feb592_4d7a_40d9_bd01_74d8343c1b37].name = inputroot.departments[i_departments_03feb592_4d7a_40d9_bd01_74d8343c1b37].name;
+outputroot[0].departments[count_i_departments_03feb592_4d7a_40d9_bd01_74d8343c1b37].head =  {};
+outputroot[0].departments[count_i_departments_03feb592_4d7a_40d9_bd01_74d8343c1b37].head.name = inputroot.departments[i_departments_03feb592_4d7a_40d9_bd01_74d8343c1b37].head.name;
+outputroot[0].departments[count_i_departments_03feb592_4d7a_40d9_bd01_74d8343c1b37].head.specialization = inputroot.departments[i_departments_03feb592_4d7a_40d9_bd01_74d8343c1b37].head.specialization;
+
+count_i_departments_03feb592_4d7a_40d9_bd01_74d8343c1b37++;
+}
+return outputroot;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

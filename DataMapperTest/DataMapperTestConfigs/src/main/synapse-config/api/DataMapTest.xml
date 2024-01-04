@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/dataMapTest" name="DataMapTest" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <datamapper config="gov:datamapper/SivaResponse_API.dmc" inputSchema="gov:datamapper/SivaResponse_API_inputSchema.json" inputType="JSON" outputSchema="gov:datamapper/SivaResponse_API_outputSchema.json" outputType="JSON" xsltStyleSheet="gov:datamapper/SivaResponse_API_xsltStyleSheet.xml"/>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

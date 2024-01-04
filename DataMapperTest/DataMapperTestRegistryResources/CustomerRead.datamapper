@@ -3,10 +3,12 @@
   <input>
     <treeNode name="root" schemaDataType="OBJECT" level="1">
       <node name="csId" schemaDataType="NUMBER" level="2">
-        <properties key="type" value="number"/>
-        <properties key="id" value="http://wso2jsonschema.org/csId"/>
         <properties key="nullable" value="false"/>
+        <properties key="id" value="http://wso2jsonschema.org/csId"/>
+        <properties key="type" value="number"/>
         <outNode>
+          <outgoingLink/>
+          <outgoingLink/>
           <outgoingLink inNode="//@output/@treeNode.0/@node.0/@node.0/@inNode"/>
         </outNode>
         <inNode/>
@@ -72,7 +74,7 @@
           <properties key="id" value="http://wso2jsonschema.org/Customer/id"/>
           <properties key="nullable" value="false"/>
           <outNode/>
-          <inNode incomingLink="//@input/@treeNode.0/@node.0/@outNode/@outgoingLink.0"/>
+          <inNode incomingLink="//@input/@treeNode.0/@node.0/@outNode/@outgoingLink.2"/>
         </node>
         <node name="Code" schemaDataType="NUMBER" level="3">
           <properties key="type" value="number"/>

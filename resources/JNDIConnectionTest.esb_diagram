@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:esb="http:///org/wso2/integrationstudio/eclipse/gmf/esb" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmi:id="_CMKkMKrPEe653tvuYJVuHA" type="Esb" name="JNDIConnectionTest" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_CM5kAKrPEe653tvuYJVuHA" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_CM5kBarPEe653tvuYJVuHA" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_C0BOYKrPEe653tvuYJVuHA" type="3668" fontName="Segoe UI">
+        <children xmi:type="notation:BasicCompartment" xmi:id="_C0B1cKrPEe653tvuYJVuHA" type="7044">
+          <children xmi:type="notation:Node" xmi:id="_C0Gt8KrPEe653tvuYJVuHA" type="3669">
+            <children xmi:type="notation:Node" xmi:id="_C0JKMKrPEe653tvuYJVuHA" type="3670">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_C0JKMarPEe653tvuYJVuHA"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_C0JKMqrPEe653tvuYJVuHA" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_C0JKM6rPEe653tvuYJVuHA"/>
+              <element xmi:type="esb:APIResourceInputConnector" href="JNDIConnectionTest.esb#//@server/@children.0/@resources.0/@inputConnector"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_C0JKNKrPEe653tvuYJVuHA" x="86" y="-11"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_C0JKNarPEe653tvuYJVuHA" type="3671">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_C0JKNqrPEe653tvuYJVuHA"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_C0JKN6rPEe653tvuYJVuHA" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_C0JKOKrPEe653tvuYJVuHA"/>
+              <element xmi:type="esb:APIResourceOutputConnector" href="JNDIConnectionTest.esb#//@server/@children.0/@resources.0/@outputConnector"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_C0JKOarPEe653tvuYJVuHA" x="86" y="-23"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_C0JKOqrPEe653tvuYJVuHA" type="3730">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_C0JKO6rPEe653tvuYJVuHA"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_C0JKPKrPEe653tvuYJVuHA" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_C0JKParPEe653tvuYJVuHA"/>
+              <element xmi:type="esb:APIResourceOutSequenceOutputConnector" href="JNDIConnectionTest.esb#//@server/@children.0/@resources.0/@outSequenceOutputConnector"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_C0JKPqrPEe653tvuYJVuHA" x="110" y="-11"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_C0JKP6rPEe653tvuYJVuHA" type="3672">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_C0JKQKrPEe653tvuYJVuHA"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_C0JKQarPEe653tvuYJVuHA" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_C0JKQqrPEe653tvuYJVuHA"/>
+              <element xmi:type="esb:APIResourceFaultInputConnector" href="JNDIConnectionTest.esb#//@server/@children.0/@resources.0/@faultInputConnector"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_C0JKQ6rPEe653tvuYJVuHA" x="86" y="7"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_C0JxQKrPEe653tvuYJVuHA" type="3673">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_C0JxQarPEe653tvuYJVuHA"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_C0JxQqrPEe653tvuYJVuHA" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_C0JxQ6rPEe653tvuYJVuHA"/>
+              <element xmi:type="esb:ProxyServiceContainer" href="JNDIConnectionTest.esb#//@server/@children.0/@resources.0/@container"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_C0JxRKrPEe653tvuYJVuHA"/>
+            </children>
+            <styles xmi:type="notation:DescriptionStyle" xmi:id="_C0Gt8arPEe653tvuYJVuHA"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_C0Gt8qrPEe653tvuYJVuHA" fontName="Segoe UI"/>
+            <styles xmi:type="notation:LineStyle" xmi:id="_C0Gt86rPEe653tvuYJVuHA"/>
+            <element xmi:type="esb:APIResource" href="JNDIConnectionTest.esb#//@server/@children.0/@resources.0"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_C0Gt9KrPEe653tvuYJVuHA" width="300" height="400"/>
+          </children>
+        </children>
+        <element xmi:type="esb:SynapseAPI" href="JNDIConnectionTest.esb#//@server/@children.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_C0BOYarPEe653tvuYJVuHA" width="640" height="500"/>
+      </children>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_CM5kAarPEe653tvuYJVuHA"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_CM5kAqrPEe653tvuYJVuHA" fontName="Segoe UI"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_CM5kA6rPEe653tvuYJVuHA"/>
+    <element xmi:type="esb:EsbServer" href="JNDIConnectionTest.esb#//@server"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CM5kBKrPEe653tvuYJVuHA"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_CMKkMarPEe653tvuYJVuHA"/>
+  <element xmi:type="esb:EsbDiagram" href="JNDIConnectionTest.esb#/"/>
+  <edges xmi:type="notation:Connector" xmi:id="_C1DwMKrPEe653tvuYJVuHA" type="4001" source="_C0JKNarPEe653tvuYJVuHA" target="_C01GsKrPEe653tvuYJVuHA" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_C1DwMarPEe653tvuYJVuHA" fontName="Segoe UI"/>
+    <element xmi:type="esb:EsbLink" href="JNDIConnectionTest.esb#//@server/@children.0/@resources.0/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_C1DwMqrPEe653tvuYJVuHA" points="[6, 5, -5, 0]$[5, 0, -6, -5]"/>
+  </edges>
+</notation:Diagram>

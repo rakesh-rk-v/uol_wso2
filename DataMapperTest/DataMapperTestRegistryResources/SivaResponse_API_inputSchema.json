@@ -1,0 +1,131 @@
+{
+  "$schema" : "http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#",
+  "inputType" : "JSON",
+  "id" : "http://wso2jsonschema.org",
+  "title" : "root",
+  "type" : "object",
+  "properties" : {
+    "Response" : {
+      "id" : "http://wso2jsonschema.org/Response",
+      "type" : "array",
+      "items" : [ {
+        "id" : "http://wso2jsonschema.org/Response/0",
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "id" : "http://wso2jsonschema.org/Response/0/id",
+            "type" : "string"
+          },
+          "href" : {
+            "id" : "http://wso2jsonschema.org/Response/0/href",
+            "type" : "string"
+          },
+          "name" : {
+            "id" : "http://wso2jsonschema.org/Response/0/name",
+            "type" : "string"
+          },
+          "status" : {
+            "id" : "http://wso2jsonschema.org/Response/0/status",
+            "type" : "string"
+          },
+          "statusReason" : {
+            "id" : "http://wso2jsonschema.org/Response/0/statusReason",
+            "type" : "string"
+          },
+          "account" : {
+            "id" : "http://wso2jsonschema.org/Response/0/account",
+            "type" : "array",
+            "items" : [ {
+              "id" : "http://wso2jsonschema.org/Response/0/account/0",
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "id" : "http://wso2jsonschema.org/Response/0/account/0/id",
+                  "type" : "string"
+                },
+                "href" : {
+                  "id" : "http://wso2jsonschema.org/Response/0/account/0/href",
+                  "type" : "string"
+                },
+                "description" : {
+                  "id" : "http://wso2jsonschema.org/Response/0/account/0/description",
+                  "type" : "string"
+                },
+                "name" : {
+                  "id" : "http://wso2jsonschema.org/Response/0/account/0/name",
+                  "type" : "string"
+                }
+              }
+            } ]
+          },
+          "contactMedium" : {
+            "id" : "http://wso2jsonschema.org/Response/0/contactMedium",
+            "type" : "array",
+            "items" : [ {
+              "id" : "http://wso2jsonschema.org/Response/0/contactMedium/0",
+              "type" : "object",
+              "properties" : {
+                "characteristic" : {
+                  "id" : "http://wso2jsonschema.org/Response/0/contactMedium/0/characteristic",
+                  "type" : "object",
+                  "properties" : {
+                    "city" : {
+                      "id" : "http://wso2jsonschema.org/Response/0/contactMedium/0/characteristic/city",
+                      "type" : "string"
+                    },
+                    "contactType" : {
+                      "id" : "http://wso2jsonschema.org/Response/0/contactMedium/0/characteristic/contactType",
+                      "type" : "string"
+                    },
+                    "country" : {
+                      "id" : "http://wso2jsonschema.org/Response/0/contactMedium/0/characteristic/country",
+                      "type" : "string"
+                    },
+                    "emailAddress" : {
+                      "id" : "http://wso2jsonschema.org/Response/0/contactMedium/0/characteristic/emailAddress",
+                      "type" : "string"
+                    },
+                    "phoneNumber" : {
+                      "id" : "http://wso2jsonschema.org/Response/0/contactMedium/0/characteristic/phoneNumber",
+                      "type" : "string"
+                    },
+                    "postCode" : {
+                      "id" : "http://wso2jsonschema.org/Response/0/contactMedium/0/characteristic/postCode",
+                      "type" : "string"
+                    },
+                    "street1" : {
+                      "id" : "http://wso2jsonschema.org/Response/0/contactMedium/0/characteristic/street1",
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            } ]
+          },
+          "assignments" : {
+            "id" : "http://wso2jsonschema.org/Response/0/assignments",
+            "type" : "array",
+            "items" : [ {
+              "id" : "http://wso2jsonschema.org/Response/0/assignments/0",
+              "type" : "object",
+              "properties" : {
+                "Id" : {
+                  "id" : "http://wso2jsonschema.org/Response/0/assignments/0/Id",
+                  "type" : "number"
+                },
+                "Status" : {
+                  "id" : "http://wso2jsonschema.org/Response/0/assignments/0/Status",
+                  "type" : "number"
+                },
+                "dateFrom" : {
+                  "id" : "http://wso2jsonschema.org/Response/0/assignments/0/dateFrom",
+                  "type" : "string"
+                }
+              }
+            } ]
+          }
+        }
+      } ]
+    }
+  }
+}
