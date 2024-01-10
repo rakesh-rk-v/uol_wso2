@@ -1,0 +1,11 @@
+---
+key: "MessageProcessorRMQ-1.0.0"
+name : "MessageProcessorRMQ"
+displayName : "MessageProcessorRMQ"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/messageProcessorRMQ"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

@@ -1,0 +1,39 @@
+{
+  "$schema" : "http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#",
+  "inputType" : "JSON",
+  "id" : "http://wso2jsonschema.org",
+  "title" : "root",
+  "type" : "object",
+  "properties" : {
+    "RequestData" : {
+      "id" : "http://wso2jsonschema.org/RequestData",
+      "type" : "array",
+      "items" : [ {
+        "id" : "http://wso2jsonschema.org/RequestData/0",
+        "type" : "object",
+        "properties" : {
+          "CustomerRead" : {
+            "id" : "http://wso2jsonschema.org/RequestData/0/CustomerRead",
+            "type" : "object",
+            "properties" : {
+              "csId" : {
+                "id" : "http://wso2jsonschema.org/RequestData/0/CustomerRead/csId",
+                "type" : "string"
+              }
+            }
+          },
+          "ContractRead" : {
+            "id" : "http://wso2jsonschema.org/RequestData/0/ContractRead",
+            "type" : "object",
+            "properties" : {
+              "co_id" : {
+                "id" : "http://wso2jsonschema.org/RequestData/0/ContractRead/co_id",
+                "type" : "string"
+              }
+            }
+          }
+        }
+      } ]
+    }
+  }
+}

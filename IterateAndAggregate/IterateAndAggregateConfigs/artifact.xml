@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="IterateAndAggregate" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/IterateAndAggregate.xml</file>
+    </artifact>
+    <artifact name="IterateAndAggregate_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/IterateAndAggregate_swagger.yaml</file>
+    </artifact>
+    <artifact name="IterateAndAggregate_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/IterateAndAggregate_metadata.yaml</file>
+    </artifact>
+    <artifact name="BIN_EP" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/BIN_EP.xml</file>
+    </artifact>
+    <artifact name="RabbbitMessageStore" groupId="com.example.message-store" version="1.0.0" type="synapse/message-store" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/message-stores/RabbbitMessageStore.xml</file>
+    </artifact>
+    <artifact name="simpleMessageProcessor" groupId="com.example.message-processors" version="1.0.0" type="synapse/message-processors" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/message-processors/simpleMessageProcessor.xml</file>
+    </artifact>
+    <artifact name="MessageProcessorRMQ" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/MessageProcessorRMQ.xml</file>
+    </artifact>
+    <artifact name="MessageProcessorRMQ_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/MessageProcessorRMQ_swagger.yaml</file>
+    </artifact>
+    <artifact name="MessageProcessorRMQ_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/MessageProcessorRMQ_metadata.yaml</file>
+    </artifact>
+</artifacts>

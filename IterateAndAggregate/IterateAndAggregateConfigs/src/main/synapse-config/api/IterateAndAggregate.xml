@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/iterateAndAggregate" name="IterateAndAggregate" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <iterate continueParent="true" expression="json-eval($.Arr)" id="JsonItr" sequential="true">
+                <target>
+                    <sequence>
+                        <payloadFactory media-type="json">
+                            <format>{"Response" :"$1" }
+                            </format>
+                            <args>
+                                <arg evaluator="json" expression="$.Input"/>
+                            </args>
+                        </payloadFactory>
+                        <property expression="json-eval($)" name="response" scope="default" type="STRING"/>
+                        <log level="custom">
+                            <property expression="json-eval($)" name="Inside Itr"/>
+                            <property expression="$ctx:response" name="response"/>
+                        </log>
+                    </sequence>
+                </target>
+            </iterate>
+            <aggregate id="JsonItr">
+                <completeCondition>
+                    <messageCount max="10" min="2"/>
+                </completeCondition>
+                <onComplete aggregateElementType="root" expression="get-property('response')">
+                    <log level="full"/>
+                    <payloadFactory media-type="xml">
+                        <format>
+                            <ns:responses xmlns:ns="http://sample.com">
+          $1
+        </ns:responses>
+                        </format>
+                        <args>
+                            <arg evaluator="xml" expression="get-property('response')"/>
+                        </args>
+                    </payloadFactory>
+                </onComplete>
+            </aggregate>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <sequence key="FaultSequence"/>
+        </faultSequence>
+    </resource>
+</api>

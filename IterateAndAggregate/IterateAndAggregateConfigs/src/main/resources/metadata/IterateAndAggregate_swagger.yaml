@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: IterateAndAggregate
+  description: API Definition of IterateAndAggregate
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/iterateAndAggregate
+paths:
+  /:
+    post:
+      responses:
+        default:
+          description: Default response

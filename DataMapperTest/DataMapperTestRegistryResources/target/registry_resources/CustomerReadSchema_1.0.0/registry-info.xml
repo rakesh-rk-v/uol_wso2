@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><resources>
+    <item>
+        <file>CustomerReadSchema.json</file>
+        <path>/_system/config/customerReadSchema</path>
+        <mediaType>application/json</mediaType>
+        <properties/>
+    </item>
+</resources>

@@ -19,13 +19,17 @@
     <com.example.metadata_._DataMapTest_swagger>capp/EnterpriseServiceBus</com.example.metadata_._DataMapTest_swagger>
     <com.example.resource_._University>capp/EnterpriseServiceBus</com.example.resource_._University>
     <com.example.resource_._University_outputSchema>capp/EnterpriseServiceBus</com.example.resource_._University_outputSchema>
+    <com.example.metadata_._DataMapperTest_swagger>capp/EnterpriseServiceBus</com.example.metadata_._DataMapperTest_swagger>
     <com.example.resource_._SivaResponse_API>capp/EnterpriseServiceBus</com.example.resource_._SivaResponse_API>
     <com.example.metadata_._DataMapTest_metadata>capp/EnterpriseServiceBus</com.example.metadata_._DataMapTest_metadata>
     <com.example.resource_._SivaResponse_API_xsltStyleSheet>capp/EnterpriseServiceBus</com.example.resource_._SivaResponse_API_xsltStyleSheet>
     <com.example.api_._DataMapTest>capp/EnterpriseServiceBus</com.example.api_._DataMapTest>
     <com.example.resource_._CustomerRead_inputSchema>capp/EnterpriseServiceBus</com.example.resource_._CustomerRead_inputSchema>
+    <com.example.resource_._CustomerReadSchema>capp/EnterpriseIntegrator</com.example.resource_._CustomerReadSchema>
     <com.example.resource_._CustomerRead_xsltStyleSheet>capp/EnterpriseServiceBus</com.example.resource_._CustomerRead_xsltStyleSheet>
+    <com.example.api_._DataMapperTest>capp/EnterpriseServiceBus</com.example.api_._DataMapperTest>
     <com.example.resource_._CustomerRead>capp/EnterpriseServiceBus</com.example.resource_._CustomerRead>
+    <com.example.metadata_._DataMapperTest_metadata>capp/EnterpriseServiceBus</com.example.metadata_._DataMapperTest_metadata>
     <com.example.resource_._SivaResponse_API_outputSchema>capp/EnterpriseServiceBus</com.example.resource_._SivaResponse_API_outputSchema>
     <com.example.resource_._University_inputSchema>capp/EnterpriseServiceBus</com.example.resource_._University_inputSchema>
     <com.example.resource_._CustomerRead_outputSchema>capp/EnterpriseServiceBus</com.example.resource_._CustomerRead_outputSchema>
@@ -51,8 +55,32 @@
       <type>xml</type>
     </dependency>
     <dependency>
+      <groupId>com.example.metadata</groupId>
+      <artifactId>DataMapperTest_metadata</artifactId>
+      <version>1.0.0</version>
+      <type>yaml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.metadata</groupId>
+      <artifactId>DataMapperTest_swagger</artifactId>
+      <version>1.0.0</version>
+      <type>yaml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.api</groupId>
+      <artifactId>DataMapperTest</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
       <groupId>com.example.resource</groupId>
       <artifactId>CustomerRead</artifactId>
+      <version>1.0.0</version>
+      <type>zip</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.resource</groupId>
+      <artifactId>CustomerReadSchema</artifactId>
       <version>1.0.0</version>
       <type>zip</type>
     </dependency>

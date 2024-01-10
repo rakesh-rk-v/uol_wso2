@@ -1,10 +1,10 @@
 openapi: 3.0.1
 info:
-  title: JNDIConnectionTest
+  title: DataMapMandatory
   description: API Definition of DataMapTest
   version: 1.0.0
 servers:
-- url: http://localhost:8290/jndiConnectionTest
+- url: http://localhost:8290/dataMapMandatory
 paths:
   /:
     get:

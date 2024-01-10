@@ -1,0 +1,20 @@
+map_S_root_S_methodCall = function(){ 
+var outputmethodCall={};
+
+outputmethodCall =  {};
+outputmethodCall.params =  {};
+outputmethodCall.params.value =  {};
+outputmethodCall.params.value.struct =  {};
+outputmethodCall.params.value.struct.member =  [];
+outputmethodCall.params.value.struct.member[0] =  {};
+outputmethodCall.params.value.struct.member[0].name = inputroot.originHostName;
+outputmethodCall.params.value.struct.member[0].value =  {};
+return outputmethodCall;
+};
+
+
+
+
+
+
+

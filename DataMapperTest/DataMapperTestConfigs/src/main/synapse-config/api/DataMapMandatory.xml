@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/dataMapMandatory" name="DataMapMandatory" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <datamapper config="gov:datamapper/Mandatory.dmc" inputSchema="gov:datamapper/Mandatory_inputSchema.json" inputType="XML" outputSchema="gov:datamapper/Mandatory_outputSchema.json" outputType="XML" xsltStyleSheet="gov:datamapper/Mandatory_xsltStyleSheet.xml"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

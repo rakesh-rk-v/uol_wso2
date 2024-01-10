@@ -29,5 +29,6 @@
       "id" : "http://wso2jsonschema.org/paymentResp",
       "type" : "boolean"
     }
-  }
+  },
+  "required" : ["csId"]
 }

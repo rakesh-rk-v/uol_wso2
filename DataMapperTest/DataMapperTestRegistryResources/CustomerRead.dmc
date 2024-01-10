@@ -1,6 +1,10 @@
+
 map_S_root_S_root = function(){ 
 var outputroot={};
-
+ // Check if csId exists in inputroot
+    if (inputroot.csId === undefined || inputroot.csId === null) {
+        throw new Error('csId is a mandatory parameter');
+    }
 outputroot =  {};
 outputroot.Customer =  {};
 outputroot.Customer.id = inputroot.csId;

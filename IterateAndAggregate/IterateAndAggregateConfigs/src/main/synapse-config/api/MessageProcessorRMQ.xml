@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/messageProcessorRMQ" name="MessageProcessorRMQ" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <log description="Welcome " level="custom">
+                <property name="Welcome " value="Log"/>
+            </log>
+            <store messageStore="RabbbitMessageStore"/>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

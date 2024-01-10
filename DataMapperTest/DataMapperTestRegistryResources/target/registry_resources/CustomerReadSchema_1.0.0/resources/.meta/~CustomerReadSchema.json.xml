@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?><resource name="CustomerReadSchema.json" isCollection="false" path="/_system/governance/datamapper/DataMapperTestRegistryResources/target/registry_resources/CustomerReadSchema_1.0.0/resources/CustomerReadSchema.json" registryUrl="https://localhost:9443/registry" status="added">
+    <mediaType>application/json</mediaType>
+</resource>

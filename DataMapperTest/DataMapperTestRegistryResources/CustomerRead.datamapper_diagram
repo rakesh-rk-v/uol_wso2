@@ -93,7 +93,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_imzu4alAEe6x2vlWKozBWA"/>
     </children>
     <element xmi:type="datamapper:Input" href="CustomerRead.datamapper#//@input"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eu8Gcak1Ee6x2vlWKozBWA" x="-15" y="190" width="250" height="140"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eu8Gcak1Ee6x2vlWKozBWA" x="25" y="190" width="250" height="140"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_eu8tgKk1Ee6x2vlWKozBWA" type="2003" fontName="Segoe UI">
     <children xmi:type="notation:Shape" xmi:id="_bXHDcKk_Ee6x2vlWKozBWA" type="3011" fontName="Segoe UI">
@@ -201,7 +201,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bXHDcak_Ee6x2vlWKozBWA"/>
     </children>
     <element xmi:type="datamapper:Output" href="CustomerRead.datamapper#//@output"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eu8tgak1Ee6x2vlWKozBWA" x="835" y="165" width="250" height="160"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eu8tgak1Ee6x2vlWKozBWA" x="475" y="175" width="250" height="160"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_ebeX4ak1Ee6x2vlWKozBWA"/>
   <element xmi:type="datamapper:DataMapperRoot" href="CustomerRead.datamapper#/"/>

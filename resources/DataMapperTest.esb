@@ -4,29 +4,12 @@
     <children xsi:type="esb:SynapseAPI" apiName="DataMapperTest" context="/dataMapperTest">
       <resources allowPost="true">
         <inputConnector/>
-        <outputConnector>
-          <outgoingLink target="//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.0/@inputConnector"/>
-        </outputConnector>
+        <outputConnector/>
         <outSequenceOutputConnector/>
         <faultInputConnector/>
         <container>
           <sequenceAndEndpointContainer>
-            <mediatorFlow>
-              <children xsi:type="esb:DataMapperMediator" inputType="JSON" outputType="JSON">
-                <inputConnector incomingLinks="//@server/@children.0/@resources.0/@outputConnector/@outgoingLink"/>
-                <outputConnector>
-                  <outgoingLink target="//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@inputConnector"/>
-                </outputConnector>
-                <configuration keyValue="gov:datamapper/CustomerRead.dmc" filters="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
-                <InputSchema keyValue="gov:datamapper/CustomerRead_inputSchema.json" filters="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
-                <outputSchema keyValue="gov:datamapper/CustomerRead_outputSchema.json" filters="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
-                <xsltStyleSheet keyValue="gov:datamapper/CustomerRead_xsltStyleSheet.xml" filters="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000100000000078"/>
-              </children>
-              <children xsi:type="esb:RespondMediator">
-                <inputConnector incomingLinks="//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.0/@outputConnector/@outgoingLink"/>
-                <outputConnector/>
-              </children>
-            </mediatorFlow>
+            <mediatorFlow/>
           </sequenceAndEndpointContainer>
           <faultContainer>
             <mediatorFlow/>

@@ -17,4 +17,13 @@
     <artifact name="DataMapTest_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
         <file>src/main/resources/metadata/DataMapTest_metadata.yaml</file>
     </artifact>
+    <artifact name="DataMapMandatory" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/DataMapMandatory.xml</file>
+    </artifact>
+    <artifact name="DataMapMandatory_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/DataMapMandatory_swagger.yaml</file>
+    </artifact>
+    <artifact name="DataMapMandatory_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/DataMapMandatory_metadata.yaml</file>
+    </artifact>
 </artifacts>

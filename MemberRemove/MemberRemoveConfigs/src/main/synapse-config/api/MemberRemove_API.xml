@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/memberRemove" name="MemberRemove_API" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <xslt key="conf:memberRemove/MemberRemoveTransform.xslt" source="$body"/>
+            <log level="full">
+                <property name="Transformed" value="True"/>
+            </log>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

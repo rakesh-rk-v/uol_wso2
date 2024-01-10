@@ -1,0 +1,55 @@
+{
+  "$schema" : "http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#",
+  "outputType" : "XML",
+  "id" : "http://wso2jsonschema.org",
+  "title" : "methodCall",
+  "type" : "object",
+  "properties" : {
+    "methodName" : {
+      "id" : "http://wso2jsonschema.org/methodName",
+      "type" : "string"
+    },
+    "params" : {
+      "id" : "http://wso2jsonschema.org/params",
+      "type" : "object",
+      "properties" : {
+        "value" : {
+          "id" : "http://wso2jsonschema.org/params/value",
+          "type" : "object",
+          "properties" : {
+            "struct" : {
+              "id" : "http://wso2jsonschema.org/params/value/struct",
+              "type" : "object",
+              "properties" : {
+                "member" : {
+                  "id" : "http://wso2jsonschema.org/params/value/struct/member",
+                  "type" : "array",
+                  "items" : [ {
+                    "id" : "http://wso2jsonschema.org/params/value/struct/member/0",
+                    "type" : "object",
+                    "properties" : {
+                      "name" : {
+                        "id" : "http://wso2jsonschema.org/params/value/struct/member/0/name",
+                        "type" : "string"
+                      },
+                      "value" : {
+                        "id" : "http://wso2jsonschema.org/params/value/struct/member/0/value",
+                        "type" : "object",
+                        "properties" : {
+                          "i4" : {
+                            "id" : "http://wso2jsonschema.org/params/value/struct/member/0/value/i4",
+                            "type" : "number"
+                          }
+                        }
+                      }
+                    }
+                  } ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamapper:DataMapperRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:datamapper="http:///org/wso2/developerstudio/eclipse/gmf/datamapper">
+  <input>
+    <treeNode name="root" schemaDataType="OBJECT" level="1">
+      <node name="RequestData" level="2">
+        <node name="CustomerRead" schemaDataType="OBJECT" level="3">
+          <node name="csId" schemaDataType="STRING" level="4">
+            <properties key="type" value="string"/>
+            <properties key="id" value="http://wso2jsonschema.org/RequestData/0/CustomerRead/csId"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode/>
+          </node>
+          <properties key="type" value="object"/>
+          <properties key="id" value="http://wso2jsonschema.org/RequestData/0/CustomerRead"/>
+          <properties key="nullable" value="false"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <node name="ContractRead" schemaDataType="OBJECT" level="3">
+          <node name="co_id" schemaDataType="STRING" level="4">
+            <properties key="type" value="string"/>
+            <properties key="id" value="http://wso2jsonschema.org/RequestData/0/ContractRead/co_id"/>
+            <properties key="nullable" value="false"/>
+            <outNode/>
+            <inNode/>
+          </node>
+          <properties key="type" value="object"/>
+          <properties key="id" value="http://wso2jsonschema.org/RequestData/0/ContractRead"/>
+          <properties key="nullable" value="false"/>
+          <properties key="properties_id" value="{csId={id=http://wso2jsonschema.org/RequestData/0/CustomerRead/csId, type=string}}"/>
+          <properties key="properties_id" value="{co_id={id=http://wso2jsonschema.org/RequestData/0/ContractRead/co_id, type=string}}"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <properties key="type" value="array"/>
+        <properties key="id" value="http://wso2jsonschema.org/RequestData"/>
+        <properties key="items_id" value="http://wso2jsonschema.org/RequestData/0"/>
+        <properties key="items_type" value="object"/>
+        <properties key="nullable" value="false"/>
+        <properties key="properties_id" value="{CustomerRead={id=http://wso2jsonschema.org/RequestData/0/CustomerRead, type=object, properties={csId={id=http://wso2jsonschema.org/RequestData/0/CustomerRead/csId, type=string}}}, ContractRead={id=http://wso2jsonschema.org/RequestData/0/ContractRead, type=object, properties={co_id={id=http://wso2jsonschema.org/RequestData/0/ContractRead/co_id, type=string}}}}"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <properties key="type" value="object"/>
+      <properties key="$schema" value="http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#"/>
+      <properties key="id" value="http://wso2jsonschema.org"/>
+      <properties key="nullable" value="false"/>
+      <outNode/>
+      <inNode/>
+    </treeNode>
+  </input>
+  <output>
+    <treeNode name="root" schemaDataType="OBJECT" level="1">
+      <node name="ResponseData" schemaDataType="OBJECT" level="2">
+        <node name="CustomerRead" schemaDataType="NULL" level="3">
+          <properties key="type" value="null"/>
+          <properties key="id" value="http://wso2jsonschema.org/ResponseData/CustomerRead"/>
+          <properties key="nullable" value="false"/>
+          <outNode/>
+          <inNode/>
+        </node>
+        <properties key="type" value="object"/>
+        <properties key="id" value="http://wso2jsonschema.org/ResponseData"/>
+        <properties key="nullable" value="false"/>
+        <properties key="properties_id" value="{CustomerRead={id=http://wso2jsonschema.org/ResponseData/CustomerRead, type=null}}"/>
+        <outNode/>
+        <inNode/>
+      </node>
+      <properties key="type" value="object"/>
+      <properties key="$schema" value="http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#"/>
+      <properties key="id" value="http://wso2jsonschema.org"/>
+      <properties key="nullable" value="false"/>
+      <outNode/>
+      <inNode/>
+    </treeNode>
+  </output>
+</datamapper:DataMapperRoot>

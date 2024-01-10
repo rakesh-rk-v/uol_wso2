@@ -1,6 +1,10 @@
 eclipse.preferences.version=1
 encoding/CustomerRead.datamapper=UTF-8
 encoding/CustomerRead.datamapper_diagram=UTF-8
+encoding/Mandatory.datamapper=UTF-8
+encoding/Mandatory.datamapper_diagram=UTF-8
+encoding/MemberRemoveDatamapper.datamapper=UTF-8
+encoding/MemberRemoveDatamapper.datamapper_diagram=UTF-8
 encoding/SivaResponse_API.datamapper=UTF-8
 encoding/SivaResponse_API.datamapper_diagram=UTF-8
 encoding/University.datamapper=UTF-8

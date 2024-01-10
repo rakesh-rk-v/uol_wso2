@@ -1,0 +1,21 @@
+{
+  "$schema" : "http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#",
+  "inputType" : "JSON",
+  "id" : "http://wso2jsonschema.org",
+  "title" : "root",
+  "type" : "object",
+  "properties" : {
+    "originHostName" : {
+      "id" : "http://wso2jsonschema.org/originHostName",
+      "type" : "string"
+    },
+    "originTimeStamp" : {
+      "id" : "http://wso2jsonschema.org/originTimeStamp",
+      "type" : "string"
+    },
+    "originNodeType" : {
+      "id" : "http://wso2jsonschema.org/originNodeType",
+      "type" : "string"
+    }
+  }
+}
