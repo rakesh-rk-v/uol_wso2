@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/scriptTest" name="ScriptTest" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <log level="custom">
+                <property name="API " value="ScriptTest"/>
+            </log>
+            <script language="js"><![CDATA[var log = mc.getServiceLog();
+    var jsonData = mc.getProperty("requestPayload");
+        var json = JSON.parse(jsonData);
+ 
+        function setProperties(json, parentKey) {
+            for (var key in json) {
+                if (json.hasOwnProperty(key)) {
+                    var value = json[key];
+ 
+                    if (typeof value === 'object') {
+                        // If the value is a nested JSON object, recursively iterate
+ 
+                        setProperties(value, parentKey + key + '.');
+                    } else {
+                        // If the value is a leaf node, set the property
+                        // var propertyName = parentKey + key;    parameters.addressRequest.adrLname
+                        var propertyName = key;
+                        var propertyValue = value.toString();
+                        mc.setProperty(propertyName, propertyValue);
+                        //log.info("Property set: " + propertyName + " = " + propertyValue);
+                    }
+                }
+            }
+        }
+ 
+        // Set properties dynamically
+        setProperties(json, '');]]></script>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

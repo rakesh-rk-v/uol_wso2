@@ -8,4 +8,13 @@
     <artifact name="MemberRemove_API_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
         <file>src/main/resources/metadata/MemberRemove_API_metadata.yaml</file>
     </artifact>
+    <artifact name="ScriptTest" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/ScriptTest.xml</file>
+    </artifact>
+    <artifact name="ScriptTest_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/ScriptTest_swagger.yaml</file>
+    </artifact>
+    <artifact name="ScriptTest_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/ScriptTest_metadata.yaml</file>
+    </artifact>
 </artifacts>

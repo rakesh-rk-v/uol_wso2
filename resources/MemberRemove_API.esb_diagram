@@ -103,6 +103,28 @@
                       <element xmi:type="esb:LogMediator" href="MemberRemove_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.2"/>
                       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_a8cLRK-CEe6dRp_isiLN5w" x="140" y="59"/>
                     </children>
+                    <children xmi:type="notation:Node" xmi:id="_m4DjsK-5Ee6dRp_isiLN5w" type="3497">
+                      <children xmi:type="notation:DecorationNode" xmi:id="_m4Djta-5Ee6dRp_isiLN5w" type="5170"/>
+                      <children xmi:type="notation:Node" xmi:id="_m4QYAK-5Ee6dRp_isiLN5w" type="3039">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_m4QYAa-5Ee6dRp_isiLN5w"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_m4QYAq-5Ee6dRp_isiLN5w" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_m4QYA6-5Ee6dRp_isiLN5w"/>
+                        <element xmi:type="esb:XSLTMediatorInputConnector" href="MemberRemove_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.3/@inputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m4QYBK-5Ee6dRp_isiLN5w" x="-6" y="-5"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_m4QYBa-5Ee6dRp_isiLN5w" type="3040">
+                        <styles xmi:type="notation:DescriptionStyle" xmi:id="_m4QYBq-5Ee6dRp_isiLN5w"/>
+                        <styles xmi:type="notation:FontStyle" xmi:id="_m4QYB6-5Ee6dRp_isiLN5w" fontName="Segoe UI"/>
+                        <styles xmi:type="notation:LineStyle" xmi:id="_m4QYCK-5Ee6dRp_isiLN5w"/>
+                        <element xmi:type="esb:XSLTMediatorOutputConnector" href="MemberRemove_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.3/@outputConnector"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m4QYCa-5Ee6dRp_isiLN5w" x="64" y="-9"/>
+                      </children>
+                      <styles xmi:type="notation:DescriptionStyle" xmi:id="_m4Djsa-5Ee6dRp_isiLN5w"/>
+                      <styles xmi:type="notation:FontStyle" xmi:id="_m4Djsq-5Ee6dRp_isiLN5w" fontName="Segoe UI"/>
+                      <styles xmi:type="notation:LineStyle" xmi:id="_m4Djs6-5Ee6dRp_isiLN5w"/>
+                      <element xmi:type="esb:XSLTMediator" href="MemberRemove_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.3"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m4DjtK-5Ee6dRp_isiLN5w" x="134" y="53"/>
+                    </children>
                     <styles xmi:type="notation:TitleStyle" xmi:id="_UxWiBq-CEe6dRp_isiLN5w" showTitle="true"/>
                   </children>
                   <styles xmi:type="notation:DescriptionStyle" xmi:id="_UxWiAa-CEe6dRp_isiLN5w"/>
@@ -154,14 +176,19 @@
     <element xmi:type="esb:EsbLink" href="MemberRemove_API.esb#//@server/@children.0/@resources.0/@outputConnector/@outgoingLink"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_an9JAq-CEe6dRp_isiLN5w" points="[6, 2, -175, 0]$[175, 0, -6, -2]"/>
   </edges>
-  <edges xmi:type="notation:Connector" xmi:id="_a8t4EK-CEe6dRp_isiLN5w" type="4001" source="_V5xioK-CEe6dRp_isiLN5w" target="_a8fOkK-CEe6dRp_isiLN5w" roundedBendpointsRadius="5" routing="Rectilinear">
-    <styles xmi:type="notation:FontStyle" xmi:id="_a8t4Ea-CEe6dRp_isiLN5w" fontName="Segoe UI"/>
-    <element xmi:type="esb:EsbLink" href="MemberRemove_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.0/@outputConnector/@outgoingLink"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_a8t4Eq-CEe6dRp_isiLN5w" points="[3, -5, -8, 10]$[7, -10, -4, 5]"/>
-  </edges>
   <edges xmi:type="notation:Connector" xmi:id="_a8zXoK-CEe6dRp_isiLN5w" type="4001" source="_a8fOla-CEe6dRp_isiLN5w" target="_ZMWtsK-CEe6dRp_isiLN5w" roundedBendpointsRadius="5" routing="Rectilinear">
     <styles xmi:type="notation:FontStyle" xmi:id="_a8zXoa-CEe6dRp_isiLN5w" fontName="Segoe UI"/>
     <element xmi:type="esb:EsbLink" href="MemberRemove_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.2/@outputConnector/@outgoingLink"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_a8zXoq-CEe6dRp_isiLN5w" points="[-11, 3, 39, -12]$[-44, 13, 6, -2]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_m4eacK-5Ee6dRp_isiLN5w" type="4001" source="_V5xioK-CEe6dRp_isiLN5w" target="_m4QYAK-5Ee6dRp_isiLN5w" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_m4eaca-5Ee6dRp_isiLN5w" fontName="Segoe UI"/>
+    <element xmi:type="esb:EsbLink" href="MemberRemove_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.0/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_m4eacq-5Ee6dRp_isiLN5w" points="[5, -5, 0, 16]$[0, -16, -5, 5]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_m4ir4K-5Ee6dRp_isiLN5w" type="4001" source="_m4QYBa-5Ee6dRp_isiLN5w" target="_a8fOkK-CEe6dRp_isiLN5w" roundedBendpointsRadius="5" routing="Rectilinear">
+    <styles xmi:type="notation:FontStyle" xmi:id="_m4ir4a-5Ee6dRp_isiLN5w" fontName="Segoe UI"/>
+    <element xmi:type="esb:EsbLink" href="MemberRemove_API.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.3/@outputConnector/@outgoingLink"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_m4ir4q-5Ee6dRp_isiLN5w" points="[-11, 5, 33, -16]$[-38, 18, 6, -3]"/>
   </edges>
 </notation:Diagram>

@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: ScriptTest
+  description: API Definition of ScriptTest
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/scriptTest
+paths:
+  /:
+    post:
+      responses:
+        default:
+          description: Default response

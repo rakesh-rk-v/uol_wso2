@@ -3,6 +3,7 @@
     <resource methods="POST">
         <inSequence>
             <xslt key="conf:memberRemove/MemberRemoveTransform.xslt" source="$body"/>
+            <xslt key="conf:memberRemove/MemberRemoveTransform.xslt" source="$body"/>
             <log level="full">
                 <property name="Transformed" value="True"/>
             </log>
