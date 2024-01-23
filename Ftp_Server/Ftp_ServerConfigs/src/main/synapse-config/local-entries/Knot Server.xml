@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<localEntry key="Knot Server" xmlns="http://ws.apache.org/ns/synapse">
+    <file.init>
+        <ftpConnectionTimeout>100000</ftpConnectionTimeout>
+        <ftpSocketTimeout>150000</ftpSocketTimeout>
+        <isPassive>true</isPassive>
+        <retryCount>5</retryCount>
+        <workingDir>E:\TestFiles\SftpConnection\out</workingDir>
+        <connectionType>FTP</connectionType>
+        <userDirIsRoot>false</userDirIsRoot>
+        <port>38</port>
+        <host>KNOTPC</host>
+        <name>Knot Server</name>
+        <fileLockScheme>Local</fileLockScheme>
+    </file.init>
+</localEntry>

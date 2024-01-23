@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: PipeConnections
+  description: API Definition of PipeConnections
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/pipeConnections
+paths:
+  /:
+    post:
+      responses:
+        default:
+          description: Default response

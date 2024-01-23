@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<localEntry key="Knot Server SFTP" xmlns="http://ws.apache.org/ns/synapse">
+    <file.init>
+        <strictHostKeyChecking>false</strictHostKeyChecking>
+        <connectionType>SFTP</connectionType>
+        <password>Kn0t12#$</password>
+        <host>172.16.110.240</host>
+        <fileLockScheme>Local</fileLockScheme>
+        <sftpConnectionTimeout>100000</sftpConnectionTimeout>
+        <setAvoidPermission>false</setAvoidPermission>
+        <userDirIsRoot>false</userDirIsRoot>
+        <port>22</port>
+        <name>Knot Server SFTP</name>
+        <sftpSessionTimeout>150000</sftpSessionTimeout>
+        <username>wso2</username>
+    </file.init>
+</localEntry>

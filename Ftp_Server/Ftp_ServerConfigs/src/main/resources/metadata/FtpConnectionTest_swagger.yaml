@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: FtpConnectionTest
+  description: API Definition of FtpConnectionTest
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/ftpConnectionTest
+paths:
+  /:
+    get:
+      responses:
+        default:
+          description: Default response

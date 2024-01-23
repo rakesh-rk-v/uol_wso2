@@ -1,0 +1,11 @@
+---
+key: "MemberRemove2-1.0.0"
+name : "MemberRemove2"
+displayName : "MemberRemove2"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/memberRemove2"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"
