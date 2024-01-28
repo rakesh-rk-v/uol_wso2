@@ -1,0 +1,11 @@
+---
+key: "MAHFileProcess_API-1.0.0"
+name : "MAHFileProcess_API"
+displayName : "MAHFileProcess_API"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/mahFileProcessAPI"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

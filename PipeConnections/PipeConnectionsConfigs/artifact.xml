@@ -8,4 +8,13 @@
     <artifact name="PipeConnections_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
         <file>src/main/resources/metadata/PipeConnections_metadata.yaml</file>
     </artifact>
+    <artifact name="OutLookMail" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/OutLookMail.xml</file>
+    </artifact>
+    <artifact name="OutLookMail_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/OutLookMail_swagger.yaml</file>
+    </artifact>
+    <artifact name="OutLookMail_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/OutLookMail_metadata.yaml</file>
+    </artifact>
 </artifacts>

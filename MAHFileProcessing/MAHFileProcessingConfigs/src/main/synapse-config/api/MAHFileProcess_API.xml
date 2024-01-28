@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/mahFileProcessAPI" name="MAHFileProcess_API" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <property description="mahFileName" expression="json-eval($.mahFileName)" name="mahFileName" scope="default" type="STRING"/>
+            <log description="mahFileName Log" level="custom">
+                <property expression="$ctx:mahFileName" name="MAH File Name ====>"/>
+            </log>
+            <class description="MAHFileProessing" name="com.knot.mah.MAHFileProessing"/>
+            <payloadFactory media-type="json">
+                <format>$1</format>
+                <args>
+                    <arg evaluator="xml" expression="$ctx:processedData"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <sequence key="FaultSequence"/>
+        </faultSequence>
+    </resource>
+</api>

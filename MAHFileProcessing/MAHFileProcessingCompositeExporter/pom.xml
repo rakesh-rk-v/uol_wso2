@@ -4,37 +4,37 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.example</groupId>
-    <artifactId>PipeConnections</artifactId>
+    <artifactId>MAHFileProcessing</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
   <groupId>com.example</groupId>
-  <artifactId>PipeConnectionsCompositeExporter</artifactId>
+  <artifactId>MAHFileProcessingCompositeExporter</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>carbon/application</packaging>
-  <name>PipeConnectionsCompositeExporter</name>
-  <description>PipeConnectionsCompositeExporter</description>
+  <name>MAHFileProcessingCompositeExporter</name>
+  <description>MAHFileProcessingCompositeExporter</description>
   <properties>
-    <com.example.api_._PipeConnections>capp/EnterpriseServiceBus</com.example.api_._PipeConnections>
-    <com.example.metadata_._PipeConnections_swagger>capp/EnterpriseServiceBus</com.example.metadata_._PipeConnections_swagger>
-    <com.example.metadata_._PipeConnections_metadata>capp/EnterpriseServiceBus</com.example.metadata_._PipeConnections_metadata>
+    <com.example.metadata_._MAHFileProcess_API_metadata>capp/EnterpriseServiceBus</com.example.metadata_._MAHFileProcess_API_metadata>
+    <com.example.api_._MAHFileProcess_API>capp/EnterpriseServiceBus</com.example.api_._MAHFileProcess_API>
+    <com.example.metadata_._MAHFileProcess_API_swagger>capp/EnterpriseServiceBus</com.example.metadata_._MAHFileProcess_API_swagger>
     <artifact.types>jaggery/app=zip,synapse/priority-executor=xml,synapse/inbound-endpoint=xml,service/rule=aar,synapse/message-store=xml,event/stream=json,service/meta=xml,datasource/datasource=xml,synapse/proxy-service=xml,bpel/workflow=zip,synapse/sequence=xml,synapse/endpointTemplate=xml,carbon/application=car,wso2/gadget=dar,synapse/api=xml,synapse/event-source=xml,synapse/message-processors=xml,event/receiver=xml,lib/dataservice/validator=jar,synapse/template=xml,synapse/endpoint=xml,lib/carbon/ui=jar,lib/synapse/mediator=jar,synapse/metadata=yaml,event/publisher=xml,synapse/local-entry=xml,synapse/task=xml,webapp/jaxws=war,registry/resource=zip,synapse/configuration=xml,service/axis2=aar,synapse/lib=zip,synapse/sequenceTemplate=xml,event/execution-plan=siddhiql,service/dataservice=dbs,web/application=war,lib/library/bundle=jar</artifact.types>
   </properties>
   <dependencies>
     <dependency>
       <groupId>com.example.metadata</groupId>
-      <artifactId>PipeConnections_metadata</artifactId>
+      <artifactId>MAHFileProcess_API_metadata</artifactId>
       <version>1.0.0</version>
       <type>yaml</type>
     </dependency>
     <dependency>
       <groupId>com.example.metadata</groupId>
-      <artifactId>PipeConnections_swagger</artifactId>
+      <artifactId>MAHFileProcess_API_swagger</artifactId>
       <version>1.0.0</version>
       <type>yaml</type>
     </dependency>
     <dependency>
       <groupId>com.example.api</groupId>
-      <artifactId>PipeConnections</artifactId>
+      <artifactId>MAHFileProcess_API</artifactId>
       <version>1.0.0</version>
       <type>xml</type>
     </dependency>

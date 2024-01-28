@@ -2,7 +2,18 @@
 <api context="/pipeConnections" name="PipeConnections" xmlns="http://ws.apache.org/ns/synapse">
     <resource methods="POST">
         <inSequence>
-            <log/>
+            <property expression="json-eval($.FileLocation)" name="FileLocation" scope="default" type="STRING"/>
+            <class name="com.pipe.PipeClass"/>
+            <log level="full">
+                <property expression="$ctx:processedData" name="PipeConnectionMediationProject"/>
+            </log>
+            <payloadFactory media-type="json">
+                <format>$1</format>
+                <args>
+                    <arg evaluator="xml" expression="$ctx:processedData"/>
+                </args>
+            </payloadFactory>
+            <respond/>
         </inSequence>
         <outSequence/>
         <faultSequence/>

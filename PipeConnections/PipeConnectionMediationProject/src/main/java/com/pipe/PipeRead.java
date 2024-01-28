@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 // Class definition for PipeRead
-public class PipeClass {
+public class PipeRead {
     // Main method, starting point of the program
     public static void main(String[] args) {
         // Path to the input file

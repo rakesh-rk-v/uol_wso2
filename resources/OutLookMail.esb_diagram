@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:esb="http:///org/wso2/integrationstudio/eclipse/gmf/esb" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmi:id="_oLlDgL3PEe6GdOBQFLKt2A" type="Esb" name="OutLookMail" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_oPcP0L3PEe6GdOBQFLKt2A" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_oPhIUL3PEe6GdOBQFLKt2A" type="7001">
+      <children xmi:type="notation:Shape" xmi:id="_peXhEL3PEe6GdOBQFLKt2A" type="3668" fontName="Segoe UI">
+        <children xmi:type="notation:BasicCompartment" xmi:id="_peXhEr3PEe6GdOBQFLKt2A" type="7044">
+          <children xmi:type="notation:Node" xmi:id="_petfUL3PEe6GdOBQFLKt2A" type="3669">
+            <children xmi:type="notation:Node" xmi:id="_pewioL3PEe6GdOBQFLKt2A" type="3670">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_pewiob3PEe6GdOBQFLKt2A"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_pewior3PEe6GdOBQFLKt2A" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_pewio73PEe6GdOBQFLKt2A"/>
+              <element xmi:type="esb:APIResourceInputConnector" href="OutLookMail.esb#//@server/@children.0/@resources.0/@inputConnector"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pewipL3PEe6GdOBQFLKt2A" x="86" y="-11"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_pewipb3PEe6GdOBQFLKt2A" type="3671">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_pewipr3PEe6GdOBQFLKt2A"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_pewip73PEe6GdOBQFLKt2A" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_pewiqL3PEe6GdOBQFLKt2A"/>
+              <element xmi:type="esb:APIResourceOutputConnector" href="OutLookMail.esb#//@server/@children.0/@resources.0/@outputConnector"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pewiqb3PEe6GdOBQFLKt2A" x="86" y="-23"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_pexJsL3PEe6GdOBQFLKt2A" type="3730">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_pexJsb3PEe6GdOBQFLKt2A"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_pexJsr3PEe6GdOBQFLKt2A" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_pexJs73PEe6GdOBQFLKt2A"/>
+              <element xmi:type="esb:APIResourceOutSequenceOutputConnector" href="OutLookMail.esb#//@server/@children.0/@resources.0/@outSequenceOutputConnector"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pexJtL3PEe6GdOBQFLKt2A" x="110" y="-11"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_pexJtb3PEe6GdOBQFLKt2A" type="3672">
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_pexJtr3PEe6GdOBQFLKt2A"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_pexJt73PEe6GdOBQFLKt2A" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_pexJuL3PEe6GdOBQFLKt2A"/>
+              <element xmi:type="esb:APIResourceFaultInputConnector" href="OutLookMail.esb#//@server/@children.0/@resources.0/@faultInputConnector"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pexJub3PEe6GdOBQFLKt2A" x="86" y="7"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_pexJur3PEe6GdOBQFLKt2A" type="3673">
+              <children xmi:type="notation:Node" xmi:id="_pe2pQL3PEe6GdOBQFLKt2A" type="3487">
+                <children xmi:type="notation:Node" xmi:id="_pe4ecL3PEe6GdOBQFLKt2A" type="3608">
+                  <children xmi:type="notation:DecorationNode" xmi:id="_pe4edb3PEe6GdOBQFLKt2A" type="7034">
+                    <styles xmi:type="notation:TitleStyle" xmi:id="_pe4edr3PEe6GdOBQFLKt2A" showTitle="true"/>
+                  </children>
+                  <styles xmi:type="notation:DescriptionStyle" xmi:id="_pe4ecb3PEe6GdOBQFLKt2A"/>
+                  <styles xmi:type="notation:FontStyle" xmi:id="_pe4ecr3PEe6GdOBQFLKt2A" fontName="Segoe UI"/>
+                  <styles xmi:type="notation:LineStyle" xmi:id="_pe4ec73PEe6GdOBQFLKt2A"/>
+                  <element xmi:type="esb:MediatorFlow" href="OutLookMail.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer/@mediatorFlow"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pe4edL3PEe6GdOBQFLKt2A"/>
+                </children>
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="_pe2pQb3PEe6GdOBQFLKt2A"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="_pe2pQr3PEe6GdOBQFLKt2A" fontName="Segoe UI"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="_pe2pQ73PEe6GdOBQFLKt2A"/>
+                <element xmi:type="esb:ProxyServiceSequenceAndEndpointContainer" href="OutLookMail.esb#//@server/@children.0/@resources.0/@container/@sequenceAndEndpointContainer"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pe2pRL3PEe6GdOBQFLKt2A"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_pe2pRb3PEe6GdOBQFLKt2A" type="3488">
+                <styles xmi:type="notation:DescriptionStyle" xmi:id="_pe2pRr3PEe6GdOBQFLKt2A"/>
+                <styles xmi:type="notation:FontStyle" xmi:id="_pe2pR73PEe6GdOBQFLKt2A" fontName="Segoe UI"/>
+                <styles xmi:type="notation:LineStyle" xmi:id="_pe2pSL3PEe6GdOBQFLKt2A"/>
+                <element xmi:type="esb:ProxyServiceFaultContainer" href="OutLookMail.esb#//@server/@children.0/@resources.0/@container/@faultContainer"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pe2pSb3PEe6GdOBQFLKt2A"/>
+              </children>
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_pexJu73PEe6GdOBQFLKt2A"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_pexJvL3PEe6GdOBQFLKt2A" fontName="Segoe UI"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_pexJvb3PEe6GdOBQFLKt2A"/>
+              <element xmi:type="esb:ProxyServiceContainer" href="OutLookMail.esb#//@server/@children.0/@resources.0/@container"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pexJvr3PEe6GdOBQFLKt2A"/>
+            </children>
+            <styles xmi:type="notation:DescriptionStyle" xmi:id="_petfUb3PEe6GdOBQFLKt2A"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_petfUr3PEe6GdOBQFLKt2A" fontName="Segoe UI"/>
+            <styles xmi:type="notation:LineStyle" xmi:id="_petfU73PEe6GdOBQFLKt2A"/>
+            <element xmi:type="esb:APIResource" href="OutLookMail.esb#//@server/@children.0/@resources.0"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_petfVL3PEe6GdOBQFLKt2A" width="300" height="400"/>
+          </children>
+        </children>
+        <element xmi:type="esb:SynapseAPI" href="OutLookMail.esb#//@server/@children.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_peXhEb3PEe6GdOBQFLKt2A" width="640" height="500"/>
+      </children>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_oPcP0b3PEe6GdOBQFLKt2A"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_oPcP0r3PEe6GdOBQFLKt2A" fontName="Segoe UI"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_oPcP073PEe6GdOBQFLKt2A"/>
+    <element xmi:type="esb:EsbServer" href="OutLookMail.esb#//@server"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oPcP1L3PEe6GdOBQFLKt2A"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_oLlDgb3PEe6GdOBQFLKt2A"/>
+  <element xmi:type="esb:EsbDiagram" href="OutLookMail.esb#/"/>
+</notation:Diagram>
