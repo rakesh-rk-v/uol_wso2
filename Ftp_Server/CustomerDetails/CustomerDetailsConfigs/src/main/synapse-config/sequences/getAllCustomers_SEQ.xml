@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="getAllCustomers_SEQ" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <dblookup>
+        <connection>
+            <pool>
+                <driver>com.mysql.cj.jdbc.Driver</driver>
+                <url>jdbc:mysql://localhost:3306/customerdetails</url>
+                <user>root</user>
+                <password>mysql</password>
+            </pool>
+        </connection>
+        <statement>
+            <sql><![CDATA[CALL GetAllCustomerDetails()]]></sql>
+            <result column="result" name="result"/>
+        </statement>
+    </dblookup>
+    <log level="custom">
+        <property expression="$ctx:result" name="Result ==== > "/>
+    </log>
+    <payloadFactory media-type="json">
+        <format>$1</format>
+        <args>
+            <arg evaluator="xml" expression="$ctx:result"/>
+        </args>
+    </payloadFactory>
+    <respond/>
+</sequence>

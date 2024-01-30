@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="Customer" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/Customer.xml</file>
+    </artifact>
+    <artifact name="Customer_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Customer_swagger.yaml</file>
+    </artifact>
+    <artifact name="Customer_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Customer_metadata.yaml</file>
+    </artifact>
+    <artifact name="getAllCustomers_SEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/getAllCustomers_SEQ.xml</file>
+    </artifact>
+    <artifact name="getCustomerById_SEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/getCustomerById_SEQ.xml</file>
+    </artifact>
+    <artifact name="deleteCustomerById_SEQ" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/deleteCustomerById_SEQ.xml</file>
+    </artifact>
+</artifacts>

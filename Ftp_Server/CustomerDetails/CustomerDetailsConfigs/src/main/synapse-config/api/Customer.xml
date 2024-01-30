@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/serverRoot/tmf-api/customerManagement/v4/customer" name="Customer" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST GET">
+        <inSequence>
+            <log>
+                <property expression="get-property('axis2', 'HTTP_METHOD')" name="Method ======>"/>
+            </log>
+            <sequence key="getAllCustomers_SEQ"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/{id}">
+        <inSequence>
+            <property expression="get-property('uri.var.id')" name="Id" scope="default" type="STRING"/>
+            <log>
+                <property expression="$ctx:Id" name="ID Value ===>"/>
+            </log>
+            <dblookup>
+                <connection>
+                    <pool>
+                        <driver>com.mysql.cj.jdbc.Driver</driver>
+                        <url>jdbc:mysql://localhost:3306/customerdetails</url>
+                        <user>root</user>
+                        <password>mysql</password>
+                    </pool>
+                </connection>
+                <statement>
+                    <sql><![CDATA[call GetCustomerDetailsById(?)]]></sql>
+                    <parameter expression="$ctx:Id" type="VARCHAR"/>
+                    <result column="result" name="result"/>
+                </statement>
+            </dblookup>
+            <payloadFactory media-type="json">
+                <format>$1</format>
+                <args>
+                    <arg evaluator="xml" expression="$ctx:result"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <sequence key="FaultSequence"/>
+        </faultSequence>
+    </resource>
+</api>

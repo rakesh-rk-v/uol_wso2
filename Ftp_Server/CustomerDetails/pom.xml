@@ -3,17 +3,16 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.example</groupId>
-  <artifactId>Ftp_Server</artifactId>
+  <artifactId>CustomerDetails</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>Ftp_Server</name>
-  <description>Ftp_Server</description>
+  <name>CustomerDetails</name>
+  <description>CustomerDetails</description>
   <modules>
-    <module>CustomerDetails</module>
-    <module>Ftp_ServerRegistryResources</module>
-    <module>Ftp_ServerConnectorExporter</module>
-    <module>Ftp_ServerConfigs</module>
-    <module>Ftp_ServerCompositeExporter</module>
+    <module>CustomerDetailsRegistryResources</module>
+    <module>CustomerDetailsConnectorExporter</module>
+    <module>CustomerDetailsConfigs</module>
+    <module>CustomerDetailsCompositeExporter</module>
   </modules>
   <scm>
     <connection>scm:git:https://github.com/username/repository.git</connection>
